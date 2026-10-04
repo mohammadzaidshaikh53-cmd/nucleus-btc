@@ -1,6 +1,6 @@
 # Nucleus-BTC
 
-For the first GitHub upload, follow [docs/GITHUB.md](docs/GITHUB.md).
+For GitHub setup and future updates, follow [docs/GITHUB.md](docs/GITHUB.md).
 
 An executable Bitcoin proof-of-work research project for this Windows machine.
 The working implementation includes a C++20 core, AMD GPU execution through

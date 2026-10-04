@@ -8,7 +8,7 @@ continued local testing; no live pool mining was started.
 
 - Native C++20 DLL and executable compile with installed MSVC Build Tools.
 - OpenCL executes on the installed discrete AMD `gfx1102` GPU.
-- 32 tests ran: **31 passed, one optional HIP test skipped**, zero failures/errors.
+- 33 tests ran: **32 passed, one optional HIP test skipped**, zero failures/errors.
 - Separate native and GPU verification each checked 16,384 randomized headers,
   an independent reference subset, and 20 exhaustive scan cases.
 - The local pipeline completed through benchmarks, fresh confirmation, family
@@ -51,6 +51,8 @@ the fastest available miner or any ASIC.
   bounded SAT, pruning audits, overhead accounting and lossless overflow retries.
 - V1 pool adapter tested against a socket-pair mock server. Mock acknowledgements
   are local protocol evidence, not live pool acceptance.
+- Share submission waits for pool acknowledgements when its bounded request
+  window is full, times out stalled pools and discards replacement-job shares.
 - Offline SV2 framing, standard-channel job activation, target epochs and share encoding.
 - PowerShell launchers, CMake build, local CLI, documentation and saved test results.
 

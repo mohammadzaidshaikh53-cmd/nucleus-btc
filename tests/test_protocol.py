@@ -38,6 +38,43 @@ class ProtocolTests(unittest.TestCase):
             self.assertFalse(client.submit(old,b"\x00\x00",0))
             self.assertEqual(client.stats["stale_discarded"],1)
         finally:left.close();right.close()
+    def test_share_backpressure_and_job_replacement(self):
+        for response in ("ack", "new-job", "already-stale", "timeout"):
+            with self.subTest(response=response):
+                left,right=socket.socketpair()
+                try:
+                    client=StratumClient(left,"offline-worker",timeout=.02)
+                    client.authorized=True;client.target=UINT256_MAX;client.extranonce2_size=2
+                    client.process({"method":"mining.notify","params":notify()});job=client.latest
+                    client.pending={ident:"mining.submit" for ident in range(1,129)};client.next_id=129
+                    if response=="already-stale":
+                        client.process({"method":"mining.notify","params":notify("replacement")})
+                        self.assertFalse(client.submit(job,b"\x00\x00",0))
+                        self.assertEqual(client.stats["stale_discarded"],1)
+                        self.assertEqual(client.stats["submitted"],0)
+                        self.assertEqual(len(client.pending),128)
+                        continue
+                    if response=="timeout":
+                        with self.assertRaisesRegex(ProtocolError,"acknowledgement timed out"):
+                            client.submit(job,b"\x00\x00",0)
+                        self.assertEqual(client.stats["submitted"],0)
+                        self.assertEqual(len(client.pending),128)
+                        continue
+                    messages=[{"id":1,"result":True,"error":None}]
+                    if response=="new-job":messages.append({"method":"mining.notify","params":notify("replacement")})
+                    right.sendall(("\n".join(json.dumps(message) for message in messages)+"\n").encode())
+                    self.assertEqual(client.submit(job,b"\x00\x00",0),response=="ack")
+                    self.assertEqual(client.stats["accepted"],1)
+                    if response=="ack":
+                        submitted=json.loads(right.recv(4096))
+                        self.assertEqual(submitted["method"],"mining.submit")
+                        self.assertEqual(submitted["params"],job.submission("offline-worker",b"\x00\x00",0))
+                        self.assertEqual(len(client.pending),128)
+                    else:
+                        self.assertEqual(client.stats["stale_discarded"],1)
+                        self.assertEqual(client.stats["submitted"],0)
+                        self.assertEqual(len(client.pending),127)
+                finally:left.close();right.close()
     def test_mock_pool_session(self):
         left,right=socket.socketpair();errors=[];seen=set();accepted=[]
         def server():

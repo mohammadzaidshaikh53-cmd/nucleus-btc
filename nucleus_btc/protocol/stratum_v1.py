@@ -154,6 +154,16 @@ class StratumClient:
         if not self.authorized:raise ProtocolError("Cannot submit before authorization")
         if self.jobs.get(job.job_id)!=job or job.generation!=self.generation:
             self.stats["stale_discarded"]+=1;return False
+        # Fast scanners can fill the request window before the pool thread responds.
+        # Wait for acknowledgements without increasing the bounded pending queue.
+        deadline=monotonic()+self.timeout
+        while len(self.pending)>=128:
+            remaining=deadline-monotonic()
+            if remaining<=0:raise ProtocolError("Share acknowledgement timed out while waiting for request capacity")
+            self.pump(min(remaining,.2))
+        # Waiting can also deliver a replacement job, making this candidate stale.
+        if self.jobs.get(job.job_id)!=job or job.generation!=self.generation:
+            self.stats["stale_discarded"]+=1;return False
         self.send("mining.submit",job.submission(self.worker,extranonce2,nonce));self.stats["submitted"]+=1;return True
     def close(self):self.socket.close()
 

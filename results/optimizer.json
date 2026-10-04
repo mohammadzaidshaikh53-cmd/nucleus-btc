@@ -1,0 +1,249 @@
+{
+  "champion": {
+    "device_index": 0,
+    "full_unroll": true,
+    "alt_boolean": true,
+    "local_size": 64
+  },
+  "experiments": [
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": false,
+        "local_size": 64
+      },
+      "result": "promoted",
+      "metrics": {
+        "geometric_speedup": 1.2630996935246293,
+        "ci95_low": 1.241130849470943,
+        "ci95_high": 1.2882093052953085,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          1.2490087537351109,
+          1.2362556992073717,
+          1.265464748174396,
+          1.2363681185044362,
+          1.2892655547208514,
+          1.2387405852059423,
+          1.3294408634393118
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": true,
+        "local_size": 64
+      },
+      "result": "promoted",
+      "metrics": {
+        "geometric_speedup": 1.1501524009691337,
+        "ci95_low": 1.1348833301966037,
+        "ci95_high": 1.1655995177734628,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          1.1150234875838627,
+          1.1352626784210287,
+          1.1727962837877768,
+          1.1456208993883708,
+          1.1604762242333417,
+          1.1425398135429712,
+          1.1806910125337886
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": false,
+        "alt_boolean": true,
+        "local_size": 64
+      },
+      "result": "DEAD",
+      "metrics": {
+        "geometric_speedup": 0.998076013083191,
+        "ci95_low": 0.9945722836281248,
+        "ci95_high": 1.002319399236779,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          0.9923712898392614,
+          0.9992912739251685,
+          0.9920538958691171,
+          0.9935260953241908,
+          1.0003781010287065,
+          1.0075456903404536,
+          1.0014645255746206
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": false,
+        "local_size": 128
+      },
+      "result": "DEAD",
+      "metrics": {
+        "geometric_speedup": 0.8655634603710142,
+        "ci95_low": 0.8528668653667337,
+        "ci95_high": 0.8777719153349974,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          0.8419412841557654,
+          0.8462178714067158,
+          0.8822007778072272,
+          0.8670355338595459,
+          0.8907526441152136,
+          0.8537720826017023,
+          0.878263835292258
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": true,
+        "local_size": 128
+      },
+      "result": "DEAD",
+      "metrics": {
+        "geometric_speedup": 0.989593180845958,
+        "ci95_low": 0.976393162237018,
+        "ci95_high": 1.002973425622807,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          0.9685580166396666,
+          0.9722087362213929,
+          0.9925441258779911,
+          0.9685239382695658,
+          1.004736104633354,
+          1.0085138797928033,
+          1.013252367895966
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": false,
+        "local_size": 256
+      },
+      "result": "DEAD",
+      "metrics": {
+        "geometric_speedup": 0.8670323847953509,
+        "ci95_low": 0.8612327929464118,
+        "ci95_high": 0.8736754534560102,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          0.8578360620700286,
+          0.8650571625229788,
+          0.8828533440033768,
+          0.8679582590510281,
+          0.8733628831913215,
+          0.865798744256137,
+          0.8566413620831664
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    },
+    {
+      "config": {
+        "device_index": 0,
+        "full_unroll": true,
+        "alt_boolean": true,
+        "local_size": 256
+      },
+      "result": "DEAD",
+      "metrics": {
+        "geometric_speedup": 0.9862066381364867,
+        "ci95_low": 0.9721299986904045,
+        "ci95_high": 1.0022498284557626,
+        "pairs": 7,
+        "method": "paired bootstrap; timing noise only, not all systematic effects",
+        "parity": {
+          "headers_tested": 1024,
+          "independent_reference_headers": 16,
+          "scan_cases": 12,
+          "passed": true,
+          "proof_of_universal_equivalence": false
+        },
+        "paired_ratios": [
+          0.9569681254917893,
+          0.9901825052813696,
+          1.0265661543178315,
+          0.9951751602808029,
+          0.9779784205823766,
+          0.9714801910803124,
+          0.9865362273460042
+        ],
+        "objective": "throughput; energy unmeasured",
+        "work_source": "held-out serialized header fixtures"
+      }
+    }
+  ],
+  "cryptanalytic_discovery": false
+}

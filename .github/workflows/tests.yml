@@ -1,0 +1,27 @@
+name: Exactness tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Configure C++20 core
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build native core
+        run: cmake --build build --config Release
+      - name: Verify reference, native and research modules
+        run: python scripts/test_runner.py --require-native

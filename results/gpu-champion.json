@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "backend": "opencl",
+  "config": {
+    "device_index": 0,
+    "full_unroll": true,
+    "alt_boolean": true,
+    "local_size": 64
+  },
+  "device": "gfx1102",
+  "work_source": "held-out serialized header fixtures, no pool acceptance",
+  "hashes_per_second": 1281089574.6625204,
+  "gh_per_second": 1.2810895746625204,
+  "steady_state_end_to_end": true,
+  "startup_compilation_excluded": true,
+  "warmup_seconds": 0.6000000000000001,
+  "power_watts": null,
+  "power_source": "unmeasured",
+  "joules_per_terahash": null,
+  "samples": [
+    {
+      "hashes": 244318208,
+      "seconds": 0.20009529999515507,
+      "hashes_per_second": 1221009229.1318972,
+      "iterations": 233,
+      "kernel_seconds": 0.14899288000000005,
+      "kernel_hashes_per_second": 1639797874.9051628
+    },
+    {
+      "hashes": 253755392,
+      "seconds": 0.2007898000010755,
+      "hashes_per_second": 1263786268.0207899,
+      "iterations": 242,
+      "kernel_seconds": 0.15125860000000008,
+      "kernel_hashes_per_second": 1677626211.0055223
+    },
+    {
+      "hashes": 256901120,
+      "seconds": 0.20053329999791458,
+      "hashes_per_second": 1281089574.6625204,
+      "iterations": 245,
+      "kernel_seconds": 0.14986820000000006,
+      "kernel_hashes_per_second": 1714180326.4468372
+    },
+    {
+      "hashes": 260046848,
+      "seconds": 0.20001179999962915,
+      "hashes_per_second": 1300157530.7080991,
+      "iterations": 248,
+      "kernel_seconds": 0.14852776000000006,
+      "kernel_hashes_per_second": 1750829932.3978217
+    },
+    {
+      "hashes": 262144000,
+      "seconds": 0.20001659999979893,
+      "hashes_per_second": 1310611219.2701182,
+      "iterations": 250,
+      "kernel_seconds": 0.14737995999999995,
+      "kernel_hashes_per_second": 1778695013.8946984
+    }
+  ]
+}

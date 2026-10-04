@@ -1,0 +1,13 @@
+{
+  "pool_url": "stratum+ssl://REPLACE_WITH_BITCOIN_POOL_HOST:3333",
+  "worker": "REPLACE_WITH_POOL_WORKER",
+  "password": "x",
+  "backend": "opencl",
+  "batch_size": 1048576,
+  "gpu": {
+    "device_index": 0,
+    "full_unroll": true,
+    "alt_boolean": true,
+    "local_size": 64
+  }
+}

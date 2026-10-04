@@ -1,0 +1,11 @@
+{
+  "max_records": 128,
+  "max_record_bytes": 65536,
+  "max_symbolic_nodes": 20000,
+  "nonce_bits": 4,
+  "parity_headers": 4096,
+  "paired_trials": 7,
+  "promotion_ci95_lower_bound": 1.02,
+  "objective_without_power_measurement": "provisional throughput",
+  "allow_probabilistic_pruning": false
+}

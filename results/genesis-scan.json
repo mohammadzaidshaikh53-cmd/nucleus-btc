@@ -1,0 +1,17 @@
+{
+  "nonces": [
+    2083236893
+  ],
+  "examined": 1024,
+  "wall_seconds": 0.0034064999999827705,
+  "kernel_seconds": 5.124e-05,
+  "verified_solutions": [
+    {
+      "nonce": 2083236893,
+      "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+      "header": "0100000000000000000000000000000000000000000000000000000000000000000000003ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a29ab5f49ffff001d1dac2b7c"
+    }
+  ],
+  "source": "historical genesis fixture",
+  "live_pool_accepted": false
+}

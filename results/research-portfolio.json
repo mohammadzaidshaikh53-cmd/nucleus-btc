@@ -1,0 +1,83 @@
+{
+  "attempts": [
+    {
+      "representation": "dag",
+      "nonce_bits": 4,
+      "candidates": 16,
+      "max_nodes": 20000,
+      "baseline_hashlib_seconds": 2.6599998818710446e-05,
+      "status": "resource_budget_collapsed",
+      "at_round": 21,
+      "nodes": 20000,
+      "total_seconds": 0.02648849999968661,
+      "reason": "DAG node budget exceeded",
+      "economic_Rc": null,
+      "cryptanalytic_discovery": false
+    },
+    {
+      "representation": "bdd",
+      "nonce_bits": 4,
+      "candidates": 16,
+      "max_nodes": 20000,
+      "baseline_hashlib_seconds": 2.3299995518755168e-05,
+      "status": "resource_budget_collapsed",
+      "at_round": 29,
+      "nodes": 20000,
+      "total_seconds": 0.09049400000367314,
+      "reason": "BDD node budget exceeded",
+      "economic_Rc": null,
+      "cryptanalytic_discovery": false
+    },
+    {
+      "representation": "bdd",
+      "nonce_bits": 4,
+      "candidates": 16,
+      "max_nodes": 100000,
+      "baseline_hashlib_seconds": 2.4199995095841587e-05,
+      "status": "full_sha256d_parity_passed",
+      "completed_rounds": 128,
+      "nodes": 58640,
+      "total_seconds": 0.4208596000025864,
+      "speedup_including_construction": 5.7501349846107505e-05,
+      "target_constraint_verified": true,
+      "exact_solutions": [],
+      "rejected_candidates": 16,
+      "cryptanalytic_discovery": false,
+      "extrapolation_allowed": false
+    },
+    {
+      "representation": "bdd",
+      "nonce_bits": 6,
+      "candidates": 64,
+      "max_nodes": 100000,
+      "baseline_hashlib_seconds": 0.00012759999663103372,
+      "status": "resource_budget_collapsed",
+      "at_round": 22,
+      "nodes": 100000,
+      "total_seconds": 0.22836539999843808,
+      "reason": "BDD node budget exceeded",
+      "economic_Rc": null,
+      "cryptanalytic_discovery": false
+    },
+    {
+      "representation": "bdd",
+      "nonce_bits": 2,
+      "candidates": 4,
+      "max_nodes": 10000,
+      "baseline_hashlib_seconds": 1.1399999493733048e-05,
+      "status": "full_sha256d_parity_passed",
+      "completed_rounds": 128,
+      "nodes": 16,
+      "total_seconds": 0.0981610999951954,
+      "speedup_including_construction": 0.00011613561272531618,
+      "target_constraint_verified": true,
+      "exact_solutions": [],
+      "rejected_candidates": 4,
+      "cryptanalytic_discovery": false,
+      "extrapolation_allowed": false
+    }
+  ],
+  "production_modified": false,
+  "cryptanalytic_discovery": false,
+  "decision": "retain optimized ordinary hashing; these symbolic branches are not economically competitive"
+}

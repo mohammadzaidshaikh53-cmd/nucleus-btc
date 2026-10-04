@@ -1,0 +1,14 @@
+{
+  "representation": "dag",
+  "nonce_bits": 4,
+  "candidates": 16,
+  "max_nodes": 20000,
+  "baseline_hashlib_seconds": 4.78999936603941e-05,
+  "status": "resource_budget_collapsed",
+  "at_round": 21,
+  "nodes": 20000,
+  "total_seconds": 0.027335999999195337,
+  "reason": "DAG node budget exceeded",
+  "economic_Rc": null,
+  "cryptanalytic_discovery": false
+}

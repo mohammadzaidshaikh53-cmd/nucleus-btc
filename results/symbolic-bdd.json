@@ -1,0 +1,19 @@
+{
+  "representation": "bdd",
+  "nonce_bits": 4,
+  "candidates": 16,
+  "max_nodes": 100000,
+  "baseline_hashlib_seconds": 3.7999998312443495e-05,
+  "status": "full_sha256d_parity_passed",
+  "completed_rounds": 128,
+  "nodes": 58627,
+  "total_seconds": 0.4181151000011596,
+  "speedup_including_construction": 9.088406114091097e-05,
+  "target_constraint_verified": true,
+  "exact_solutions": [
+    2083236893
+  ],
+  "rejected_candidates": 15,
+  "cryptanalytic_discovery": false,
+  "extrapolation_allowed": false
+}

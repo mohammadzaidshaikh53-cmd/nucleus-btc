@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nucleus-btc"
+version = "0.1.0"
+description = "Exact Bitcoin proof-of-work and bounded, evidence-driven optimizer"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+nucleus-btc = "nucleus_btc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nucleus_btc*"]
+
+[tool.setuptools.package-data]
+nucleus_btc = ["gpu/*.cl"]

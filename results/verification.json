@@ -1,0 +1,7 @@
+{
+  "headers_tested": 16384,
+  "independent_reference_headers": 16,
+  "scan_cases": 20,
+  "passed": true,
+  "proof_of_universal_equivalence": false
+}

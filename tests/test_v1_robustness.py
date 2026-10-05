@@ -46,5 +46,15 @@ class V1RobustnessTests(unittest.TestCase):
             result=run_miner({"pool_url":"stratum+tcp://localhost:1","worker":"fixture","password":"private-password"},seconds=2)
         self.assertEqual(connect.call_count,3);self.assertEqual(result["accepted"],0)
         self.assertNotIn("password",json.dumps(result));self.assertEqual(result["status"],"bounded_reconnect_exhausted")
+    def test_failed_gpu_range_retried_exactly_on_cpu(self):
+        from nucleus_btc.protocol.recovering_backend import RecoveringBackend
+        from nucleus_btc.gpu.opencl import OpenCLError
+        from nucleus_btc.bitcoin.block_header import GENESIS
+        engine=Mock();engine.name="opencl";engine.scan.side_effect=OpenCLError("fixture GPU fault");reasons=[]
+        backend=RecoveringBackend(engine,reasons);reference=HashlibBackend()
+        with patch("nucleus_btc.protocol.recovering_backend.get_backend",return_value=reference):
+            result=backend.scan(GENESIS.serialize(),0,16,UINT256_MAX,16)
+        self.assertEqual(result.nonces,list(range(16)));self.assertEqual(result.examined,16)
+        engine.close.assert_called_once();self.assertEqual(backend.name,"hashlib");self.assertEqual(len(reasons),1);backend.close()
 
 if __name__=="__main__":unittest.main()

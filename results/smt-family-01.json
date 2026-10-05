@@ -1,0 +1,14 @@
+{
+  "status": "UNKNOWN",
+  "representation": "SMT-bitvector",
+  "solver": "5.1.0",
+  "count": 16,
+  "construction_seconds": 3.211543899999924,
+  "solver_seconds": 0.022604600000704522,
+  "total_seconds": 3.2341496999997617,
+  "timeout_ms": 250,
+  "solutions": [],
+  "family_discarded": false,
+  "unknown_reason": "max. resource limit exceeded",
+  "cryptanalytic_discovery": false
+}

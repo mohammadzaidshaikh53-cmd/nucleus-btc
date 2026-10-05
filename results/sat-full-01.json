@@ -1,0 +1,40 @@
+{
+  "representation": "dag",
+  "nonce_bits": 1,
+  "candidates": 2,
+  "max_nodes": 500000,
+  "baseline_hashlib_seconds": 2.069999936793465e-05,
+  "status": "full_sha256d_parity_passed",
+  "completed_rounds": 128,
+  "nodes": 213912,
+  "total_seconds": 0.985805899999832,
+  "speedup_including_construction": 2.0998047757614535e-05,
+  "phase_node_growth": {
+    "Ch_Maj": 30564,
+    "T1_Sigma_carries": 72792,
+    "T2_Sigma_carries": 26901,
+    "state_carries": 38284,
+    "message_schedule": 43028,
+    "target_constraint": 965
+  },
+  "variable_order": [
+    0
+  ],
+  "target_constraint_verified": true,
+  "exact_solutions": [
+    2083236893
+  ],
+  "rejected_candidates": 1,
+  "constraint_result": {
+    "status": "UNKNOWN",
+    "visited": 1,
+    "clauses": 763979,
+    "conversion_and_solver_seconds": 0.6840631000004578
+  },
+  "transitions": [],
+  "peak_estimated_representation_bytes": null,
+  "audited_candidates": 2,
+  "exhaustive_audit": true,
+  "cryptanalytic_discovery": false,
+  "extrapolation_allowed": false
+}

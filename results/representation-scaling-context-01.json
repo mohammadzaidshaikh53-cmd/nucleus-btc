@@ -1,0 +1,62 @@
+{
+  "timestamp_utc": "2026-10-05T08:41:20.880336+00:00",
+  "arithmetic_source_sha256": {
+    "plane_circuit": "e2eef4b0865ad1d4270bb5e4e48abf81ceaf6ecf40c5244cde8727f142253848",
+    "full_compression": "723d906e6e490a51cf3a1f14c9b96b25bf421ab0ab27d0b2c486b525d1b2c45a",
+    "hybrid": "51868823d4276e3759592e60975c6ccd9f7f98edded2f21eb8deb09f053c7ae2",
+    "symbolic_execution": "595b9f4f84270180bdee84e3033b527d30e28d2c724a4360fe879e71b8afdb66"
+  },
+  "fixture_seed_base": 890001,
+  "seed_rule": "base + nonce_bits",
+  "fixture_hashes": {
+    "8": [
+      "5d3cfb54a43455c3e5d58b1e59d00190c76db868efc46ee625e49a4df58b2b5f",
+      "6e7c460ca0e0cfd44a5fa6db2c117e8d3c23f0cecd9ec35acf6b70297847e39a",
+      "4141d174bc4dd76fc8471e5c3a961ae23a8768d01c81a03b43a2b8a16e404a05"
+    ],
+    "10": [
+      "7c08b8d4256c4431f3da2a6ec6218d4e6f3ba04644bc0b0056b305ce7459d7d4",
+      "24408085f1408113a6bf206676a93fb5786e40fd301c7801df33cbdc5fe436ef",
+      "dc3bb3d93dc2c1a58a0631de88ab3cddabe6041b91699e6089e264ad75349d3d"
+    ],
+    "12": [
+      "dd6c026f3eea3a44dea04fe03b761a450f2eb2f11f56c3028cd459f9b1677893",
+      "779c88fbcb5321c029920294f829032776884dc5d3a5c9b1f69f923939002a16",
+      "6d0ba96036ca45a9acbe83a86c6d86a72cecc1349a9e832b2a62b120678c7060"
+    ],
+    "14": [
+      "836500e852c2fc539c47f27c300aefc252d51d05bc2452119989f703987b6efd",
+      "ac69b6b47307bc0b4930f19b6bb9e9acf8d89dbe82555c5b4db41323b7f63fd7",
+      "09e7cc5ffe3ff6f2671445df4792975f5e3e027c970a7c37b5a2f0ad37d1267c"
+    ],
+    "16": [
+      "339504ad2502bef5f71f906ccf7a47779cce45c43c8c117fcf3c3c925cd6b0d9",
+      "6847a22524f00171c19667c934c92b409ac467844514627fb324db555fe4a52f",
+      "d7dff5433028c5de064b2b10f3dbda886329c82af119355850e4898e53e0ade6"
+    ],
+    "18": [
+      "3b624096e93abc2b643636148db4bc3f533ef992ff80988bfbda5196c9df20d0",
+      "314c6dea085e7a96fba956c91af388121e8e14608fac8bc6e100b4cd2b8fd2b6",
+      "fa234921ce29f224a9d9c569bd09c5547aff158c7ba4b0d9d077004553460910"
+    ],
+    "20": [
+      "9820e8ac652d74364e0da3bcb10c71fcb5cccd382e4735e9bce75e68c70596a4",
+      "bacc357248713849c987adf153eb035d13a69784ecdfb2f3b85dfb11b5f5271d",
+      "595fdad5ea6b2ea506a8b6e2410db9a7ef9a2cce4dd3f684741124fd01a01c75"
+    ]
+  },
+  "reports": {
+    "representation-scaling-01.json": {
+      "sha256": "bf913b2ae02f68dfc22213eaff5b2bc57590c5b56eabcdb60f774f6ab0203711",
+      "file_timestamp_utc": "2026-10-05T08:24:56.340566+00:00"
+    },
+    "hybrid-scaling-01.json": {
+      "sha256": "50b76a16a059ff8d78e3adf8bed096f7d5b0ec4fe958231ec911898350714c47",
+      "file_timestamp_utc": "2026-10-05T08:26:36.926360+00:00"
+    }
+  },
+  "metadata_scope": "Supplemental hashes of the arithmetic used in the measured runs; full worker wrapper evolved subsequently",
+  "physical_device_id": "Driver exposes AMD vendor id 0x1002, gfx1102 and driver version; KHR PCI/UUID extensions unavailable; Windows CIM denied access",
+  "power_watts": null,
+  "joules_per_terahash": null
+}

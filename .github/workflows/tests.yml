@@ -21,6 +21,8 @@ jobs:
           python-version: '3.12'
       - name: Configure C++20 core
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Install optional exact SMT solver
+        run: python -m pip install -e .[research]
       - name: Build native core
         run: cmake --build build --config Release
       - name: Test locked reference SV2 cryptography

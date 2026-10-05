@@ -27,3 +27,10 @@ class AdaptiveTests(unittest.TestCase):
         result=symbolic_experiment(4,1000,"dag")
         self.assertEqual(result["status"],"resource_budget_collapsed")
         self.assertIn("failure_phase",result)
+    def test_policy_learns_bounded_economic_boundary(self):
+        policy=SplitPolicy()
+        policy.observe(4,{"representation":"bdd","status":"resource_budget_collapsed","total_seconds":1.,"at_round":7,"nodes":20000},.001)
+        self.assertEqual(policy.max_symbolic_bits,3);self.assertEqual(policy.switch_round,6)
+        self.assertLess(policy.growth_fraction,.8);self.assertFalse(policy.high_first)
+        for _ in range(40):policy.observe(3,{"representation":"hybrid-dag","status":"full_sha256d_parity_passed","total_seconds":.001},1.)
+        self.assertEqual(len(policy.observations),32);self.assertEqual(policy.representation,"hybrid-dag")

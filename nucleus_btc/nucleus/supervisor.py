@@ -25,6 +25,8 @@ def classify(error):
     if isinstance(error,ModuleNotFoundError):return "H",False
     if isinstance(error,OSError):return "B",True
     text=str(error).lower()
+    if "timeouterror" in text:return "F",True
+    if "oserror" in text:return "B",True
     if "unavailable" in text or "loader absent" in text:return "H",False
     if "mismatch" in text or "parity" in text:return "D",False
     if "build" in text:return "B",False
@@ -33,8 +35,10 @@ def classify(error):
 
 def source_fingerprint():
     digest=sha256()
-    for path in sorted(ROOT.rglob("*.py")):
-        if ".git" in path.parts or "build" in path.parts:continue
+    paths=[]
+    for folder in (ROOT/"nucleus_btc",ROOT/"native",ROOT/"tests",ROOT/"scripts"):
+        paths.extend(p for p in folder.rglob("*") if p.suffix in (".py",".cl",".cpp",".h",".hpp",".cu",".rs",".toml",".lock") and "target" not in p.parts)
+    for path in sorted(paths):
         digest.update(str(path.relative_to(ROOT)).encode());digest.update(path.read_bytes())
     return digest.hexdigest()
 
@@ -49,7 +53,7 @@ class Supervisor:
         if response.exists():response.unlink()
         command=[sys.executable,"-m","nucleus_btc.nucleus.worker",str(request.resolve()),str(response.resolve())]
         environment={k.upper():v for k,v in os.environ.items()} if os.name=="nt" else dict(os.environ)
-        result=subprocess.run(command,cwd=ROOT,env=environment,capture_output=True,timeout=self.worker_timeout)
+        result=subprocess.run(command,cwd=ROOT,env=environment,capture_output=True,timeout=getattr(self,"current_worker_timeout",self.worker_timeout))
         if result.returncode:
             # Worker diagnostics are intentionally limited and never contain pool config.
             message=result.stderr.decode("utf-8","replace")[-2048:]
@@ -62,6 +66,10 @@ class Supervisor:
         fingerprint=source_fingerprint()
         with ProcessLock(self.directory/"owner.lock"),KnowledgeStore(self.directory/"state.sqlite",self.max_records) as store:
             state=store.get_state("supervisor",{"schema":1,"cursor":0,"pending":None,"completed":0,"history":[]})
+            if state["pending"] and state["pending"].get("source_sha256")!=fingerprint:
+                previous=state["pending"]
+                store.put("DEAD",{"candidate_id":previous["id"]},{"failure_class":"A","previous_source_sha256":previous.get("source_sha256"),"new_source_sha256":fingerprint},"Source changed across restart; stale worker result invalidated")
+                state["pending"]=None;store.set_state("supervisor",state)
             selector=ExperimentSelector(store.get_state("selector",{}));promotions=0
             previous_handlers={}
             if __import__('threading').current_thread() is __import__('threading').main_thread():
@@ -72,6 +80,7 @@ class Supervisor:
                     if state["pending"] is None:
                         cursor=state["cursor"];kind=selector.select(cursor)
                         config={"kind":kind,"generation":selector.statistics.get(kind,{}).get("trials",0),"source_sha256":fingerprint}
+                        if kind=="family":config["split_policy"]=store.get_state("split_policy",{})
                         ident=sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
                         state["pending"]={**config,"id":ident,"attempts":0}
                     experiment=state["pending"]
@@ -82,6 +91,7 @@ class Supervisor:
                         result={"status":"failed","failure_class":"F","reason":"Three interrupted/failed attempts; fallback to next species"}
                     else:
                         experiment["attempts"]+=1
+                        self.current_worker_timeout=max(.01,min(self.worker_timeout,seconds-(monotonic()-started)))
                         store.set_state("supervisor",state) # Durable execution intent BEFORE worker starts.
                         try:result=self.runner(dict(experiment))
                         except Exception as error:
@@ -108,14 +118,16 @@ class Supervisor:
                             promotions+=1
                         except Exception as error:
                             category,_=classify(error);result={"status":"failed","failure_class":category,"reason":str(error)[:2048]}
-                    kind="DEAD" if result.get("status") in ("failed","resource_budget_collapsed","economically_dominated") else "FRONTIER"
+                    kind="DEAD" if result.get("status") in ("failed","resource_budget_collapsed","economic_budget_collapsed","economically_dominated") else "FRONTIER"
                     # Worker validation does not itself authorize a production replacement.
                     store.put(kind,{"species":experiment["kind"],"candidate_id":experiment["id"]},result,
                               result.get("reason","Finite exact experiment; production champion retained"))
                     state["history"]=(state["history"]+[{"id":experiment["id"],"kind":experiment["kind"],"status":result.get("status"),"attempts":experiment["attempts"]}])[-32:]
                     state["completed"]+=1;state["cursor"]+=1;state["pending"]=None;completed+=1
                     selector.observe(experiment["kind"],result,monotonic()-operation_started)
-                    store.set_states({"supervisor":state,"selector":selector.statistics})
+                    checkpoint={"supervisor":state,"selector":selector.statistics}
+                    if experiment["kind"]=="family" and result.get("policy"):checkpoint["split_policy"]=result["policy"]
+                    store.set_states(checkpoint)
                     store.consolidate()
                     atomic_json(self.directory/"checkpoint.json",state)
                 store.db.execute("PRAGMA wal_checkpoint(TRUNCATE)")

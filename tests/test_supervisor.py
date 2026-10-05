@@ -60,3 +60,17 @@ class SupervisorTests(unittest.TestCase):
             self.assertEqual(report["total_completed"],2)
             self.assertFalse(report["production_champion_modified"])
             self.assertTrue(all(r["status"]=="failed" for r in report["history"]))
+    def test_source_change_invalidates_pending_result(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with KnowledgeStore(Path(directory)/"state.sqlite") as store:
+                store.set_state("supervisor",{"schema":1,"cursor":0,"completed":0,"history":[],"pending":{"id":"old-source","source_sha256":"old","attempts":1}})
+            seen=[]
+            Supervisor(directory,runner=lambda e:seen.append(e) or {"status":"exactness_passed"}).run(1)
+            self.assertNotEqual(seen[0]["id"],"old-source")
+    def test_frontier_diversity_and_state_limits(self):
+        with tempfile.TemporaryDirectory() as directory,KnowledgeStore(Path(directory)/"store.sqlite",max_records=12) as store:
+            for species in ("dag","bdd","carry","hybrid"):store.put("FRONTIER",{"species":species,"i":0},{},"species")
+            for i in range(10):store.put("FRONTIER",{"species":"dag","i":i+1},{},"recent")
+            self.assertEqual({r["config"]["species"] for r in store.records()},{"dag","bdd","carry","hybrid"})
+            for i in range(64):store.set_state(str(i),{})
+            with self.assertRaises(ValueError):store.set_state("extra",{})

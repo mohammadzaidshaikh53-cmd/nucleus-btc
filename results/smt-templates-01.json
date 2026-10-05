@@ -1,0 +1,31 @@
+{
+  "solver": "5.1.0",
+  "templates": {
+    "Ch": {
+      "status": "UNSAT",
+      "seconds": 0.003284200000052806,
+      "universal_uint32_equivalence_proved": true
+    },
+    "Maj": {
+      "status": "UNSAT",
+      "seconds": 0.0034031000004688394,
+      "universal_uint32_equivalence_proved": true
+    },
+    "carry-save": {
+      "status": "UNSAT",
+      "seconds": 0.03738270000030752,
+      "universal_uint32_equivalence_proved": true
+    },
+    "rotate-compose": {
+      "status": "UNSAT",
+      "seconds": 5.450000026030466e-05,
+      "universal_uint32_equivalence_proved": true
+    },
+    "uint32-reassociate": {
+      "status": "UNSAT",
+      "seconds": 3.640000068116933e-05,
+      "universal_uint32_equivalence_proved": true
+    }
+  },
+  "all_proved": true
+}

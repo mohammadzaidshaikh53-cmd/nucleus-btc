@@ -63,6 +63,23 @@ records and preserve boundary discoveries.
   protocol tests as well as native/oracle/research tests.
 
 ## Current step
-Publish the protocol checkpoint. Measure full representation scaling, strengthen
-economic split learning, carry alternatives and optional SMT, then run supervisor
-recovery and reproducibility checks on the final frontier.
+Publish the final tested research checkpoint and verify Windows/Linux CI.
+
+## Research checkpoint
+- Four exact carry representations measured with full SHA families 2^8..2^20.
+- DAG/BDD hybrid conversion works through 2^16 and bounds memory at larger K.
+- Full DAG/CNF solver and exact bit-vector SMT evaluated; UNKNOWN does not prune.
+- Five rewrite templates have universal uint32 SMT proofs.
+- Split policy learns bounded growth/economic observations and persists across runs.
+- Supervisor enforces worker budgets, invalidates stale-source results, protects
+  diverse frontier species and bounds state keys/SQLite pages.
+- Two generated searches cover 32 exact candidates; none improved the champion.
+- Suite: 70 tests, 69 pass, HIP skip. CPU recovery preserves a failed GPU range.
+- Authenticated SV2 checkpoint CI passed on Windows and Linux.
+
+## Remaining frontier and external gates
+The achievable local engineering checkpoint is implemented. No large SHA
+advantage was found; nonlinear compression and cheap target proofs remain
+unresolved research. `docs/FRONTIER.md` retains runnable experiments and kill
+boundaries. Live pool/authority configuration, power measurement, HIP SDK and
+independent external environments are unavailable. No BTC/energy claims are made.

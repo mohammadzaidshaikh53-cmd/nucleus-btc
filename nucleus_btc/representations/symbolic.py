@@ -44,6 +44,8 @@ class Circuit:
         for i in range(64):
             self.round+=1
             if self.economic_deadline is not None and perf_counter()>self.economic_deadline:raise EconomicCollapse("Observed construction cost exceeded conventional family budget")
+            if hasattr(getattr(self,"r",None),"boundary"):
+                self.r.boundary(self.round,[bit for word in [*state,a,b,c,d,e,f,g,h,*w] for bit in word])
             if i>=16:
                 self.stage("message_schedule")
                 x,y=w[i-15],w[i-2]
@@ -61,10 +63,15 @@ class Circuit:
             self.finish_stage()
         return [self.add(old,new) for old,new in zip(state,(a,b,c,d,e,f,g,h))]
 
-def symbolic_experiment(nonce_bits=4,max_nodes=20000,representation="dag",header=None,target=None,economic_budget_seconds=None,variable_order=None,solve_constraints=False):
-    if not 1<=nonce_bits<=8 or not 64<=max_nodes<=2_000_000:raise ValueError("Research budget: 1..8 nonce bits and 64..2,000,000 nodes")
-    if representation not in ("dag","bdd","anf"):raise ValueError("Choose dag, bdd or anf")
-    r=BooleanDAG(max_nodes) if representation=="dag" else BDD(max_nodes) if representation=="bdd" else ANF(max_nodes);c=Circuit(r)
+def symbolic_experiment(nonce_bits=4,max_nodes=20000,representation="dag",header=None,target=None,economic_budget_seconds=None,variable_order=None,solve_constraints=False,switch_round=8,growth_fraction=.5):
+    bit_limit=20 if representation.startswith("hybrid-") else 8
+    if not 1<=nonce_bits<=bit_limit or not 64<=max_nodes<=2_000_000:raise ValueError("Research nonce/node budget exceeded")
+    if representation not in ("dag","bdd","anf","hybrid-dag","hybrid-bdd"):raise ValueError("Choose dag, bdd, anf or hybrid")
+    if representation.startswith("hybrid-"):
+        from .hybrid import Hybrid
+        r=Hybrid(1<<nonce_bits,max_nodes,switch_round,growth_fraction,representation.removeprefix("hybrid-"))
+    else:r=BooleanDAG(max_nodes) if representation=="dag" else BDD(max_nodes) if representation=="bdd" else ANF(max_nodes)
+    c=Circuit(r)
     header=GENESIS.serialize() if header is None else header
     parsed=BlockHeader.parse(header)
     base=parsed.nonce&~((1<<nonce_bits)-1);count=1<<nonce_bits
@@ -101,6 +108,7 @@ def symbolic_experiment(nonce_bits=4,max_nodes=20000,representation="dag",header
                 equal=r.node("and",equal,r.node("not",bit))
         feasible=r.node("not",greater)
         c.finish_stage()
+        transitions=getattr(r,"transitions",[])
         constraint_result=None
         if solve_constraints:
             if representation!="dag":raise ValueError("CNF conversion requires a Boolean DAG")
@@ -108,19 +116,29 @@ def symbolic_experiment(nonce_bits=4,max_nodes=20000,representation="dag",header
             cnf_started=perf_counter();clauses=dag_to_cnf(r,feasible)
             answer=solve_cnf(clauses,max_nodes=10000,max_seconds=.1)
             constraint_result={"status":answer.status,"visited":answer.visited,"clauses":len(clauses),"conversion_and_solver_seconds":perf_counter()-cnf_started}
-        actual=[]
+        actual=[];lanes=list(range(count)) if count<=4096 else sorted(set([0,count-1]+[i*count//64 for i in range(64)]))
         solutions=[]
-        for n in range(count):
+        if getattr(r,"values",None) is not None:
+            pending=r.values[feasible]
+            if pending.bit_count()>4096:raise RepresentationCollapsed("Hybrid result capacity exceeded; split family")
+            while pending:
+                lane=(pending&-pending).bit_length()-1;n=sum(((lane>>rank)&1)<<bit for rank,bit in enumerate(order));solutions.append(base+n);pending&=pending-1
+            solutions.sort();lanes=sorted(set(lanes+[n-base for n in solutions]))
+        for n in lanes:
             variables={str(rank):bool((n>>bit)&1) for rank,bit in enumerate(order)}
-            words=[sum(int(r.evaluate(bit,variables))<<i for i,bit in enumerate(word)) for word in second]
+            indexes=[bit for word in second for bit in word]+[feasible]
+            evaluated=r.evaluate_many(indexes,variables) if hasattr(r,"evaluate_many") else [r.evaluate(bit,variables) for bit in indexes]
+            words=[sum(int(evaluated[j*32+i])<<i for i in range(32)) for j in range(8)]
             actual.append(b"".join(w.to_bytes(4,"big") for w in words))
-            if r.evaluate(feasible,variables):solutions.append(base+n)
-        if actual!=expected:raise AssertionError("Symbolic full SHA-256d parity failed")
+            if getattr(r,"values",None) is None and evaluated[-1]:solutions.append(base+n)
+        if actual!=[expected[n] for n in lanes]:raise AssertionError("Symbolic full SHA-256d parity failed")
         expected_solutions=[base+i for i,d in enumerate(expected) if meets_target(d,target)]
         if solutions!=expected_solutions:raise AssertionError("Symbolic target constraint lost or invented a solution")
         elapsed=perf_counter()-began
         return {**trace,"status":"full_sha256d_parity_passed","completed_rounds":c.round,"nodes":len(r.nodes),"total_seconds":elapsed,"speedup_including_construction":baseline/elapsed,"phase_node_growth":c.phase_growth,"variable_order":order,
                 "target_constraint_verified":True,"exact_solutions":solutions,"rejected_candidates":count-len(solutions),"constraint_result":constraint_result,
+                "transitions":transitions,"peak_estimated_representation_bytes":getattr(r,"peak_estimated_bytes",None),
+                "audited_candidates":len(lanes),"exhaustive_audit":count<=4096,
                 "cryptanalytic_discovery":False,"extrapolation_allowed":False}
     except RepresentationCollapsed as e:
         return {**trace,"status":"economic_budget_collapsed" if isinstance(e,EconomicCollapse) else "resource_budget_collapsed","at_round":c.round,"nodes":len(r.nodes),"total_seconds":perf_counter()-began,"reason":str(e),

@@ -1,0 +1,24 @@
+{
+  "status": "naive_rules_refuted",
+  "seed": 881,
+  "samples": 256,
+  "counterexamples": {
+    "Ch": {
+      "sum_word": 3532859642,
+      "carry_word": 1457376298,
+      "f": 3527935824,
+      "g": 1922370700,
+      "resolved_result": 1388645768,
+      "naive_componentwise_result": 1682704600
+    },
+    "Sigma": {
+      "sum_word": 3532859642,
+      "carry_word": 1457376298,
+      "f": 3527935824,
+      "g": 1922370700,
+      "resolved_result": 2354741214,
+      "naive_componentwise_result": 8133969
+    }
+  },
+  "scope": "Exact counterexamples to the specified naive rule only; other redundant nonlinear representations remain research frontier"
+}

@@ -1,0 +1,232 @@
+{
+  "schema": 1,
+  "status": "checkpointed",
+  "completed_this_run": 16,
+  "total_completed": 24,
+  "next_kind": "carry",
+  "pending": null,
+  "history": [
+    {
+      "attempts": 1,
+      "id": "ba77737bf57e3e73958ee0b248923ab98166b2bc0580e37e2f881cf69e4a6d0b",
+      "kind": "generated",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "0423b08de679259c2477cf9065d20ef20389a83e4d0e3f65b85d3f94ea5540c5",
+      "kind": "family",
+      "status": "exact_family_solved"
+    },
+    {
+      "attempts": 1,
+      "id": "109b2773dff8cd278eb8c17466a61bbb74c355ee0e3148c0f7d280a8c0cd525d",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "b29659a610e01f837c638936619864cc33c3a27c94cf7f6cd0c9d266748f930e",
+      "kind": "structural",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "c0ef502d9c6dbe1766f606e94a89a89bc42e0d282172c6aedc4bc424b9dcda97",
+      "kind": "sat",
+      "status": "resource_budget_collapsed"
+    },
+    {
+      "attempts": 1,
+      "id": "c5657b7fcb35b3feb5666705cb8d5fc8418ed235c40264dceebdf20a73eb344c",
+      "kind": "representation",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "3c268f92c5958e179f76aa846453c12943704225d8ebc1334fee266929e948c4",
+      "kind": "regression",
+      "status": "exactness_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "37c9d999fcfcf40eeacc22fa85443dc8cc772babd34bb4452d168e9e1971f164",
+      "kind": "benchmark",
+      "status": "measured"
+    },
+    {
+      "id": "4bb77d14646ee25b701ea98c205a3cd843a9241d12169d2bb498374c1d1eed0e",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "f52286e599cced1fe852bb80e97d07a7952204f7c58a7acf5a3069ed37dc7b62",
+      "kind": "representation",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "0d9d3d9fd692097dc6fda41a2ed00f7a4209aec5a2f014d4cccc638e38e3db8e",
+      "kind": "sat",
+      "status": "UNKNOWN",
+      "attempts": 1
+    },
+    {
+      "id": "6084ce8777b3553715c097bf8aa2bd393363ea239f8a99d443c5581f11493eb7",
+      "kind": "family",
+      "status": "exact_family_solved",
+      "attempts": 1
+    },
+    {
+      "id": "3f5729ffed0db2b5a7586d8fb5dbde629debb9169c1b4ef70509fdd492bed440",
+      "kind": "structural",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "f35672ba18bdaf5dfbccea56b475eab39a0040deaafe20458553b7de6b79ca86",
+      "kind": "generated",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "d6091f3d87181d5a166d217d3b501f8c60fcc01e4455e6ce4e949d98a48349a6",
+      "kind": "regression",
+      "status": "exactness_passed",
+      "attempts": 1
+    },
+    {
+      "id": "1919cff84939f1de17810bf711da1ceb58ffaf22d3d54179f7c7e73ce850eddb",
+      "kind": "benchmark",
+      "status": "measured",
+      "attempts": 1
+    },
+    {
+      "id": "7b2e48dd25b89cdbdae29e21c4d210d45ed0e60e8885fcc896aaf2d3504bd160",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "f0b07d426aed9a3a04cbf8d479e0fcee71762acc192f8c381cbd2df2191498b5",
+      "kind": "representation",
+      "status": "resource_budget_collapsed",
+      "attempts": 1
+    },
+    {
+      "id": "9afc609b6d65fdb72d2c363ec7230f98b20b7b3d808136502ed30a770bff6181",
+      "kind": "sat",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "e0b83953ba0bad53f5f6f6fdef1cc73b0ccf052c8115d4e1be4830efa24740d2",
+      "kind": "family",
+      "status": "exact_family_solved",
+      "attempts": 1
+    },
+    {
+      "id": "595efca0e2be9f8d8636ce04da5e216af0a5299978844109a34935d83d16edd8",
+      "kind": "structural",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "9c7a2165cc71ad7c5e158ba1a0362785ba8c699037ebf8dafe9ccb1b562e8857",
+      "kind": "generated",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "9f5e91ec10bf5c1434e8d4009e020e14296c49664ae050482618f637fa3bf8ce",
+      "kind": "regression",
+      "status": "exactness_passed",
+      "attempts": 1
+    },
+    {
+      "id": "97a1a9c20b7e3b97251bd78e1c72c2cd8436c1930e47512edd565eeef9ce6550",
+      "kind": "benchmark",
+      "status": "measured",
+      "attempts": 1
+    }
+  ],
+  "source_sha256": "490d3e65f32bbe06813eb060306c4b1f10d23af62987c73b5174d68193445810",
+  "storage_bytes": 693280,
+  "production_champion_modified": false,
+  "selector_estimates": {
+    "generated": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 7.948000000000396,
+      "priority": 0.015110289588469947
+    },
+    "family": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 3.119666666666793,
+      "priority": 0.038496607003684236
+    },
+    "carry": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 0.11999999999996665,
+      "priority": 1.0008048470766542
+    },
+    "structural": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 3.432333333333039,
+      "priority": 0.03498977808561001
+    },
+    "sat": {
+      "P_valid": 0.6,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 1.5156666666665235,
+      "priority": 0.05942760253148163
+    },
+    "representation": {
+      "P_valid": 0.6,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 0.192666666666355,
+      "priority": 0.4675039943097899
+    },
+    "regression": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 10.64599999999973,
+      "priority": 0.011280911295244049
+    },
+    "benchmark": {
+      "P_valid": 0.8,
+      "P_better": 0.2,
+      "expected_gain": 1.0,
+      "novelty": 1.5,
+      "expected_information_gain": 0.5004024235381879,
+      "expected_cost": 3.4476666666667675,
+      "priority": 0.03483416271366961
+    }
+  },
+  "live_pool_acceptance": false
+}

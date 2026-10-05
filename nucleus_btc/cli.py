@@ -12,7 +12,11 @@ ROOT=Path(__file__).resolve().parents[1]
 def dump(value,path=None):
     encoded=json.dumps(value,indent=2,allow_nan=False)
     if path:
-        p=Path(path);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(encoded+"\n",encoding="utf-8")
+        p=Path(path);p.parent.mkdir(parents=True,exist_ok=True)
+        if p.exists():
+            from time import time_ns
+            p=p.with_name(p.stem+"-"+str(time_ns())+p.suffix);print(f"Preserved previous result; saving {p}",file=sys.stderr)
+        with p.open("x",encoding="utf-8") as stream:stream.write(encoded+"\n")
     print(encoded)
 
 def header_value(text):
@@ -37,7 +41,9 @@ def main(argv=None):
     s=sub.add_parser("scan");s.add_argument("--backend",default="opencl",choices=["hashlib","native","native-full","opencl"]);s.add_argument("--header");s.add_argument("--start",type=int);s.add_argument("--count",type=int,default=1024);s.add_argument("--target",help="Full 256-bit target in conventional big-endian hex");s.add_argument("--capacity",type=int,default=4096);s.add_argument("--champion",action="store_true");s.add_argument("--output")
     sub.add_parser("status")
     p=sub.add_parser("portfolio");p.add_argument("--output");p.add_argument("--store",default=str(ROOT/"results"/"knowledge.sqlite"))
-    r=sub.add_parser("research");r.add_argument("--nonce-bits",type=int,default=4);r.add_argument("--max-nodes",type=int,default=20000);r.add_argument("--representation",choices=["dag","bdd","anf"],default="dag");r.add_argument("--output")
+    r=sub.add_parser("research");r.add_argument("--nonce-bits",type=int,default=4);r.add_argument("--max-nodes",type=int,default=20000);r.add_argument("--representation",choices=["dag","bdd","anf","hybrid-dag","hybrid-bdd"],default="dag");r.add_argument("--output")
+    sm=sub.add_parser("smt");sm.add_argument("--nonce-bits",type=int,default=4);sm.add_argument("--timeout-ms",type=int,default=250);sm.add_argument("--templates",action="store_true");sm.add_argument("--output")
+    rs=sub.add_parser("representation-scaling");rs.add_argument("--repeats",type=int,default=3);rs.add_argument("--hybrids",action="store_true");rs.add_argument("--output")
     m=sub.add_parser("mine");m.add_argument("--config",required=True);m.add_argument("--seconds",type=float,default=60);m.add_argument("--output")
     args=parser.parse_args(argv)
     try:
@@ -75,6 +81,13 @@ def main(argv=None):
         if args.command=="research":
             from .representations.symbolic import symbolic_experiment
             dump(symbolic_experiment(args.nonce_bits,args.max_nodes,args.representation),args.output);return 0
+        if args.command=="smt":
+            from .solver.smt import smt_family,prove_templates
+            dump(prove_templates() if args.templates else smt_family(GENESIS.serialize(),nonce_bits=args.nonce_bits,timeout_ms=args.timeout_ms),args.output);return 0
+        if args.command=="representation-scaling":
+            from .solver.scaling import representation_scaling
+            options={"representations":("hybrid-dag","hybrid-bdd")} if args.hybrids else {}
+            dump(representation_scaling(repeats=args.repeats,progress=lambda m:print(m,file=sys.stderr),**options),args.output);return 0
         if args.command=="portfolio":
             from .nucleus.experiment_selector import run_portfolio
             dump(run_portfolio(args.store),args.output);return 0

@@ -97,6 +97,9 @@ class StratumClient:
         self.socket.sendall((json.dumps({"id":ident,"method":method,"params":params},separators=(",",":"))+"\n").encode())
         self.pending[ident]=method;return ident
     def process(self,obj):
+        try:self._process(obj)
+        except (ValueError,TypeError,ArithmeticError) as error:raise ProtocolError("Invalid Stratum notification data") from error
+    def _process(self,obj):
         method=obj.get("method")
         if method:
             params=obj.get("params",[])
@@ -248,6 +251,8 @@ def run_miner(config,seconds=60):
             except Exception:backend.close();raise
             break
     if backend is None:raise BackendUnavailable("; ".join(failures))
+    from .recovering_backend import RecoveringBackend
+    backend=RecoveringBackend(backend,failures)
     sock=None;client=None;started=monotonic();sessions=[];totals={"submitted":0,"accepted":0,"rejected":0,"stale_discarded":0,"examined":0};evidence=[]
     try:
         for attempt in range(3):

@@ -1,0 +1,2801 @@
+{
+  "schema": 1,
+  "status": "measured",
+  "seconds": 39.55478589999984,
+  "baselines": {
+    "native": {
+      "metadata": {
+        "timestamp_utc": "2026-10-05T08:25:57.368436+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": null,
+        "device_fingerprint": null,
+        "physical_pci_id": null,
+        "source_sha256": null,
+        "build_options": null,
+        "compilation_seconds": null,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "rows": [
+        {
+          "count": 256,
+          "median_seconds": 0.0001593000006323564,
+          "samples": [
+            {
+              "seconds": 9.310000041296007e-05,
+              "kernel_seconds": null,
+              "examined": 256
+            },
+            {
+              "seconds": 0.0001593000006323564,
+              "kernel_seconds": null,
+              "examined": 256
+            },
+            {
+              "seconds": 0.0001613000003999332,
+              "kernel_seconds": null,
+              "examined": 256
+            }
+          ]
+        },
+        {
+          "count": 1024,
+          "median_seconds": 0.0003877000008287723,
+          "samples": [
+            {
+              "seconds": 0.00033660000008239876,
+              "kernel_seconds": null,
+              "examined": 1024
+            },
+            {
+              "seconds": 0.0003877000008287723,
+              "kernel_seconds": null,
+              "examined": 1024
+            },
+            {
+              "seconds": 0.0005367000003388966,
+              "kernel_seconds": null,
+              "examined": 1024
+            }
+          ]
+        },
+        {
+          "count": 4096,
+          "median_seconds": 0.0016476000000693602,
+          "samples": [
+            {
+              "seconds": 0.0016476000000693602,
+              "kernel_seconds": null,
+              "examined": 4096
+            },
+            {
+              "seconds": 0.0015860000003158348,
+              "kernel_seconds": null,
+              "examined": 4096
+            },
+            {
+              "seconds": 0.0017714000005071284,
+              "kernel_seconds": null,
+              "examined": 4096
+            }
+          ]
+        },
+        {
+          "count": 16384,
+          "median_seconds": 0.005660099999658996,
+          "samples": [
+            {
+              "seconds": 0.005372200000238081,
+              "kernel_seconds": null,
+              "examined": 16384
+            },
+            {
+              "seconds": 0.007790700000441575,
+              "kernel_seconds": null,
+              "examined": 16384
+            },
+            {
+              "seconds": 0.005660099999658996,
+              "kernel_seconds": null,
+              "examined": 16384
+            }
+          ]
+        },
+        {
+          "count": 65536,
+          "median_seconds": 0.021746100000200386,
+          "samples": [
+            {
+              "seconds": 0.021804499999234395,
+              "kernel_seconds": null,
+              "examined": 65536
+            },
+            {
+              "seconds": 0.021048999999948137,
+              "kernel_seconds": null,
+              "examined": 65536
+            },
+            {
+              "seconds": 0.021746100000200386,
+              "kernel_seconds": null,
+              "examined": 65536
+            }
+          ]
+        },
+        {
+          "count": 262144,
+          "median_seconds": 0.08577259999947273,
+          "samples": [
+            {
+              "seconds": 0.08577259999947273,
+              "kernel_seconds": null,
+              "examined": 262144
+            },
+            {
+              "seconds": 0.08311119999962102,
+              "kernel_seconds": null,
+              "examined": 262144
+            },
+            {
+              "seconds": 0.08778970000003028,
+              "kernel_seconds": null,
+              "examined": 262144
+            }
+          ]
+        },
+        {
+          "count": 1048576,
+          "median_seconds": 0.33772440000029746,
+          "samples": [
+            {
+              "seconds": 0.3440768999998909,
+              "kernel_seconds": null,
+              "examined": 1048576
+            },
+            {
+              "seconds": 0.33772440000029746,
+              "kernel_seconds": null,
+              "examined": 1048576
+            },
+            {
+              "seconds": 0.3364472000002934,
+              "kernel_seconds": null,
+              "examined": 1048576
+            }
+          ]
+        }
+      ],
+      "fit": {
+        "alpha_with_fixed_overhead": 0.99,
+        "fixed_overhead_seconds": 0.00012477165034371906,
+        "coefficient": 3.698494612798991e-07,
+        "squared_error": 3.8978288599186765e-08,
+        "largest_three_observed_slope": 0.9892544556427733,
+        "interpretation": "Finite descriptive fit; fixed overhead, integer width and instrumentation affect slope; no algorithmic sublinearity claim"
+      }
+    },
+    "opencl": {
+      "metadata": {
+        "timestamp_utc": "2026-10-05T08:26:00.459301+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": {
+          "name": "gfx1102",
+          "vendor": "Advanced Micro Devices, Inc.",
+          "driver": "3679.0 (PAL,LC)",
+          "memory_bytes": 17163091968,
+          "compute_units": 16,
+          "unified_memory": false,
+          "max_work_group": 256
+        },
+        "device_fingerprint": "3f17ec2d67671c0024fb7a3423b4dbf58aa5343d53945501ee9b26a650d1f4ae",
+        "physical_pci_id": null,
+        "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+        "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+        "compilation_seconds": 2.327843300000495,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "rows": [
+        {
+          "count": 256,
+          "median_seconds": 0.0012076000002707588,
+          "samples": [
+            {
+              "seconds": 0.0006923999999344232,
+              "kernel_seconds": 3.328e-05,
+              "examined": 256
+            },
+            {
+              "seconds": 0.0014325000001917942,
+              "kernel_seconds": 3.848e-05,
+              "examined": 256
+            },
+            {
+              "seconds": 0.0012076000002707588,
+              "kernel_seconds": 1.104e-05,
+              "examined": 256
+            }
+          ]
+        },
+        {
+          "count": 1024,
+          "median_seconds": 0.0006681999993816135,
+          "samples": [
+            {
+              "seconds": 0.0005304000005708076,
+              "kernel_seconds": 3.276e-05,
+              "examined": 1024
+            },
+            {
+              "seconds": 0.0014000999999552732,
+              "kernel_seconds": 3.848e-05,
+              "examined": 1024
+            },
+            {
+              "seconds": 0.0006681999993816135,
+              "kernel_seconds": 1.04e-05,
+              "examined": 1024
+            }
+          ]
+        },
+        {
+          "count": 4096,
+          "median_seconds": 0.0008572999995521968,
+          "samples": [
+            {
+              "seconds": 0.0004351999996288214,
+              "kernel_seconds": 1.068e-05,
+              "examined": 4096
+            },
+            {
+              "seconds": 0.0013952999997854931,
+              "kernel_seconds": 6.824e-05,
+              "examined": 4096
+            },
+            {
+              "seconds": 0.0008572999995521968,
+              "kernel_seconds": 1.072e-05,
+              "examined": 4096
+            }
+          ]
+        },
+        {
+          "count": 16384,
+          "median_seconds": 0.0013064000004305854,
+          "samples": [
+            {
+              "seconds": 0.0003119999992122757,
+              "kernel_seconds": 1.108e-05,
+              "examined": 16384
+            },
+            {
+              "seconds": 0.0013822999999320018,
+              "kernel_seconds": 4.188e-05,
+              "examined": 16384
+            },
+            {
+              "seconds": 0.0013064000004305854,
+              "kernel_seconds": 4.184e-05,
+              "examined": 16384
+            }
+          ]
+        },
+        {
+          "count": 65536,
+          "median_seconds": 0.0007353999999395455,
+          "samples": [
+            {
+              "seconds": 0.0005620000001727021,
+              "kernel_seconds": 3.384e-05,
+              "examined": 65536
+            },
+            {
+              "seconds": 0.0008910000005926122,
+              "kernel_seconds": 3.676e-05,
+              "examined": 65536
+            },
+            {
+              "seconds": 0.0007353999999395455,
+              "kernel_seconds": 6.3e-05,
+              "examined": 65536
+            }
+          ]
+        },
+        {
+          "count": 262144,
+          "median_seconds": 0.0017825999993874575,
+          "samples": [
+            {
+              "seconds": 0.0016899000002013054,
+              "kernel_seconds": 0.00047444,
+              "examined": 262144
+            },
+            {
+              "seconds": 0.0019971000001532957,
+              "kernel_seconds": 0.00047496,
+              "examined": 262144
+            },
+            {
+              "seconds": 0.0017825999993874575,
+              "kernel_seconds": 0.0004746,
+              "examined": 262144
+            }
+          ]
+        },
+        {
+          "count": 1048576,
+          "median_seconds": 0.0028036000003339723,
+          "samples": [
+            {
+              "seconds": 0.0029948999999760417,
+              "kernel_seconds": 0.00185964,
+              "examined": 1048576
+            },
+            {
+              "seconds": 0.0028036000003339723,
+              "kernel_seconds": 0.0018608,
+              "examined": 1048576
+            },
+            {
+              "seconds": 0.0012456000004021917,
+              "kernel_seconds": 0.00050288,
+              "examined": 1048576
+            }
+          ]
+        }
+      ],
+      "fit": {
+        "alpha_with_fixed_overhead": 0.77,
+        "fixed_overhead_seconds": 0.0009206376799199346,
+        "coefficient": 4.428402236355415e-08,
+        "squared_error": 4.638174334266721e-07,
+        "largest_three_observed_slope": 0.48266986200508377,
+        "interpretation": "Finite descriptive fit; fixed overhead, integer width and instrumentation affect slope; no algorithmic sublinearity claim"
+      }
+    }
+  },
+  "representations": {
+    "hybrid-dag": {
+      "rows": [
+        {
+          "count": 256,
+          "median_seconds": 0.30133939999996073,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.00034719999985100003,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5555,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 444400,
+              "phase_node_growth": {
+                "Ch_Maj": 34774,
+                "T1_Sigma_carries": 81695,
+                "T2_Sigma_carries": 27343,
+                "message_schedule": 47585,
+                "state_carries": 39323,
+                "target_constraint": 277
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.0016239073580015275,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.2138053000007858,
+              "transitions": [
+                {
+                  "conversion_seconds": 8.399999387620483e-06,
+                  "from": "dag",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.30133939999996073
+            },
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.0003434999998717103,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5559,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 444720,
+              "phase_node_growth": {
+                "Ch_Maj": 34808,
+                "T1_Sigma_carries": 81731,
+                "T2_Sigma_carries": 27349,
+                "message_schedule": 47593,
+                "state_carries": 39339,
+                "target_constraint": 280
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.001594253076753234,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.21546140000009473,
+              "transitions": [
+                {
+                  "conversion_seconds": 8.199999683711212e-06,
+                  "from": "dag",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.2964524999997593
+            },
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.0004264999997758423,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5564,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 445120,
+              "phase_node_growth": {
+                "Ch_Maj": 34788,
+                "T1_Sigma_carries": 81754,
+                "T2_Sigma_carries": 27338,
+                "message_schedule": 47657,
+                "state_carries": 39305,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.0019218810541606847,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.22191799999927753,
+              "transitions": [
+                {
+                  "conversion_seconds": 1.1799999811046291e-05,
+                  "from": "dag",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.30155980000017735
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 849.5404185447816,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 249.5357733789307,
+            "phi": 0.0,
+            "M": 90112,
+            "K": 256,
+            "Q": null,
+            "S": 0.00400744144400273,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 1024,
+          "median_seconds": 0.5921607999998741,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.0010746999996626982,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5565,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 979440,
+              "phase_node_growth": {
+                "Ch_Maj": 34817,
+                "T1_Sigma_carries": 81897,
+                "T2_Sigma_carries": 27348,
+                "message_schedule": 47872,
+                "state_carries": 39367,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.0021085564180857966,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.5096851999996943,
+              "transitions": [
+                {
+                  "conversion_seconds": 1.1299999641778413e-05,
+                  "from": "dag",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5921607999998741
+            },
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.0012378999999782536,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5565,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 979440,
+              "phase_node_growth": {
+                "Ch_Maj": 34831,
+                "T1_Sigma_carries": 81852,
+                "T2_Sigma_carries": 27359,
+                "message_schedule": 47822,
+                "state_carries": 39366,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.002454477463334385,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.5043436000005386,
+              "transitions": [
+                {
+                  "conversion_seconds": 1.1899999663000926e-05,
+                  "from": "dag",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5858477000001585
+            },
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.0012114999999539577,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5559,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 978384,
+              "phase_node_growth": {
+                "Ch_Maj": 34800,
+                "T1_Sigma_carries": 81804,
+                "T2_Sigma_carries": 27342,
+                "message_schedule": 47858,
+                "state_carries": 39356,
+                "target_constraint": 280
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.002362342601400446,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.5128383999999642,
+              "transitions": [
+                {
+                  "conversion_seconds": 1.1099999937869143e-05,
+                  "from": "dag",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5944614999998521
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 1729.260025317815,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 886.2029340734662,
+            "phi": 0.0,
+            "M": 360448,
+            "K": 1024,
+            "Q": null,
+            "S": 0.0011284097146953252,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 4096,
+          "median_seconds": 1.9437986000002638,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.004463899999791465,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5578,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3123680,
+              "phase_node_growth": {
+                "Ch_Maj": 34865,
+                "T1_Sigma_carries": 81966,
+                "T2_Sigma_carries": 27368,
+                "message_schedule": 48057,
+                "state_carries": 39390,
+                "target_constraint": 299
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.002347105447700617,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.9018744999993942,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.880000010918593e-05,
+                  "from": "dag",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.986066800000117
+            },
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.0044372000002113055,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5574,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3121440,
+              "phase_node_growth": {
+                "Ch_Maj": 34845,
+                "T1_Sigma_carries": 81943,
+                "T2_Sigma_carries": 27373,
+                "message_schedule": 48071,
+                "state_carries": 39390,
+                "target_constraint": 295
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.0024243158023791248,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.8302896000004694,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.9599999834317714e-05,
+                  "from": "dag",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.9164742000002661
+            },
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.004501000000345812,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5574,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3121440,
+              "phase_node_growth": {
+                "Ch_Maj": 34878,
+                "T1_Sigma_carries": 81987,
+                "T2_Sigma_carries": 27398,
+                "message_schedule": 48065,
+                "state_carries": 39421,
+                "target_constraint": 295
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.00242671336441707,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.8547719999996843,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.8700000257231295e-05,
+                  "from": "dag",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.9437986000002638
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 2107.214193898197,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 2267.3493538033244,
+            "phi": 0.0,
+            "M": 1441792,
+            "K": 4096,
+            "Q": null,
+            "S": 0.0004410436346399676,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 16384,
+          "median_seconds": 0.33749989999978425,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017475200000262703,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5591,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11718736,
+              "phase_node_growth": {
+                "Ch_Maj": 34866,
+                "T1_Sigma_carries": 82001,
+                "T2_Sigma_carries": 27395,
+                "message_schedule": 48187,
+                "state_carries": 39417,
+                "target_constraint": 312
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.07369086876329992,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.2371419999999489,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00019749999955820385,
+                  "from": "dag",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.33749989999978425
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017742800000632997,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5588,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11712448,
+              "phase_node_growth": {
+                "Ch_Maj": 34876,
+                "T1_Sigma_carries": 81991,
+                "T2_Sigma_carries": 27385,
+                "message_schedule": 48162,
+                "state_carries": 39433,
+                "target_constraint": 309
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.07464087377722205,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.23770890000014333,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00020050000057381112,
+                  "from": "dag",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.3390967000004821
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017897400000038033,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5577,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11689392,
+              "phase_node_growth": {
+                "Ch_Maj": 34855,
+                "T1_Sigma_carries": 82013,
+                "T2_Sigma_carries": 27373,
+                "message_schedule": 48149,
+                "state_carries": 39418,
+                "target_constraint": 298
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.07551750720611361,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.23699669999950856,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00019870000051014358,
+                  "from": "dag",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.33703349999996135
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 48545.19956897906,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 258.3434628663084,
+            "phi": 0.0,
+            "M": 5767168,
+            "K": 16384,
+            "Q": null,
+            "S": 0.0038708159630015315,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 65536,
+          "median_seconds": 0.5887753999995766,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06892070000048989,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5588,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46045120,
+              "phase_node_growth": {
+                "Ch_Maj": 34880,
+                "T1_Sigma_carries": 82020,
+                "T2_Sigma_carries": 27387,
+                "message_schedule": 48288,
+                "state_carries": 39418,
+                "target_constraint": 309
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.15954600686608403,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.4319800999992367,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.0025224000000889646,
+                  "from": "dag",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5856519999997545
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06889899999987392,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5584,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46012160,
+              "phase_node_growth": {
+                "Ch_Maj": 34898,
+                "T1_Sigma_carries": 82021,
+                "T2_Sigma_carries": 27399,
+                "message_schedule": 48297,
+                "state_carries": 39422,
+                "target_constraint": 305
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.1582424861285853,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.4354014000000461,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.0027556000004551606,
+                  "from": "dag",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5922128000001976
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06859930000064196,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5585,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46020400,
+              "phase_node_growth": {
+                "Ch_Maj": 34867,
+                "T1_Sigma_carries": 82030,
+                "T2_Sigma_carries": 27390,
+                "message_schedule": 48271,
+                "state_carries": 39435,
+                "target_constraint": 306
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-dag",
+              "speedup_including_construction": 0.15756150186727996,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.435381100000086,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00272430000040913,
+                  "from": "dag",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5887753999995766
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 111308.99830401732,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 800.6192548925451,
+            "phi": 0.0,
+            "M": 23068672,
+            "K": 65536,
+            "Q": null,
+            "S": 0.0012490331626288638,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 262144,
+          "median_seconds": 0.6464362000006076,
+          "passed": false,
+          "samples": [
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.27643199999965873,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 3990,
+                "T1_Sigma_carries": 9098,
+                "T2_Sigma_carries": 3322,
+                "message_schedule": 405,
+                "state_carries": 4545
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.2774536999995689,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.6385757999996713
+            },
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.2782468000004883,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 4013,
+                "T1_Sigma_carries": 9127,
+                "T2_Sigma_carries": 3317,
+                "message_schedule": 407,
+                "state_carries": 4558
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.28160600000046543,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.6465733999993972
+            },
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.27763450000020384,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 4008,
+                "T1_Sigma_carries": 9100,
+                "T2_Sigma_carries": 3311,
+                "message_schedule": 410,
+                "state_carries": 4532
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.28355329999976675,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.6464362000006076
+            }
+          ]
+        },
+        {
+          "count": 1048576,
+          "median_seconds": 1.3337015000006431,
+          "passed": false,
+          "samples": [
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.1158261999999013,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 97,
+                "T1_Sigma_carries": 98,
+                "T2_Sigma_carries": 0,
+                "state_carries": 204
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.1334775000004811,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3418153000002349
+            },
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.1117581999997128,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 89,
+                "T1_Sigma_carries": 95,
+                "T2_Sigma_carries": 0,
+                "state_carries": 200
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.1306774000004225,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3328166999999667
+            },
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.1128483000002234,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 98,
+                "T1_Sigma_carries": 88,
+                "T2_Sigma_carries": 0,
+                "state_carries": 172
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-dag",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.13140480000038224,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3337015000006431
+            }
+          ]
+        }
+      ],
+      "fit": {
+        "alpha_with_fixed_overhead": 0.3,
+        "fixed_overhead_seconds": 0.7527148199998919,
+        "coefficient": 0,
+        "squared_error": 1.8474774973189905,
+        "largest_three_observed_slope": -0.430772361800514,
+        "interpretation": "Finite descriptive fit; fixed overhead, integer width and instrumentation affect slope; no algorithmic sublinearity claim"
+      }
+    },
+    "hybrid-bdd": {
+      "rows": [
+        {
+          "count": 256,
+          "median_seconds": 0.2958819000004951,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.0004268000002412009,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5555,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 444400,
+              "phase_node_growth": {
+                "Ch_Maj": 34774,
+                "T1_Sigma_carries": 81695,
+                "T2_Sigma_carries": 27343,
+                "message_schedule": 47585,
+                "state_carries": 39323,
+                "target_constraint": 277
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0019964860360239304,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.21377559999928053,
+              "transitions": [
+                {
+                  "conversion_seconds": 8.399999387620483e-06,
+                  "from": "bdd",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.2962041999999201
+            },
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.00033990000065386994,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5559,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 444720,
+              "phase_node_growth": {
+                "Ch_Maj": 34808,
+                "T1_Sigma_carries": 81731,
+                "T2_Sigma_carries": 27349,
+                "message_schedule": 47593,
+                "state_carries": 39339,
+                "target_constraint": 280
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0015847395071189778,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.21448320000035892,
+              "transitions": [
+                {
+                  "conversion_seconds": 8.50000014906982e-06,
+                  "from": "bdd",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.2958819000004951
+            },
+            {
+              "audited_candidates": 256,
+              "baseline_hashlib_seconds": 0.0003385999998499756,
+              "candidates": 256,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5564,
+              "nonce_bits": 8,
+              "peak_estimated_representation_bytes": 445120,
+              "phase_node_growth": {
+                "Ch_Maj": 34788,
+                "T1_Sigma_carries": 81754,
+                "T2_Sigma_carries": 27338,
+                "message_schedule": 47657,
+                "state_carries": 39305,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 256,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0015813252301716098,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.21412419999978738,
+              "transitions": [
+                {
+                  "conversion_seconds": 6.70000008540228e-06,
+                  "from": "bdd",
+                  "live_nodes": 10,
+                  "round": 2,
+                  "symbolic_nodes": 10,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "all_cost_seconds": 0.2953193999992436
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 865.2100719901138,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 245.01647891201947,
+            "phi": 0.0,
+            "M": 90112,
+            "K": 256,
+            "Q": null,
+            "S": 0.004081358137380956,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 1024,
+          "median_seconds": 0.5908507999993162,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.00123150000035821,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5565,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 979440,
+              "phase_node_growth": {
+                "Ch_Maj": 34817,
+                "T1_Sigma_carries": 81897,
+                "T2_Sigma_carries": 27348,
+                "message_schedule": 47872,
+                "state_carries": 39367,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0023915342607073032,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.51494140000068,
+              "transitions": [
+                {
+                  "conversion_seconds": 9.500000487605575e-06,
+                  "from": "bdd",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5973969999995461
+            },
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.0011877000006279559,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5565,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 979440,
+              "phase_node_growth": {
+                "Ch_Maj": 34831,
+                "T1_Sigma_carries": 81852,
+                "T2_Sigma_carries": 27359,
+                "message_schedule": 47822,
+                "state_carries": 39366,
+                "target_constraint": 286
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.002336165043810801,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.5083973000000697,
+              "transitions": [
+                {
+                  "conversion_seconds": 9.60000033956021e-06,
+                  "from": "bdd",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5908507999993162
+            },
+            {
+              "audited_candidates": 1024,
+              "baseline_hashlib_seconds": 0.0011928999992960598,
+              "candidates": 1024,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5559,
+              "nonce_bits": 10,
+              "peak_estimated_representation_bytes": 978384,
+              "phase_node_growth": {
+                "Ch_Maj": 34800,
+                "T1_Sigma_carries": 81804,
+                "T2_Sigma_carries": 27342,
+                "message_schedule": 47858,
+                "state_carries": 39356,
+                "target_constraint": 280
+              },
+              "rejected_candidates": 1024,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.00235158305420598,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.5072752999994918,
+              "transitions": [
+                {
+                  "conversion_seconds": 9.599999430065509e-06,
+                  "from": "bdd",
+                  "live_nodes": 12,
+                  "round": 2,
+                  "symbolic_nodes": 12,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "all_cost_seconds": 0.5901107999998203
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 1733.0940399863807,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 884.2424431998202,
+            "phi": 0.0,
+            "M": 360448,
+            "K": 1024,
+            "Q": null,
+            "S": 0.0011309115590304468,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 4096,
+          "median_seconds": 1.922392100000252,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.004520299999967392,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5578,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3123680,
+              "phase_node_growth": {
+                "Ch_Maj": 34865,
+                "T1_Sigma_carries": 81966,
+                "T2_Sigma_carries": 27368,
+                "message_schedule": 48057,
+                "state_carries": 39390,
+                "target_constraint": 299
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.002466532951603335,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.8326533999997991,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.8399999791872688e-05,
+                  "from": "bdd",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.922392100000252
+            },
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.004802899999958754,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5574,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3121440,
+              "phase_node_growth": {
+                "Ch_Maj": 34845,
+                "T1_Sigma_carries": 81943,
+                "T2_Sigma_carries": 27373,
+                "message_schedule": 48071,
+                "state_carries": 39390,
+                "target_constraint": 295
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0026247017502132354,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.8298841000005268,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.7999999474559445e-05,
+                  "from": "bdd",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.9205785000003743
+            },
+            {
+              "audited_candidates": 4096,
+              "baseline_hashlib_seconds": 0.004440799999429146,
+              "candidates": 4096,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": true,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5574,
+              "nonce_bits": 12,
+              "peak_estimated_representation_bytes": 3121440,
+              "phase_node_growth": {
+                "Ch_Maj": 34878,
+                "T1_Sigma_carries": 81987,
+                "T2_Sigma_carries": 27398,
+                "message_schedule": 48065,
+                "state_carries": 39421,
+                "target_constraint": 295
+              },
+              "rejected_candidates": 4096,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0024183039598253985,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 1.8363282999998773,
+              "transitions": [
+                {
+                  "conversion_seconds": 2.8399999791872688e-05,
+                  "from": "bdd",
+                  "live_nodes": 14,
+                  "round": 2,
+                  "symbolic_nodes": 14,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "all_cost_seconds": 1.922403800000211
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 2130.6787517486487,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 2242.3796815635096,
+            "phi": 0.0,
+            "M": 1441792,
+            "K": 4096,
+            "Q": null,
+            "S": 0.00044595480784179485,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 16384,
+          "median_seconds": 0.33842920000006416,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017570599999999104,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5591,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11718736,
+              "phase_node_growth": {
+                "Ch_Maj": 34866,
+                "T1_Sigma_carries": 82001,
+                "T2_Sigma_carries": 27395,
+                "message_schedule": 48187,
+                "state_carries": 39417,
+                "target_constraint": 312
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.0739069754530886,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.23773939999955473,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00021209999977145344,
+                  "from": "bdd",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.3391100999997434
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017389900000125635,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5588,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11712448,
+              "phase_node_growth": {
+                "Ch_Maj": 34876,
+                "T1_Sigma_carries": 81991,
+                "T2_Sigma_carries": 27385,
+                "message_schedule": 48162,
+                "state_carries": 39433,
+                "target_constraint": 309
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.07275615627775292,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.239016200000151,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.0002088999999614316,
+                  "from": "bdd",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.33842920000006416
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.017511199999717064,
+              "candidates": 16384,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5577,
+              "nonce_bits": 14,
+              "peak_estimated_representation_bytes": 11689392,
+              "phase_node_growth": {
+                "Ch_Maj": 34855,
+                "T1_Sigma_carries": 82013,
+                "T2_Sigma_carries": 27373,
+                "message_schedule": 48149,
+                "state_carries": 39418,
+                "target_constraint": 298
+              },
+              "rejected_candidates": 16384,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.07382944500898228,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.23718449999978475,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00021070000002509914,
+                  "from": "bdd",
+                  "live_nodes": 16,
+                  "round": 2,
+                  "symbolic_nodes": 16,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "all_cost_seconds": 0.33783220000077563
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 48411.8982640886,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 259.05480701815594,
+            "phi": 0.0,
+            "M": 5767168,
+            "K": 16384,
+            "Q": null,
+            "S": 0.0038601870064117927,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 65536,
+          "median_seconds": 0.5940522000000783,
+          "passed": true,
+          "samples": [
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06865759999982401,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5588,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46045120,
+              "phase_node_growth": {
+                "Ch_Maj": 34880,
+                "T1_Sigma_carries": 82020,
+                "T2_Sigma_carries": 27387,
+                "message_schedule": 48288,
+                "state_carries": 39418,
+                "target_constraint": 309
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.15584342477058155,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.44055500000013126,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.0025402999999641906,
+                  "from": "bdd",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5940522000000783
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06916240000009566,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5584,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46012160,
+              "phase_node_growth": {
+                "Ch_Maj": 34898,
+                "T1_Sigma_carries": 82021,
+                "T2_Sigma_carries": 27399,
+                "message_schedule": 48297,
+                "state_carries": 39422,
+                "target_constraint": 305
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.1582774808209998,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.43696929999987333,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.00253569999949832,
+                  "from": "bdd",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5903036999998221
+            },
+            {
+              "audited_candidates": 65,
+              "baseline_hashlib_seconds": 0.06940209999993385,
+              "candidates": 65536,
+              "completed_rounds": 128,
+              "constraint_result": null,
+              "cryptanalytic_discovery": false,
+              "exact_solutions": [],
+              "exhaustive_audit": false,
+              "extrapolation_allowed": false,
+              "max_nodes": 20000,
+              "nodes": 5585,
+              "nonce_bits": 16,
+              "peak_estimated_representation_bytes": 46020400,
+              "phase_node_growth": {
+                "Ch_Maj": 34867,
+                "T1_Sigma_carries": 82030,
+                "T2_Sigma_carries": 27390,
+                "message_schedule": 48271,
+                "state_carries": 39435,
+                "target_constraint": 306
+              },
+              "rejected_candidates": 65536,
+              "representation": "hybrid-bdd",
+              "speedup_including_construction": 0.15760592489481404,
+              "status": "full_sha256d_parity_passed",
+              "target_constraint_verified": true,
+              "total_seconds": 0.44035210000038205,
+              "transitions": [
+                {
+                  "conversion_seconds": 0.0026182999999946333,
+                  "from": "bdd",
+                  "live_nodes": 18,
+                  "round": 2,
+                  "symbolic_nodes": 18,
+                  "to": "bit-planes"
+                }
+              ],
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "all_cost_seconds": 0.5949197999998432
+            }
+          ],
+          "fitness": {
+            "correctness_passed": true,
+            "H": 110320.2715182123,
+            "E": null,
+            "alpha": null,
+            "Rc": null,
+            "rho": 1.0,
+            "F": 807.7946696340945,
+            "phi": 0.0,
+            "M": 23068672,
+            "K": 65536,
+            "Q": null,
+            "S": 0.0012379383494235837,
+            "Q_scope": "finite measured family only; all-rejected Q is undefined here",
+            "energy_scope": "measured only; null when unavailable"
+          }
+        },
+        {
+          "count": 262144,
+          "median_seconds": 0.6422413999998753,
+          "passed": false,
+          "samples": [
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.275391999999556,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 3990,
+                "T1_Sigma_carries": 9098,
+                "T2_Sigma_carries": 3322,
+                "message_schedule": 405,
+                "state_carries": 4545
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.281756200000018,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.6438006999997015
+            },
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.2765432999995028,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 4013,
+                "T1_Sigma_carries": 9127,
+                "T2_Sigma_carries": 3317,
+                "message_schedule": 407,
+                "state_carries": 4558
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.2756614999998419,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.638489799999661
+            },
+            {
+              "at_round": 19,
+              "baseline_hashlib_seconds": 0.2785764999998719,
+              "candidates": 262144,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "state_carries",
+              "max_nodes": 20000,
+              "nodes": 2045,
+              "nonce_bits": 18,
+              "phase_node_growth": {
+                "Ch_Maj": 4008,
+                "T1_Sigma_carries": 9100,
+                "T2_Sigma_carries": 3311,
+                "message_schedule": 410,
+                "state_carries": 4532
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.27772319999985484,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "all_cost_seconds": 0.6422413999998753
+            }
+          ]
+        },
+        {
+          "count": 1048576,
+          "median_seconds": 1.3301142000000254,
+          "passed": false,
+          "samples": [
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.10475310000038,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 97,
+                "T1_Sigma_carries": 98,
+                "T2_Sigma_carries": 0,
+                "state_carries": 204
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.13287709999985964,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3288402999996833
+            },
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.1084906999994928,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 89,
+                "T1_Sigma_carries": 95,
+                "T2_Sigma_carries": 0,
+                "state_carries": 200
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.12957189999997354,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3307628000002296
+            },
+            {
+              "at_round": 5,
+              "baseline_hashlib_seconds": 1.1057324000003064,
+              "candidates": 1048576,
+              "cryptanalytic_discovery": false,
+              "economic_Rc": null,
+              "failure_phase": "T1_Sigma_carries",
+              "max_nodes": 20000,
+              "nodes": 511,
+              "nonce_bits": 20,
+              "phase_node_growth": {
+                "Ch_Maj": 98,
+                "T1_Sigma_carries": 88,
+                "T2_Sigma_carries": 0,
+                "state_carries": 172
+              },
+              "reason": "Hybrid live plane memory bound exceeded",
+              "representation": "hybrid-bdd",
+              "status": "resource_budget_collapsed",
+              "total_seconds": 0.13109929999973247,
+              "variable_order": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "all_cost_seconds": 1.3301142000000254
+            }
+          ]
+        }
+      ],
+      "fit": {
+        "alpha_with_fixed_overhead": 0.3,
+        "fixed_overhead_seconds": 0.7483212400000412,
+        "coefficient": 0,
+        "squared_error": 1.799751101312734,
+        "largest_three_observed_slope": -0.42356025300759276,
+        "interpretation": "Finite descriptive fit; fixed overhead, integer width and instrumentation affect slope; no algorithmic sublinearity claim"
+      }
+    }
+  },
+  "family_target": 1,
+  "work_source": "fresh deterministic serialized fixtures; no live job or acceptance",
+  "all_cost_scope": "Research includes construction, target computation, audit, conversion and isolated process startup; baseline is warmed end-to-end scan",
+  "memory_scope": "Estimated live planes; not process RSS or a universal upper bound",
+  "power_watts": null,
+  "joules_per_terahash": null,
+  "cryptanalytic_discovery": false,
+  "milestone_alpha_claim": false
+}

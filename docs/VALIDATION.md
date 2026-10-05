@@ -23,3 +23,10 @@ Hosted Windows/Linux CI builds the native core and runs CPU tests. Locally run
 candidate holdout verification. Historical genesis work and mock shares do not
 constitute new BTC. Live claims require actual positive pool responses and
 secret-free header/digest/target evidence.
+
+CI additionally builds locked Rust production/fixture helpers and requires local
+encrypted standard/extended SV2 tests. Optional Z3 is installed in CI. Universal
+SMT UNSAT equivalence proofs cover only the named uint32 rewrite templates;
+full generated algorithms still require independent differential verification.
+Large-family representation audits are sampled and labeled. Saved report writers
+choose a fresh filename whenever an existing measurement would be overwritten.

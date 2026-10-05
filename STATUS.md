@@ -65,8 +65,8 @@ the fastest available miner or any ASIC.
   window is full, times out stalled pools and discards replacement-job shares.
 - Authenticated SV2 transport, standard/extended channels and local encrypted
   mock sessions pass. V1 adversarial response, TLS and reconnect tests pass.
-- Current local suite: 60 tests, 59 passed, optional HIP skipped; three locked
-  Rust cryptography/input tests pass. Checkpoint 1 CI passed on Windows and Linux.
+- Current local suite: 70 tests, 69 passed, optional HIP skipped; three locked
+  Rust cryptography/input tests pass. Checkpoints 1 and 2 CI passed on Windows/Linux.
 - PowerShell launchers, CMake build, local CLI, documentation and saved test results.
 - Generated word IR has eight diverse species, safe identity templates, structural
   CSE, deterministic serialization, exact interpreter and OpenCL/C++ lowering.
@@ -74,6 +74,23 @@ the fastest available miner or any ASIC.
   checks; generated production promotion requires a fresh 16,384-header holdout.
 - BDD ordering, ANF monomial bounds and phase-specific collapse diagnosis are
   runnable. Current generated/carry/symbolic search found no large new advantage.
+- Thirty-two generated kernels passed parity and paired timing; no new promotion.
+- Ripple, prefix, carry-select and carry-save full SHA families measured through
+  2^20 with three fixtures per size; all were slower than the ordinary GPU.
+- Hybrid DAG/BDD to bit planes pass through 2^16; larger families hit the explicit
+  memory bound. Full DAG-to-CNF and exact SMT are runnable; solver UNKNOWN retains work.
+- Five uint32 identities have universal SMT proofs. Full SHA composition still
+  relies on differential tests; this is not a general SHA shortcut proof.
+
+## Current champion, frontier and bottleneck
+
+Champion: OpenCL full unroll, alternate Boolean identities, local size 64.
+The new checkpoint-start confirmation is 1.634 GH/s and 1.713x the original
+project kernel. All power/energy measurements remain null. The current result is
+**no large advantage found in the tested search space**. See `docs/FRONTIER.md`
+for measured failures, costs and commands. The next research bottleneck is an
+exact nonlinear representation or proof that costs less than ordinary hashing;
+the external engineering gates are actual pool settings, power and HIP SDK.
 
 ## Pending milestones
 

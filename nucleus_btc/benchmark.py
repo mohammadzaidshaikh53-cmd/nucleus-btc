@@ -13,7 +13,7 @@ def metadata(backend):
     identifier=sha256(str(sorted(fields.items())).encode()).hexdigest() if fields else None
     return {"timestamp_utc":datetime.now(timezone.utc).isoformat(),"python":platform.python_version(),
             "os":platform.platform(),"cpu":platform.processor(),"device":fields,"device_fingerprint":identifier,
-            "physical_pci_id":None,"source_sha256":getattr(backend,"source_sha256",None),
+            "physical_pci_id":getattr(device,"pci_address",None),"device_uuid":getattr(device,"uuid",None),"source_sha256":getattr(backend,"source_sha256",None),
             "build_options":getattr(backend,"build_options",None),"compilation_seconds":getattr(backend,"compilation_seconds",None),
             "gpu_clock_mhz":None,"gpu_temperature_c":None,"power_watts":None,"joules_per_terahash":None,
             "sensors":"not available; no TDP inference"}

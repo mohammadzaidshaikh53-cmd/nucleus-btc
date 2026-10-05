@@ -5,7 +5,8 @@ For GitHub setup and future updates, follow [docs/GITHUB.md](docs/GITHUB.md).
 An executable Bitcoin proof-of-work research project for this Windows machine.
 The working implementation includes a C++20 core, AMD GPU execution through
 OpenCL, an independent SHA-256 reference, a bounded optimizer, and exact symbolic
-experiments. It has no third-party Python dependencies.
+experiments. The core uses Python's standard library; optional SMT uses Z3,
+and authenticated SV2 uses a separately built locked Rust reference helper.
 
 The project has measured ordinary GPU mining improvements. It has **not** found
 a SHA-256 shortcut, demonstrated ASIC competitiveness, measured energy efficiency,
@@ -69,7 +70,7 @@ source. An installed Python package alone does not install the native libraries.
 | `nucleus_btc/nucleus/` | Paired benchmark promotions, bounded SQLite PROVEN/DEAD/FRONTIER memory, diverse research retries |
 | `nucleus_btc/representations/` | Exact bit-plane addition, carry-save arithmetic, Boolean DAG, reduced ordered BDD, full remaining SHA-256d symbolic circuit |
 | `nucleus_btc/solver/` | Exact target constraints, bounded DPLL SAT, DAG-to-CNF encoding, pruning audits/cost accounting, overflow family splitting |
-| `nucleus_btc/protocol/` | Stratum V1 job handling and finite mining session; offline SV2 framing and standard-channel state |
+| `nucleus_btc/protocol/` | Finite V1/TLS and authenticated SV2 standard/extended sessions, exact share validation, bounded reconnect and CPU recovery |
 | `tests/` | Correctness, rejected wrong challengers, overflow retries, bounded storage, symbolic parity and mock pool integration |
 | `config/` | Example pool settings and documented research defaults |
 | `results/` | Measurements, verification records, optimizer history, bounded knowledge database |
@@ -214,7 +215,12 @@ to benchmark reports. Never confuse the mock pool tests with live acceptance.
 Accepted pool shares also do not establish payout or BTC balance; those depend
 on the pool's accounting and payout rules.
 
-The **SV2** module currently implements offline framing, share payload encoding,
-future-job activation and target epochs. Authenticated encrypted transport and
-live channel establishment are pending. It must not be represented as a complete
-SV2 pool client. See [STATUS.md](STATUS.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
+The **SV2** path now implements authenticated encrypted transport and standard/
+extended mining lifecycle. Local encrypted pool tests pass on Windows and Linux
+CI. External interoperability still requires a real pool and pinned authority.
+See [docs/STRATUM.md](docs/STRATUM.md) for the build and configuration.
+
+The measured research boundary and resumable commands are in
+[docs/FRONTIER.md](docs/FRONTIER.md). The current result is **no large advantage
+found in the tested search space**. The ordinary GPU champion remains protected.
+Result writers preserve existing files by choosing a new filename.

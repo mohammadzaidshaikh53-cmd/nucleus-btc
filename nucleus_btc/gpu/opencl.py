@@ -59,6 +59,9 @@ class Device:
     compute_units:int
     unified_memory:bool
     max_work_group:int
+    vendor_id:int|None=None
+    pci_address:str|None=None
+    uuid:str|None=None
 
 def devices(api=None):
     api=api or API();n=U();rc=api.clGetPlatformIDs(0,None,c.byref(n))
@@ -75,7 +78,15 @@ def devices(api=None):
             text=lambda field:api.info(d,field).rstrip(b"\x00").decode("utf-8","replace")
             integer=lambda field:int.from_bytes(api.info(d,field),sys.byteorder)
             if not integer(0x1026):continue # This host binding requires little-endian GPU words.
-            found.append(Device(d,text(0x102B),text(0x102C),text(0x102D),integer(0x101F),integer(0x1002),bool(integer(0x1035)),integer(0x1004)))
+            pci=None;uuid=None;extensions=text(0x1030).split()
+            if "cl_khr_pci_bus_info" in extensions:
+                try:
+                    domain,bus,slot,function=unpack("<4I",api.info(d,0x410F));pci=f"{domain:04x}:{bus:02x}:{slot:02x}.{function}"
+                except (OpenCLError,ValueError):pass
+            if "cl_khr_device_uuid" in extensions:
+                try:uuid=api.info(d,0x106A).hex()
+                except OpenCLError:pass
+            found.append(Device(d,text(0x102B),text(0x102C),text(0x102D),integer(0x101F),integer(0x1002),bool(integer(0x1035)),integer(0x1004),integer(0x1001),pci,uuid))
     # Some drivers expose the same board in multiple platforms; default favors discrete VRAM.
     return sorted(found,key=lambda d:(d.unified_memory,-d.memory_bytes,d.name))
 

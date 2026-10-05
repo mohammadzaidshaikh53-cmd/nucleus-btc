@@ -1,0 +1,22 @@
+{
+  "source_sha256": "490d3e65f32bbe06813eb060306c4b1f10d23af62987c73b5174d68193445810",
+  "oracle_current_sha256": "ba31968b29e027bde897f817532ff156f2f3c967d1378f123939c92f73545b00",
+  "oracle_baseline_sha256": "ba31968b29e027bde897f817532ff156f2f3c967d1378f123939c92f73545b00",
+  "oracle_unchanged": true,
+  "production_champion": {
+    "config": {
+      "alt_boolean": true,
+      "device_index": 0,
+      "full_unroll": true,
+      "local_size": 64
+    },
+    "record_id": "8db730c69726e28aed26e5735f4b2c7cc6a0250bc12c320df1360044dbb95ca3",
+    "scope": "provisional throughput champion; energy and live acceptance unmeasured"
+  },
+  "pool_config_exists": false,
+  "live_pool_acceptance": false,
+  "binaries": {
+    "nucleus_core.dll": "09df6f96f8803930f64f8471b96c8076dbcbe96d97b82be799aaa2a6cea33bb8",
+    "nucleus-sv2-noise.exe": "cf66ea21b89bce695064e4b69b245a41168a8babe5a00a6d0149ad86d6c1aa12"
+  }
+}

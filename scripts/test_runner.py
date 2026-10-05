@@ -27,7 +27,12 @@ def main():
             "skipped":[{"test":test.id(),"reason":reason} for test,reason in result.skipped],
             "failures":[{"test":test.id(),"details":details} for test,details in result.failures],
             "errors":[{"test":test.id(),"details":details} for test,details in result.errors],"successful":result.wasSuccessful()}
-    path=Path(args.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    path=Path(args.output);path.parent.mkdir(parents=True,exist_ok=True)
+    if path.exists():
+        from time import time_ns
+        path=path.with_name(path.stem+"-"+str(time_ns())+path.suffix)
+    with path.open("x",encoding="utf-8") as stream:stream.write(json.dumps(report,indent=2)+"\n")
+    print(f"Verification record: {path}",file=sys.stderr)
     return 0 if result.wasSuccessful() else 1
 
 if __name__=="__main__":raise SystemExit(main())

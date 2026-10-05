@@ -14,6 +14,9 @@ class KnowledgeStore:
         self.max_records=max_records;self.db=sqlite3.connect(self.path)
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA synchronous=FULL")
+        self.db.execute("PRAGMA max_page_count=8192") # 32 MiB with SQLite's default 4096-byte pages.
+        self.db.execute("PRAGMA wal_autocheckpoint=64")
+        self.db.execute("PRAGMA journal_size_limit=262144")
         self.db.execute("CREATE TABLE IF NOT EXISTS knowledge (id TEXT PRIMARY KEY, class TEXT NOT NULL, created TEXT NOT NULL, utility REAL NOT NULL, payload TEXT NOT NULL)")
         self.db.execute("CREATE TABLE IF NOT EXISTS state (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
         self.db.commit()
@@ -35,12 +38,20 @@ class KnowledgeStore:
                 records=self.db.execute("SELECT id FROM knowledge WHERE class=? ORDER BY utility DESC,created DESC",(kind,)).fetchall()
                 champion_in_class=any(r[0]==champion for r in records)
                 keep={champion} if champion_in_class else set()
+                if kind=="FRONTIER":
+                    diverse={}
+                    for (key,) in records:
+                        row=self.db.execute("SELECT payload FROM knowledge WHERE id=?",(key,)).fetchone()
+                        species=json.loads(row[0])["config"].get("species")
+                        if species and species not in diverse:diverse[species]=key
+                    for key in list(diverse.values())[:max(0,budget-len(keep))]:keep.add(key)
                 for (key,) in records:
                     if len(keep)>=budget:break
                     keep.add(key)
                 for (key,) in records:
                     if key not in keep:self.db.execute("DELETE FROM knowledge WHERE id=?",(key,))
     def set_state(self,key,value):
+        if not self.db.execute("SELECT 1 FROM state WHERE key=?",(key,)).fetchone() and self.db.execute("SELECT COUNT(*) FROM state").fetchone()[0]>=64:raise ValueError("State key budget exceeded")
         encoded=json.dumps(value,allow_nan=False,sort_keys=True)
         if len(encoded)>65536:raise ValueError("State value too large")
         with self.db:self.db.execute("INSERT OR REPLACE INTO state VALUES (?,?)",(key,encoded))
@@ -65,6 +76,8 @@ class KnowledgeStore:
         except BaseException:self.db.rollback();raise
         self.consolidate();return key
     def set_states(self,values):
+        existing={r[0] for r in self.db.execute("SELECT key FROM state")}
+        if len(existing|set(values))>64:raise ValueError("State key budget exceeded")
         encoded={k:json.dumps(v,allow_nan=False,sort_keys=True) for k,v in values.items()}
         if any(len(v.encode())>65536 for v in encoded.values()):raise ValueError("Checkpoint too large")
         with self.db:

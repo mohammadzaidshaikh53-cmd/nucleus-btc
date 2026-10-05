@@ -9,7 +9,7 @@
                                    |
                  independent CPU validation of solutions
                                    |
-                 Stratum V1 submit -> pool acknowledgement
+              V1/TLS or authenticated SV2 -> pool acknowledgement
 
     bounded research queue -> candidate kernels / exact representations
                                    |
@@ -69,3 +69,14 @@ The symbolic SHA engine and target circuit are exact for their finite input
 family. Bitslicing, carry-save arithmetic, DAG sharing, BDD canonicalization and
 SAT solving are independently tested primitives. None currently offers a
 measured cheaper path than ordinary hashing on Bitcoin work.
+
+Hybrid representations convert at round boundaries and include the conversion
+cost; transient Boolean nodes are reclaimed between rounds. Full SMT bit vectors
+lower the word IR, audit constant assignments against the immutable oracle, and
+never reject an UNKNOWN family. Adaptive policy stores bounded economic/growth
+observations, adjusts thresholds and preserves exhaustive fallback coverage.
+
+The reference Rust Noise helper handles pinned authority authentication and
+encrypted frames over bounded local IPC. Synthetic server authorities exist only
+in a separate fixture build. V1/SV2 reconnect uses fresh job state and preserves
+acknowledged statistics. CPU recovery retries the exact failed GPU range.

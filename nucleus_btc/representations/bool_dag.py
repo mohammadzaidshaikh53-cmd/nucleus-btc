@@ -26,8 +26,10 @@ class BooleanDAG:
             self.lookup[key]=len(self.nodes);self.nodes.append(key)
         return self.lookup[key]
     def evaluate(self,index,variables):
+        return self.evaluate_many([index],variables)[0]
+    def evaluate_many(self,indexes,variables):
         values=[]
-        for node in self.nodes[:index+1]:
+        for node in self.nodes[:max(indexes)+1]:
             op,*args=node
             if op=="const":value=bool(args[0])
             elif op=="var":value=bool(variables[args[0]])
@@ -35,4 +37,4 @@ class BooleanDAG:
             elif op=="and":value=values[args[0]] and values[args[1]]
             else:value=values[args[0]] != values[args[1]]
             values.append(value)
-        return values[index]
+        return [values[index] for index in indexes]

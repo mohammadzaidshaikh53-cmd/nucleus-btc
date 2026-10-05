@@ -126,6 +126,7 @@ class SV2Client:
             elif kind==w.SUBMIT_ERROR:
                 sequence=r.integer();code=r.text();r.finish()
                 if sequence not in self.pending:raise ProtocolError("Unknown share rejection sequence")
+                if any(b["last"]==sequence for b in self.ack_batches):raise ProtocolError("SV2 rejection contradicts acknowledged last sequence")
                 self.pending.pop(sequence);self.stats["rejected"]+=1
                 self.resolve_ack_batches()
             elif kind==w.SUBMIT_OK:
@@ -242,6 +243,8 @@ def run_miner(config,seconds=60):
         except Exception:backend.close();raise
         break
     if backend is None:raise BackendUnavailable("All SV2 scan backends unavailable")
+    from .recovering_backend import RecoveringBackend
+    backend=RecoveringBackend(backend,fallbacks)
     client=None;started=monotonic();totals={"submitted":0,"accepted":0,"rejected":0,"stale_discarded":0,"examined":0};evidence=[]
     try:
         host=uri.hostname;port=uri.port;attempts=[]

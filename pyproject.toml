@@ -9,6 +9,9 @@ description = "Exact Bitcoin proof-of-work and bounded, evidence-driven optimize
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+research = ["z3-solver==5.1.0.0"]
+
 [project.scripts]
 nucleus-btc = "nucleus_btc.cli:main"
 

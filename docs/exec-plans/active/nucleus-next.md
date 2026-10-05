@@ -1,0 +1,56 @@
+# Nucleus next: execution checkpoint
+
+## Objective
+Advance exact Bitcoin work on the existing Ryzen/RDNA3 system. Preserve the
+independent oracle, verified ordinary GPU champion and historical evidence.
+Do not claim a cryptanalytic or energy advantage without independent evidence.
+
+## Baseline inspected on 5 October 2026
+- Local and remote main: `7b8e1b7` with a clean tree.
+- Existing suite reproduced: 33 tests, 32 passed, optional HIP skipped.
+- GPU: discrete gfx1102, 16 GiB, AMD OpenCL driver 3679.0 (PAL,LC).
+- Production champion: full unroll, alternate Boolean identities, local size 64.
+- Fresh champion confirmation is running; previous 1.710x evidence is preserved.
+- No local pool configuration, HIP compiler, or measured power data available.
+
+## Checkpoints
+1. Resumable supervisor: transactional checkpoint, exclusive ownership, bounded
+   retries, compressed failures, diversity, storage limits and finite CLI.
+2. Exact word IR: structural hashing, stable serialization, interpreter, full
+   SHA compression, safe rewrites and generated OpenCL/native lowering.
+3. Generated discovery: deterministic mutation/crossover, validation gates,
+   fresh holdouts, paired raw timings and protected champion promotion.
+4. Adaptive families: economic collapse, exact splitting/fallback, carry and
+   representation diagnostics, pruning audits and full cost accounting.
+5. V1 robustness: adversarial protocol tests, finite reconnect policy, secret-free
+   accepted-share evidence; keep live testing blocked until user config exists.
+6. SV2: consult authoritative wire/Noise specification, implement audited
+   encrypted transport and lifecycle where dependencies permit; never use a
+   plaintext fallback or mislabel partial support as live compliant.
+7. Reproduce local hardware results, exercise restart/recovery, run CPU CI,
+   update authoritative status, preserve runnable frontier and commit checkpoints.
+
+## Recovery policy
+Capture command/config/checkpoint and classify A..J. Retry nondeterministic
+operations at most three times, then choose a materially different method.
+Reject any bit mismatch. UNKNOWN never prunes. Do not replace a verified
+champion on a resource failure or a noisy benchmark. Keep compact causal
+records and preserve boundary discoveries.
+
+## Completed engineering checkpoint
+- Startup confirmed 1.634 GH/s and 1.713x with new fixtures; historical evidence preserved.
+- Full word IR, interpreter, validated rewrites, liveness compiler and generated
+  OpenCL search run. Sixteen exact candidates: no qualified promotion.
+- Supervisor completed eight species with isolated processes, atomic SQLite
+  intent/result state, bounded retries, Bayesian selection and checkpoint export.
+- Restart, crash-intent, lock, invalid-promotion and bounded failure tests pass.
+- Full bit planes pass exact SHA/target parity. BDD ordering, ANF and complete
+  DAG-to-CNF paths are runnable; budget failures remain unresolved.
+- Adaptive economic splitting solves 65,536 candidates with exact fallback.
+- Reference SV2 Noise 2.0.0 compiled; authenticated roundtrip, wrong-key rejection
+  and ciphertext tamper rejection pass. Cargo Windows Schannel failed; a local
+  registry relay fetched upstream data with Python verified HTTPS instead.
+
+## Current step
+Publish tested checkpoint. Complete V1 adversarial coverage and encrypted SV2
+transport/lifecycle; run full representation scaling and reproducibility checks.

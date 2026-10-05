@@ -81,7 +81,7 @@ def devices(api=None):
 
 class OpenCLBackend:
     name="opencl"
-    def __init__(self,device_index=0,full_unroll=False,alt_boolean=False,local_size=64):
+    def __init__(self,device_index=0,full_unroll=False,alt_boolean=False,local_size=64,ir_spec=None,ir_hash=None):
         self.api=API();ds=devices(self.api)
         if not 0<=device_index<len(ds):raise BackendUnavailable(f"No OpenCL GPU at index {device_index}")
         self.device=ds[device_index];self.context=None;self.queue=None;self.program=None;self.kernels={}
@@ -93,10 +93,22 @@ class OpenCLBackend:
         try:
             self.context=self.api.clCreateContext(None,1,c.byref(d),None,None,c.byref(err));check(err.value,"context")
             self.queue=self.api.clCreateCommandQueue(self.context,d,2,c.byref(err));check(err.value,"profiling queue")
-            source=(Path(__file__).with_name("exact.cl")).read_bytes();sources=(c.c_char_p*1)(source);lengths=(S*1)(len(source))
+            source=(Path(__file__).with_name("exact.cl")).read_bytes()
+            if ir_spec is not None:
+                from ..ir.sha import compression_graph
+                from ..ir.lower_opencl import kernel_source
+                graph=compression_graph(ir_spec)
+                if ir_hash is not None and ir_hash!=graph.fingerprint:raise ValueError("Stored champion IR hash differs from reconstructed graph")
+                source=kernel_source(graph,source.decode()).encode()
+                self.config.update(ir_spec=ir_spec,ir_hash=graph.fingerprint)
+            from hashlib import sha256
+            self.source_sha256=sha256(source).hexdigest()
+            sources=(c.c_char_p*1)(source);lengths=(S*1)(len(source))
             self.program=self.api.clCreateProgramWithSource(self.context,1,sources,lengths,c.byref(err));check(err.value,"program")
             options=f"-cl-std=CL1.2 -DFULL_UNROLL={int(full_unroll)} -DALT_BOOLEAN={int(alt_boolean)}".encode()
+            self.build_options=options.decode();build_started=perf_counter()
             rc=self.api.clBuildProgram(self.program,1,c.byref(d),options,None,None)
+            self.compilation_seconds=perf_counter()-build_started
             if rc:
                 n=S();self.api.clGetProgramBuildInfo(self.program,d,0x1183,0,None,c.byref(n));log=c.create_string_buffer(n.value)
                 self.api.clGetProgramBuildInfo(self.program,d,0x1183,n.value,log,None)

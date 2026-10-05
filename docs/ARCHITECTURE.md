@@ -20,7 +20,8 @@
                       provisional throughput champion
 ```
 
-The optimizer edits configuration choices only. It has no mechanism to rewrite
+The optimizer generates exact word IR and lowers it into the GPU compression
+function. It has no mechanism to rewrite
 the independent oracle or consensus serialization. Research results are data;
 they are not executable instructions. All arbitrary submitted header digests
 are calculated with exact SHA-256d, with raw digest bytes distinguished from
@@ -51,6 +52,18 @@ Persistent knowledge records are bounded and JSON serializable. A current
 champion is protected during consolidation. Historical measurements must be
 reverified after environment changes; a stored result is not an enduring
 performance guarantee.
+
+Supervisor SQLite state is FULL synchronous. Intent, attempt count and identity
+are persisted before an isolated worker launches. Completed result and checkpoint
+are written transactionally; production promotions use compare-and-swap and an
+atomic receipt. OS locks survive stale lock files while releasing on process
+death. JSON exports use fsync plus atomic replacement. Historical measurements
+are never overwritten by supervisor workers.
+
+Word IR graphs are topological, structurally hashed and serialized canonically.
+Generated C/OpenCL uses liveness-based temporary reuse. Common expressions,
+dead-node removal, equivalent Ch/Maj, modular reassociation, carry-save and
+message schedule order are exact; their performance is measured separately.
 
 The symbolic SHA engine and target circuit are exact for their finite input
 family. Bitslicing, carry-save arithmetic, DAG sharing, BDD canonicalization and

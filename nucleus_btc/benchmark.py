@@ -5,6 +5,18 @@ from random import Random
 from statistics import median
 from time import perf_counter
 import platform
+from datetime import datetime,timezone
+
+def metadata(backend):
+    device=getattr(backend,"device",None)
+    fields={k:v for k,v in asdict(device).items() if k!="handle"} if device is not None else None
+    identifier=sha256(str(sorted(fields.items())).encode()).hexdigest() if fields else None
+    return {"timestamp_utc":datetime.now(timezone.utc).isoformat(),"python":platform.python_version(),
+            "os":platform.platform(),"cpu":platform.processor(),"device":fields,"device_fingerprint":identifier,
+            "physical_pci_id":None,"source_sha256":getattr(backend,"source_sha256",None),
+            "build_options":getattr(backend,"build_options",None),"compilation_seconds":getattr(backend,"compilation_seconds",None),
+            "gpu_clock_mhz":None,"gpu_temperature_c":None,"power_watts":None,"joules_per_terahash":None,
+            "sensors":"not available; no TDP inference"}
 from .bitcoin.block_header import GENESIS
 
 def heldout_headers(seed=491,number=5):
@@ -24,6 +36,7 @@ def measure_window(backend,header,count,seconds=0.2):
         examined+=result.examined;kernel_seconds+=result.kernel_seconds or 0.;trials+=1;start+=count
     wall=perf_counter()-started
     return {"hashes":examined,"seconds":wall,"hashes_per_second":examined/wall,"iterations":trials,
+            "batch_size":count,"fixture_sha256":sha256(header).hexdigest(),"host_and_queue_seconds":max(0,wall-kernel_seconds) if kernel_seconds else None,
             "kernel_seconds":kernel_seconds or None,"kernel_hashes_per_second":examined/kernel_seconds if kernel_seconds else None}
 
 def benchmark(backend,count=1<<20,repeats=5,seconds=0.2,watts=None):
@@ -34,7 +47,7 @@ def benchmark(backend,count=1<<20,repeats=5,seconds=0.2,watts=None):
     measure_window(backend,jobs[0],count,warmup_seconds)
     samples=[measure_window(backend,h,count,seconds) for h in jobs]
     hps=median(s["hashes_per_second"] for s in samples)
-    return {"schema":1,"backend":backend.name,"config":getattr(backend,"config",{}),"device":getattr(getattr(backend,"device",None),"name",platform.processor()),
+    return {"schema":2,"metadata":metadata(backend),"batch_size":count,"backend":backend.name,"config":getattr(backend,"config",{}),"device":getattr(getattr(backend,"device",None),"name",platform.processor()),
             "work_source":"held-out serialized header fixtures, no pool acceptance", "hashes_per_second":hps,"gh_per_second":hps/1e9,
             "steady_state_end_to_end":True,"startup_compilation_excluded":True,"warmup_seconds":warmup_seconds,"power_watts":watts,
             "power_source":"user-provided whole-system measurement" if watts is not None else "unmeasured",

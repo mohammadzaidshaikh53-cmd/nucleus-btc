@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "status": "checkpointed",
+  "completed_this_run": 8,
+  "total_completed": 8,
+  "next_kind": "carry",
+  "pending": null,
+  "history": [
+    {
+      "id": "ba77737bf57e3e73958ee0b248923ab98166b2bc0580e37e2f881cf69e4a6d0b",
+      "kind": "generated",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "0423b08de679259c2477cf9065d20ef20389a83e4d0e3f65b85d3f94ea5540c5",
+      "kind": "family",
+      "status": "exact_family_solved",
+      "attempts": 1
+    },
+    {
+      "id": "109b2773dff8cd278eb8c17466a61bbb74c355ee0e3148c0f7d280a8c0cd525d",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "b29659a610e01f837c638936619864cc33c3a27c94cf7f6cd0c9d266748f930e",
+      "kind": "structural",
+      "status": "economically_dominated",
+      "attempts": 1
+    },
+    {
+      "id": "c0ef502d9c6dbe1766f606e94a89a89bc42e0d282172c6aedc4bc424b9dcda97",
+      "kind": "sat",
+      "status": "resource_budget_collapsed",
+      "attempts": 1
+    },
+    {
+      "id": "c5657b7fcb35b3feb5666705cb8d5fc8418ed235c40264dceebdf20a73eb344c",
+      "kind": "representation",
+      "status": "full_sha256d_parity_passed",
+      "attempts": 1
+    },
+    {
+      "id": "3c268f92c5958e179f76aa846453c12943704225d8ebc1334fee266929e948c4",
+      "kind": "regression",
+      "status": "exactness_passed",
+      "attempts": 1
+    },
+    {
+      "id": "37c9d999fcfcf40eeacc22fa85443dc8cc772babd34bb4452d168e9e1971f164",
+      "kind": "benchmark",
+      "status": "measured",
+      "attempts": 1
+    }
+  ],
+  "source_sha256": "5b5dbebf7d612b8384910c7c7275e8b485d2f9baba5c18f296936ec6de0fb4b4",
+  "storage_bytes": 144716,
+  "production_champion_modified": false,
+  "selector_estimates": {
+    "generated": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 8.156000000000176,
+      "priority": 0.029605952073929666
+    },
+    "family": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 3.155999999999949,
+      "priority": 0.07651018539764876
+    },
+    "carry": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.10999999999989996,
+      "priority": 2.1951467737745016
+    },
+    "structural": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 3.4220000000000255,
+      "priority": 0.07056287116159374
+    },
+    "sat": {
+      "P_valid": 0.3333333333333333,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.125,
+      "priority": 0.9658645804599023
+    },
+    "representation": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.2339999999999236,
+      "priority": 1.0319066030557882
+    },
+    "regression": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 7.688000000000102,
+      "priority": 0.031408187449918364
+    },
+    "benchmark": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.7071067811865475,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 3.4529999999999745,
+      "priority": 0.06992937883434039
+    }
+  },
+  "live_pool_acceptance": false
+}

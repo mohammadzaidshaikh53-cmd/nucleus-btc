@@ -6,6 +6,9 @@ build/
 results/*.sqlite*
 results/*.jsonl
 results/cache/
+results/evolution/
+results/generated-cache/
+native/sv2-noise/target/
 config/local.json
 .env
 .env.*

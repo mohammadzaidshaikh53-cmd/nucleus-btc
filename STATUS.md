@@ -8,7 +8,17 @@ continued local testing; no live pool mining was started.
 
 - Native C++20 DLL and executable compile with installed MSVC Build Tools.
 - OpenCL executes on the installed discrete AMD `gfx1102` GPU.
-- 33 tests ran: **32 passed, one optional HIP test skipped**, zero failures/errors.
+- Startup verification reproduced 33 tests: 32 passed, optional HIP skipped.
+- The next engineering checkpoint adds exact word IR, generated GPU kernels,
+  transactional supervisor recovery and adaptive family validation tests.
+- Fresh confirmation: **1.634 GH/s**, **1.713x** original kernel; historical
+  1.605 GH/s / 1.710x evidence remains unchanged in `results/confirmation.json`.
+- Sixteen generated graph candidates passed parity; none earned promotion.
+- Supervisor completed eight isolated experiments, retained a 145 KB checkpoint,
+  resumed from SQLite and continued after failed symbolic/SAT experiments.
+- Full bit-plane SHA/target parity passed exhaustively for 256 candidates.
+- Adaptive BDD/native solving covered 65,536 candidates exactly; its measured
+  economic collapse triggered conventional hashing rather than dropping work.
 - Separate native and GPU verification each checked 16,384 randomized headers,
   an independent reference subset, and 20 exhaustive scan cases.
 - The local pipeline completed through benchmarks, fresh confirmation, family
@@ -55,12 +65,20 @@ the fastest available miner or any ASIC.
   window is full, times out stalled pools and discards replacement-job shares.
 - Offline SV2 framing, standard-channel job activation, target epochs and share encoding.
 - PowerShell launchers, CMake build, local CLI, documentation and saved test results.
+- Generated word IR has eight diverse species, safe identity templates, structural
+  CSE, deterministic serialization, exact interpreter and OpenCL/C++ lowering.
+- Bayesian experiment selection schedules diverse species and periodic safety
+  checks; generated production promotion requires a fresh 16,384-header holdout.
+- BDD ordering, ANF monomial bounds and phase-specific collapse diagnosis are
+  runnable. Current generated/carry/symbolic search found no large new advantage.
 
 ## Pending milestones
 
 - HIP compilation and hardware verification: an SDK is not installed; its source
   is optional and explicitly unverified.
 - Complete authenticated SV2 transport and live channel setup.
+  A pinned reference Noise library compiled and passed authentication/tamper
+  tests; Python transport and lifecycle integration are the current checkpoint.
 - Actual pool acceptance and BTC payout: intentionally not attempted while local
   testing is selected. A real Bitcoin pool URL and worker are required later.
 - Simultaneous measured whole-system power: no J/TH or profitability claim exists.

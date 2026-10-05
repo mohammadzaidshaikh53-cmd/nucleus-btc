@@ -1,0 +1,39 @@
+{
+  "original_config": {
+    "device_index": 0,
+    "full_unroll": false,
+    "alt_boolean": false,
+    "local_size": 64
+  },
+  "champion_config": {
+    "alt_boolean": true,
+    "device_index": 0,
+    "full_unroll": true,
+    "local_size": 64
+  },
+  "confirmation": {
+    "geometric_speedup": 1.712520559331854,
+    "ci95_low": 1.6996019428697875,
+    "ci95_high": 1.726042460309685,
+    "pairs": 9,
+    "method": "paired bootstrap; timing noise only, not all systematic effects"
+  },
+  "baseline_median_hps": 956782305.6006656,
+  "champion_median_hps": 1634460857.6564653,
+  "paired_ratios": [
+    1.6938297015664294,
+    1.7340445173946155,
+    1.7206899194701528,
+    1.7416130893785986,
+    1.719897234638876,
+    1.7305398842028406,
+    1.6989559621224195,
+    1.6797437295097128,
+    1.6944493961830238
+  ],
+  "batch_size": 4194304,
+  "window_seconds": 0.5,
+  "power_measured": false,
+  "pool_acceptance_measured": false,
+  "work_source": "fresh held-out serialized header fixtures"
+}

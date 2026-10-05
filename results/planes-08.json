@@ -1,0 +1,20 @@
+{
+  "status": "full_sha256d_parity_passed",
+  "representation": "bit-planes",
+  "count": 256,
+  "nonce_bits": 8,
+  "solutions": [],
+  "completed_rounds": 128,
+  "construction_seconds": 3.309999988232448e-05,
+  "compute_seconds": 0.010949700000082885,
+  "target_seconds": 5.2800000048591755e-05,
+  "total_seconds": 0.011036299999886978,
+  "audit_seconds": 0.007223900000099093,
+  "audited_candidates": 256,
+  "exhaustive_audit": true,
+  "carry_density": 0.4515723673502604,
+  "ripple_carry_depth": 32,
+  "additions": 1200,
+  "live_state_minimum_bytes": 8192,
+  "cryptanalytic_discovery": false
+}

@@ -8,7 +8,7 @@ def candidates(device_index=0):
                                 (True,False,128),(True,True,128),(True,False,256),(True,True,256)]:
         yield dict(device_index=device_index,full_unroll=unroll,alt_boolean=algebra,local_size=local)
 
-def optimize(store_path="results/knowledge.sqlite",count=1<<20,seconds=.12,device_index=0,progress=None):
+def optimize_flags(store_path="results/knowledge.sqlite",count=1<<20,seconds=.12,device_index=0,progress=None):
     configs=list(candidates(device_index));outcomes=[]
     with KnowledgeStore(store_path) as store:
         champion_config=store.get_state("champion",{}).get("config",configs[0])
@@ -72,3 +72,5 @@ def confirm_champion(store_path="results/knowledge.sqlite",count=1<<22,seconds=.
                 "baseline_median_hps":median(baseline_samples),"champion_median_hps":median(champion_samples),
                 "paired_ratios":pairs,"batch_size":count,"window_seconds":seconds,
                 "power_measured":False,"pool_acceptance_measured":False,"work_source":"fresh held-out serialized header fixtures"}
+
+from .generated import optimize_generated as optimize

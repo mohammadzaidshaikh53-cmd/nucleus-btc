@@ -13,6 +13,7 @@ class KnowledgeStore:
         self.path=Path(path);self.path.parent.mkdir(parents=True,exist_ok=True)
         self.max_records=max_records;self.db=sqlite3.connect(self.path)
         self.db.execute("PRAGMA journal_mode=WAL")
+        self.db.execute("PRAGMA synchronous=FULL")
         self.db.execute("CREATE TABLE IF NOT EXISTS knowledge (id TEXT PRIMARY KEY, class TEXT NOT NULL, created TEXT NOT NULL, utility REAL NOT NULL, payload TEXT NOT NULL)")
         self.db.execute("CREATE TABLE IF NOT EXISTS state (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
         self.db.commit()
@@ -46,6 +47,28 @@ class KnowledgeStore:
     def get_state(self,key,default=None):
         row=self.db.execute("SELECT value FROM state WHERE key=?",(key,)).fetchone()
         return json.loads(row[0]) if row else default
+    def promote(self,config,metrics,expected_config,experiment_id=None):
+        """Atomically protect a verified record and switch champion, with CAS guard."""
+        key=sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
+        payload=json.dumps({"config":config,"metrics":metrics,"reason":"Exact holdout and confidence-qualified generated improvement"},sort_keys=True,allow_nan=False)
+        if len(payload.encode())>65536:raise ValueError("Promotion record too large")
+        self.db.execute("BEGIN IMMEDIATE")
+        try:
+            current=self.get_state("champion",{}).get("config",expected_config)
+            if current!=expected_config:raise RuntimeError("Champion changed during experiment; no promotion")
+            self.db.execute("INSERT OR REPLACE INTO knowledge VALUES (?,?,?,?,?)",(key,"PROVEN",datetime.now(timezone.utc).isoformat(),metrics["geometric_speedup"],payload))
+            value=json.dumps({"config":config,"record_id":key,"scope":"exact throughput champion; energy and live acceptance unmeasured"},sort_keys=True)
+            self.db.execute("INSERT OR REPLACE INTO state VALUES (?,?)",("champion",value))
+            if experiment_id is not None:
+                self.db.execute("INSERT OR REPLACE INTO state VALUES (?,?)",("promotion_receipt",json.dumps({"experiment_id":experiment_id,"record_id":key})))
+            self.db.commit()
+        except BaseException:self.db.rollback();raise
+        self.consolidate();return key
+    def set_states(self,values):
+        encoded={k:json.dumps(v,allow_nan=False,sort_keys=True) for k,v in values.items()}
+        if any(len(v.encode())>65536 for v in encoded.values()):raise ValueError("Checkpoint too large")
+        with self.db:
+            self.db.executemany("INSERT OR REPLACE INTO state VALUES (?,?)",encoded.items())
     def records(self):
         return [{"id":key,"class":kind,"created":created,"utility":utility,**json.loads(payload)} for key,kind,created,utility,payload in self.db.execute("SELECT * FROM knowledge ORDER BY created")]
     def close(self):self.db.close()

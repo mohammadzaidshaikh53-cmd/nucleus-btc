@@ -47,6 +47,9 @@ For individual stages:
 .\scripts\run.ps1 portfolio --output results/research-portfolio.json
 .\scripts\run.ps1 scan --champion --output results/genesis-scan.json
 .\scripts\run.ps1 status
+.\scripts\research-loop.ps1 -Steps 16 -Seconds 3600
+.\scripts\run.ps1 family --count 65536 --output results/adaptive-family.json
+.\scripts\run.ps1 planes --nonce-bits 8 --output results/bit-planes.json
 ```
 
 The equivalent portable commands are `python -m nucleus_btc ...` and
@@ -106,8 +109,10 @@ integration may require additional configuration.
 
 ## Optimization and measurement
 
-The optimizer explores exact Boolean identities, loop unrolling and workgroup
-sizes. It verifies each candidate before seven alternating-order A/B pairs on
+The optimizer now generates full SHA word graphs with per-round Boolean mutation,
+exact addition rewrites, schedule choices and crossover between diverse species.
+An independent interpreter verifies graphs before OpenCL lowering. It verifies
+each compiled candidate before seven alternating-order A/B pairs on
 previously unseen serialized header fixtures. Promotion requires the lower 95%
 paired bootstrap speedup bound to exceed 1.02. A second `confirm` stage compares
 the winner directly against the original baseline on new fixtures, after warmup.
@@ -164,6 +169,21 @@ audits check for lost valid solutions. All analysis, construction, proof and
 survivor costs must be included in any proposed advantage.
 
 The knowledge store limits both record count and per-record serialized size.
+`evolve` runs isolated bounded workers and resumes from transactional SQLite
+execution intents. Ctrl+C stops at a safe checkpoint; process crashes leave the
+same pending identity for a bounded retry. Exported JSON is a view, not the
+authoritative checkpoint. OS locks prevent two supervisors sharing state.
+Eight species include generated graphs, adaptive families, carry/bit planes,
+structural cost hunts, full SHA CNF and alternate representations. Periodic
+tests and champion timing are mandatory. `--forever` is explicit and still
+respects the supplied time budget. No research launcher connects to a pool.
+
+Adaptive symbolic work stops when its construction cost exceeds conventional
+family hashing, splits disjoint nonce ranges and preserves all unresolved
+solutions through exact native fallback. Bit planes execute all remaining 128
+rounds; ANF adds a bounded polynomial branch. These are research mechanisms,
+with current economic evidence favoring ordinary independent hashing.
+
 Failed approaches are retained as compact records rather than raw traces.
 `config/research.json` documents initial policy values; current command flags and
 module defaults are authoritative. This file is not a dynamic configuration

@@ -29,11 +29,15 @@ def main(argv=None):
         if name=="benchmark":
             b.add_argument("--count",type=int,default=1<<20);b.add_argument("--seconds",type=float,default=.2);b.add_argument("--watts",type=float)
     o=sub.add_parser("optimize");o.add_argument("--store",default=str(ROOT/"results"/"knowledge.sqlite"));o.add_argument("--count",type=int,default=1<<20);o.add_argument("--seconds",type=float,default=.12);o.add_argument("--output")
+    o.add_argument("--candidates",type=int,default=16)
+    e=sub.add_parser("evolve");e.add_argument("--steps",type=int,default=16);e.add_argument("--seconds",type=float,default=3600);e.add_argument("--forever",action="store_true");e.add_argument("--directory",default=str(ROOT/"results"/"evolution"));e.add_argument("--output")
+    f=sub.add_parser("family");f.add_argument("--count",type=int,default=65536);f.add_argument("--backend",default="native",choices=["native","opencl","hashlib"]);f.add_argument("--output")
+    pl=sub.add_parser("planes");pl.add_argument("--nonce-bits",type=int,default=8);pl.add_argument("--output")
     c=sub.add_parser("confirm");c.add_argument("--store",default=str(ROOT/"results"/"knowledge.sqlite"));c.add_argument("--count",type=int,default=1<<22);c.add_argument("--seconds",type=float,default=.5);c.add_argument("--output")
     s=sub.add_parser("scan");s.add_argument("--backend",default="opencl",choices=["hashlib","native","native-full","opencl"]);s.add_argument("--header");s.add_argument("--start",type=int);s.add_argument("--count",type=int,default=1024);s.add_argument("--target",help="Full 256-bit target in conventional big-endian hex");s.add_argument("--capacity",type=int,default=4096);s.add_argument("--champion",action="store_true");s.add_argument("--output")
     sub.add_parser("status")
     p=sub.add_parser("portfolio");p.add_argument("--output");p.add_argument("--store",default=str(ROOT/"results"/"knowledge.sqlite"))
-    r=sub.add_parser("research");r.add_argument("--nonce-bits",type=int,default=4);r.add_argument("--max-nodes",type=int,default=20000);r.add_argument("--representation",choices=["dag","bdd"],default="dag");r.add_argument("--output")
+    r=sub.add_parser("research");r.add_argument("--nonce-bits",type=int,default=4);r.add_argument("--max-nodes",type=int,default=20000);r.add_argument("--representation",choices=["dag","bdd","anf"],default="dag");r.add_argument("--output")
     m=sub.add_parser("mine");m.add_argument("--config",required=True);m.add_argument("--seconds",type=float,default=60);m.add_argument("--output")
     args=parser.parse_args(argv)
     try:
@@ -54,7 +58,17 @@ def main(argv=None):
             return 0
         if args.command=="optimize":
             from .nucleus.champion import optimize
-            dump(optimize(args.store,args.count,args.seconds,progress=lambda msg:print(msg,file=sys.stderr)),args.output);return 0
+            dump(optimize(args.store,args.count,args.seconds,progress=lambda msg:print(msg,file=sys.stderr),number=args.candidates),args.output);return 0
+        if args.command=="evolve":
+            from .nucleus.supervisor import Supervisor
+            dump(Supervisor(args.directory).run(args.steps,args.seconds,args.forever),args.output);return 0
+        if args.command=="family":
+            from .solver.adaptive import solve_family
+            with get_backend(args.backend) as engine:dump(solve_family(engine,GENESIS.serialize(),0,args.count,compact_to_target(GENESIS.bits)),args.output)
+            return 0
+        if args.command=="planes":
+            from .representations.plane_sha import plane_family
+            dump(plane_family(GENESIS.serialize(),0,args.nonce_bits),args.output);return 0
         if args.command=="confirm":
             from .nucleus.champion import confirm_champion
             dump(confirm_champion(args.store,args.count,args.seconds),args.output);return 0

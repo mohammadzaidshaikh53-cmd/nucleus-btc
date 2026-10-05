@@ -1,0 +1,3910 @@
+{
+  "schema": 1,
+  "source": "665b2e18ab56b8aaa2f35e9a99a0a254ae6a204e23724b2abf3474540b9b633b",
+  "refinement_source": "e871105be79e7c650a54688225f66515fec96dba3f3ead61f6064be331507d23",
+  "mechanism": "target demand on exact pre-packing digest state, through proved one-unknown inverses",
+  "causal_parent": "predicate-vnext-experiments-01.json: backward demand stopped at byte-packing OR",
+  "champion_file": "results\\predicate-vnext-champion-01.json",
+  "rows": [
+    {
+      "seed": 202610080,
+      "target": "105310684730512927707642485721578091156292573197555328461475676160",
+      "target_fixture": "share difficulty256",
+      "conceptual_K": 16777216,
+      "K_materialized": false,
+      "scope": "f4a6297142fa25d83f776973640d1d624f5e6a174e042ac34f111216138cea85",
+      "analysis": {
+        "conceptual_K": 16777216,
+        "K_materialized": false,
+        "observable": "backward",
+        "construction_seconds": 0.21204620000207797,
+        "rewrite_seconds": 0.03018710000469582,
+        "proof_seconds": 0.10279370000353083,
+        "certificate_check_seconds": 0.0,
+        "certificate": null,
+        "production_promotion_allowed": false,
+        "nodes": 3967,
+        "raw_nodes": 6071,
+        "dead_nodes_removed": 2104,
+        "graph_bytes": 91633,
+        "compile_seconds": 0.21204620000207797,
+        "predicate_nodes": 5017,
+        "predicate_bytes": 116012,
+        "predicate_root_outputs": 1,
+        "storage_includes_digest_view": true,
+        "setup_headers": 1,
+        "root": "exact inclusive little-endian uint256 comparator",
+        "comparator_words": 8,
+        "predicate_fingerprint": "2dfb5045915e1316813d2a593388968f473aad1c843156d366e8621e91eff570",
+        "cost_grows_with_K": false,
+        "rewrites": {
+          "status": "EXACT",
+          "seconds": 0.03018710000469582,
+          "input_nodes": 3967,
+          "output_nodes": 3967,
+          "proofs": [],
+          "analyses": {
+            "precision": "complement-carry elimination",
+            "opencl": "Boolean selection form"
+          },
+          "candidate_count_materialized": 0
+        },
+        "rewritten_nodes": 3967,
+        "status": "UNKNOWN",
+        "bounds": [
+          0,
+          115792089237316195423570985008687907853269984665640564039457584007913129639935
+        ],
+        "target_information": 0.0,
+        "counts": {
+          "widened_bit_expressions": 117079,
+          "nonlinear_to_parity": 6250,
+          "iterations": 2,
+          "known_to_congruence": 1274,
+          "nonlinear_to_known": 2
+        },
+        "round_precision": [
+          {
+            "compression": "header/first/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/first/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/first/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/first/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 0,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 1,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 2,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 3,
+            "known_state_bits": 208,
+            "retained_sparse_nonlinear_bits": 214
+          },
+          {
+            "compression": "header/first/1",
+            "round": 4,
+            "known_state_bits": 144,
+            "retained_sparse_nonlinear_bits": 150
+          },
+          {
+            "compression": "header/first/1",
+            "round": 5,
+            "known_state_bits": 80,
+            "retained_sparse_nonlinear_bits": 86
+          },
+          {
+            "compression": "header/first/1",
+            "round": 6,
+            "known_state_bits": 16,
+            "retained_sparse_nonlinear_bits": 22
+          },
+          {
+            "compression": "header/first/1",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/second/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/second/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/second/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          }
+        ],
+        "abstract_nodes": 3967,
+        "monomial_count": 2430,
+        "logical_representation_bytes_estimate": 458592,
+        "representation_byte_scope": "logical estimate excludes Python object overhead",
+        "domain_seconds": 0.10278200000175275,
+        "enumerated_candidates": 0,
+        "backward": {
+          "status": "UNKNOWN",
+          "steps": [
+            {
+              "rule": "inverse-add32-one-unknown",
+              "output": 3862,
+              "input": 3755,
+              "value": 2753508071
+            }
+          ],
+          "conditional_known_bits": 64,
+          "losses": [
+            {
+              "node": 3755,
+              "operation": "ADD32",
+              "unknown_operands": 2,
+              "reason": "joint nonlinear/schedule/carry relation required; independent inverse is universal"
+            }
+          ],
+          "budget_widened": false,
+          "seconds": 1.170000177808106e-05,
+          "pruning_authorized": false,
+          "candidate_count_materialized": 0
+        },
+        "total_seconds": 0.35113239999918733,
+        "candidate_count_materialized": 0
+      },
+      "refinement_leaves": 1,
+      "maximum_depth": 0,
+      "coverage_proof_seconds": 0.0,
+      "fallback": {
+        "status": "EXACT_FALLBACK",
+        "retained": 16777216,
+        "executed": 16777216,
+        "seconds": 0.00935619999654591,
+        "independent_audit_seconds": 0.0,
+        "fallback_gpu_candidates": 16777216,
+        "fallback_cpu_candidates": 0,
+        "K_materialized": false,
+        "peak_batch_headers": 1,
+        "scan_path": "unchanged contiguous champion with overflow splitting and same-range CPU recovery",
+        "execution_complexity": "linear in K; solution storage proportional to matches"
+      },
+      "audit_scope_K": 16,
+      "audit_exhaustive": false,
+      "random_audit_is_proof": false,
+      "independent_audit_seconds": 0.23174989999824902,
+      "baseline": {
+        "same_scope": true,
+        "warm": true,
+        "samples_seconds": [
+          0.010757100004411768,
+          0.011636499999440275,
+          0.012161899998318404,
+          0.01176389999454841,
+          0.01176310000300873
+        ],
+        "median_seconds": 0.01176310000300873
+      },
+      "F_analysis": 49.551759302254375,
+      "total_wall_seconds": 0.593690500005323,
+      "effective_speedup": 0.019813522370499888,
+      "normalized_total_cost": 50.47058172195005,
+      "exact_rho": 0.0,
+      "useful_rho": 0.0,
+      "Q": 0.0,
+      "equivalent_work_hps": 28259195.6580905,
+      "peak_memory_bytes": null,
+      "power_watts": null,
+      "joules_per_terahash": null,
+      "cost_scope": "full compile/rewrite/proof/check + sampled regression audit + actual unchanged champion fallback + solution validation"
+    },
+    {
+      "seed": 202610081,
+      "target": "191561942608236107294793378393788647952342390272950272",
+      "target_fixture": "synthetic network nBits17020000",
+      "conceptual_K": 16777216,
+      "K_materialized": false,
+      "scope": "d20571a2f17e727930036d93ff6614ba3a5b3202eddfe16717f4368e74a3433e",
+      "analysis": {
+        "conceptual_K": 16777216,
+        "K_materialized": false,
+        "observable": "backward",
+        "construction_seconds": 0.20883109999704175,
+        "rewrite_seconds": 0.03000179999799002,
+        "proof_seconds": 0.10108820000459673,
+        "certificate_check_seconds": 0.0,
+        "certificate": null,
+        "production_promotion_allowed": false,
+        "nodes": 3967,
+        "raw_nodes": 6070,
+        "dead_nodes_removed": 2103,
+        "graph_bytes": 91635,
+        "compile_seconds": 0.20883109999704175,
+        "predicate_nodes": 4987,
+        "predicate_bytes": 115279,
+        "predicate_root_outputs": 1,
+        "storage_includes_digest_view": true,
+        "setup_headers": 1,
+        "root": "exact inclusive little-endian uint256 comparator",
+        "comparator_words": 8,
+        "predicate_fingerprint": "b7c8df37578df13a255f777a513dda5281e494d3602449f0b84472e510a52f8e",
+        "cost_grows_with_K": false,
+        "rewrites": {
+          "status": "EXACT",
+          "seconds": 0.03000179999799002,
+          "input_nodes": 3967,
+          "output_nodes": 3967,
+          "proofs": [],
+          "analyses": {
+            "precision": "complement-carry elimination",
+            "opencl": "Boolean selection form"
+          },
+          "candidate_count_materialized": 0
+        },
+        "rewritten_nodes": 3967,
+        "status": "UNKNOWN",
+        "bounds": [
+          0,
+          115792089237316195423570985008687907853269984665640564039457584007913129639935
+        ],
+        "target_information": 0.0,
+        "counts": {
+          "widened_bit_expressions": 117097,
+          "nonlinear_to_parity": 6236,
+          "iterations": 2,
+          "known_to_congruence": 1264
+        },
+        "round_precision": [
+          {
+            "compression": "header/first/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/first/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/first/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/first/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 0,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 1,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 2,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 3,
+            "known_state_bits": 208,
+            "retained_sparse_nonlinear_bits": 214
+          },
+          {
+            "compression": "header/first/1",
+            "round": 4,
+            "known_state_bits": 144,
+            "retained_sparse_nonlinear_bits": 150
+          },
+          {
+            "compression": "header/first/1",
+            "round": 5,
+            "known_state_bits": 80,
+            "retained_sparse_nonlinear_bits": 86
+          },
+          {
+            "compression": "header/first/1",
+            "round": 6,
+            "known_state_bits": 16,
+            "retained_sparse_nonlinear_bits": 22
+          },
+          {
+            "compression": "header/first/1",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/second/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/second/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/second/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          }
+        ],
+        "abstract_nodes": 3967,
+        "monomial_count": 2390,
+        "logical_representation_bytes_estimate": 457312,
+        "representation_byte_scope": "logical estimate excludes Python object overhead",
+        "domain_seconds": 0.10107889999926556,
+        "enumerated_candidates": 0,
+        "backward": {
+          "status": "UNKNOWN",
+          "steps": [
+            {
+              "rule": "inverse-add32-one-unknown",
+              "output": 3862,
+              "input": 3755,
+              "value": 2753508071
+            }
+          ],
+          "conditional_known_bits": 64,
+          "losses": [
+            {
+              "node": 3755,
+              "operation": "ADD32",
+              "unknown_operands": 2,
+              "reason": "joint nonlinear/schedule/carry relation required; independent inverse is universal"
+            }
+          ],
+          "budget_widened": false,
+          "seconds": 9.300005331169814e-06,
+          "pruning_authorized": false,
+          "candidate_count_materialized": 0
+        },
+        "total_seconds": 0.3458738999979687,
+        "candidate_count_materialized": 0
+      },
+      "refinement_leaves": 1,
+      "maximum_depth": 0,
+      "coverage_proof_seconds": 0.0,
+      "fallback": {
+        "status": "EXACT_FALLBACK",
+        "retained": 16777216,
+        "executed": 16777216,
+        "seconds": 0.009811899995838758,
+        "independent_audit_seconds": 0.0,
+        "fallback_gpu_candidates": 16777216,
+        "fallback_cpu_candidates": 0,
+        "K_materialized": false,
+        "peak_batch_headers": 1,
+        "scan_path": "unchanged contiguous champion with overflow splitting and same-range CPU recovery",
+        "execution_complexity": "linear in K; solution storage proportional to matches"
+      },
+      "audit_scope_K": 16,
+      "audit_exhaustive": false,
+      "random_audit_is_proof": false,
+      "independent_audit_seconds": 0.23848990000260528,
+      "baseline": {
+        "same_scope": true,
+        "warm": true,
+        "samples_seconds": [
+          0.011586699998588301,
+          0.01225509999494534,
+          0.011963099997956306,
+          0.011808900002506562,
+          0.011740400004782714
+        ],
+        "median_seconds": 0.011808900002506562
+      },
+      "F_analysis": 49.48503246505066,
+      "total_wall_seconds": 0.5954018999982509,
+      "effective_speedup": 0.019833493985392477,
+      "normalized_total_cost": 50.41975966193893,
+      "exact_rho": 0.0,
+      "useful_rho": 0.0,
+      "Q": 0.0,
+      "equivalent_work_hps": 28177968.52856749,
+      "peak_memory_bytes": null,
+      "power_watts": null,
+      "joules_per_terahash": null,
+      "cost_scope": "full compile/rewrite/proof/check + sampled regression audit + actual unchanged champion fallback + solution validation"
+    },
+    {
+      "seed": 202610082,
+      "target": "105310684730512927707642485721578091156292573197555328461475676160",
+      "target_fixture": "share difficulty256",
+      "conceptual_K": 16777216,
+      "K_materialized": false,
+      "scope": "ce685ba488c49f4a2c63395f2ddc22fcec108cef09a4adb0101407a30ac581c3",
+      "analysis": {
+        "conceptual_K": 16777216,
+        "K_materialized": false,
+        "observable": "backward",
+        "construction_seconds": 0.20793890000641113,
+        "rewrite_seconds": 0.03167399999802001,
+        "proof_seconds": 0.11048119999759365,
+        "certificate_check_seconds": 0.0,
+        "certificate": null,
+        "production_promotion_allowed": false,
+        "nodes": 3967,
+        "raw_nodes": 6074,
+        "dead_nodes_removed": 2107,
+        "graph_bytes": 91628,
+        "compile_seconds": 0.20793890000641113,
+        "predicate_nodes": 5017,
+        "predicate_bytes": 116007,
+        "predicate_root_outputs": 1,
+        "storage_includes_digest_view": true,
+        "setup_headers": 1,
+        "root": "exact inclusive little-endian uint256 comparator",
+        "comparator_words": 8,
+        "predicate_fingerprint": "e614a3de7dd19704b9d9cc7e344baf61727541e811fcfb8fee73531f2f96927d",
+        "cost_grows_with_K": false,
+        "rewrites": {
+          "status": "EXACT",
+          "seconds": 0.03167399999802001,
+          "input_nodes": 3967,
+          "output_nodes": 3967,
+          "proofs": [],
+          "analyses": {
+            "precision": "complement-carry elimination",
+            "opencl": "Boolean selection form"
+          },
+          "candidate_count_materialized": 0
+        },
+        "rewritten_nodes": 3967,
+        "status": "UNKNOWN",
+        "bounds": [
+          0,
+          115792089237316195423570985008687907853269984665640564039457584007913129639935
+        ],
+        "target_information": 0.0,
+        "counts": {
+          "widened_bit_expressions": 117089,
+          "nonlinear_to_parity": 6247,
+          "iterations": 2,
+          "known_to_congruence": 1269
+        },
+        "round_precision": [
+          {
+            "compression": "header/first/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/first/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/first/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/first/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 0,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 1,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 2,
+            "known_state_bits": 256,
+            "retained_sparse_nonlinear_bits": 256
+          },
+          {
+            "compression": "header/first/1",
+            "round": 3,
+            "known_state_bits": 208,
+            "retained_sparse_nonlinear_bits": 214
+          },
+          {
+            "compression": "header/first/1",
+            "round": 4,
+            "known_state_bits": 144,
+            "retained_sparse_nonlinear_bits": 150
+          },
+          {
+            "compression": "header/first/1",
+            "round": 5,
+            "known_state_bits": 80,
+            "retained_sparse_nonlinear_bits": 86
+          },
+          {
+            "compression": "header/first/1",
+            "round": 6,
+            "known_state_bits": 16,
+            "retained_sparse_nonlinear_bits": 22
+          },
+          {
+            "compression": "header/first/1",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/first/1",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 0,
+            "known_state_bits": 192,
+            "retained_sparse_nonlinear_bits": 192
+          },
+          {
+            "compression": "header/second/0",
+            "round": 1,
+            "known_state_bits": 128,
+            "retained_sparse_nonlinear_bits": 128
+          },
+          {
+            "compression": "header/second/0",
+            "round": 2,
+            "known_state_bits": 64,
+            "retained_sparse_nonlinear_bits": 64
+          },
+          {
+            "compression": "header/second/0",
+            "round": 3,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 4,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 5,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 6,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 7,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 8,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 9,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 10,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 11,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 12,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 13,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 14,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 15,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 16,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 17,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 18,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 19,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 20,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 21,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 22,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 23,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 24,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 25,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 26,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 27,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 28,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 29,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 30,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 31,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 32,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 33,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 34,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 35,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 36,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 37,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 38,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 39,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 40,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 41,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 42,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 43,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 44,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 45,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 46,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 47,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 48,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 49,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 50,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 51,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 52,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 53,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 54,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 55,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 56,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 57,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 58,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 59,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 60,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 61,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 62,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          },
+          {
+            "compression": "header/second/0",
+            "round": 63,
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0
+          }
+        ],
+        "abstract_nodes": 3967,
+        "monomial_count": 2393,
+        "logical_representation_bytes_estimate": 457408,
+        "representation_byte_scope": "logical estimate excludes Python object overhead",
+        "domain_seconds": 0.1104678999981843,
+        "enumerated_candidates": 0,
+        "backward": {
+          "status": "UNKNOWN",
+          "steps": [
+            {
+              "rule": "inverse-add32-one-unknown",
+              "output": 3862,
+              "input": 3755,
+              "value": 2753508071
+            }
+          ],
+          "conditional_known_bits": 64,
+          "losses": [
+            {
+              "node": 3755,
+              "operation": "ADD32",
+              "unknown_operands": 2,
+              "reason": "joint nonlinear/schedule/carry relation required; independent inverse is universal"
+            }
+          ],
+          "budget_widened": false,
+          "seconds": 1.3299999409355223e-05,
+          "pruning_authorized": false,
+          "candidate_count_materialized": 0
+        },
+        "total_seconds": 0.356186400000297,
+        "candidate_count_materialized": 0
+      },
+      "refinement_leaves": 1,
+      "maximum_depth": 0,
+      "coverage_proof_seconds": 0.0,
+      "fallback": {
+        "status": "EXACT_FALLBACK",
+        "retained": 16777216,
+        "executed": 16777216,
+        "seconds": 0.009467400006542448,
+        "independent_audit_seconds": 0.0,
+        "fallback_gpu_candidates": 16777216,
+        "fallback_cpu_candidates": 0,
+        "K_materialized": false,
+        "peak_batch_headers": 1,
+        "scan_path": "unchanged contiguous champion with overflow splitting and same-range CPU recovery",
+        "execution_complexity": "linear in K; solution storage proportional to matches"
+      },
+      "audit_scope_K": 16,
+      "audit_exhaustive": false,
+      "random_audit_is_proof": false,
+      "independent_audit_seconds": 0.2364637999999104,
+      "baseline": {
+        "same_scope": true,
+        "warm": true,
+        "samples_seconds": [
+          0.012033999999403022,
+          0.012790699998731725,
+          0.011861700004374143,
+          0.011583899999095593,
+          0.011843899999803398
+        ],
+        "median_seconds": 0.011861700004374143
+      },
+      "F_analysis": 49.963344190264515,
+      "total_wall_seconds": 0.6041793000040343,
+      "effective_speedup": 0.01963274810026583,
+      "normalized_total_cost": 50.93530436457135,
+      "exact_rho": 0.0,
+      "useful_rho": 0.0,
+      "Q": 0.0,
+      "equivalent_work_hps": 27768604.452168375,
+      "peak_memory_bytes": null,
+      "power_watts": null,
+      "joules_per_terahash": null,
+      "cost_scope": "full compile/rewrite/proof/check + sampled regression audit + actual unchanged champion fallback + solution validation"
+    }
+  ],
+  "production_champion_modified": false,
+  "target_achieved": false,
+  "power_watts": null,
+  "joules_per_terahash": null,
+  "session_metadata": {
+    "timestamp_utc": "2026-10-05T17:09:05.201645+00:00",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "device": {
+      "name": "gfx1102",
+      "vendor": "Advanced Micro Devices, Inc.",
+      "driver": "3679.0 (PAL,LC)",
+      "memory_bytes": 17163091968,
+      "compute_units": 16,
+      "unified_memory": false,
+      "max_work_group": 256,
+      "vendor_id": 4098,
+      "pci_address": null,
+      "uuid": null
+    },
+    "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+    "physical_pci_id": null,
+    "device_uuid": null,
+    "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+    "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+    "compilation_seconds": 2.3903974999993807,
+    "gpu_clock_mhz": null,
+    "gpu_temperature_c": null,
+    "power_watts": null,
+    "joules_per_terahash": null,
+    "sensors": "not available; no TDP inference"
+  },
+  "status": "B_INVERSE_DEMAND_FALSIFIED_AT_JOINT_UNKNOWN_ADD",
+  "best_effective_speedup": 0.019833493985392477
+}

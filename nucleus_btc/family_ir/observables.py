@@ -92,7 +92,10 @@ def backward_demand(predicate, analysis, max_steps=256):
     if predicate.always_true or predicate.target >> 224 or analysis.get('values') is None:
         return {'status': 'UNKNOWN', 'reason': 'zero-high-word precondition unavailable', 'steps': [], 'seconds': perf_counter()-started}
     nodes, values = predicate.graph.nodes, analysis['values']
-    pending = [(predicate.graph.outputs[7], 0)]
+    # Exact compiler binding before byte unpack/repack: demanding raw H7=0
+    # equals demanding comparator high word=0. The previous view stopped at
+    # representation-only OR/shift nodes before reaching SHA arithmetic.
+    pending = [(predicate.digest_state[7], 0)]
     demands, steps, losses = {}, [], []
     contradiction = False
     while pending and len(steps) < max_steps:

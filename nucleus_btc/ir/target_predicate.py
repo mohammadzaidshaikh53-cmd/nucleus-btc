@@ -80,6 +80,8 @@ class TargetPredicate:
             state = [g.const(x) for x in IV]
             for offset in range(0, len(data), 64):
                 state = compression(state, to_words(data[offset:offset+64]), label+'/'+str(offset//64))
+            if label == 'header/second':
+                self.digest_state = tuple(state)
             return [b for word in state for b in word_bytes(word)]
         def double_sha(data, label):
             return sha(sha(data, label+'/first'), label+'/second')
@@ -124,7 +126,10 @@ class TargetPredicate:
         self.raw_nodes = len(g.nodes)
         self.graph, mapping = compact(g)
         self.digest_nodes = tuple(self.graph.outputs)
-        self.trace = [{**t, 'state': tuple(mapping.get(i) for i in t['state']), 'W': mapping.get(t['W'])} for t in self.trace]
+        self.digest_state = tuple(mapping[i] for i in self.digest_state)
+        self.trace = [{**t, 'state': tuple(mapping.get(i) for i in t['state']),
+                       'constant_state': tuple(g.nodes[i].value if g.nodes[i].op == 'CONST32' else None for i in t['state']),
+                       'W': mapping.get(t['W'])} for t in self.trace]
         # Separate Boolean-root view, using only existing exact word operators.
         # The digest view remains available to the independent interval checker.
         # Slice backward from the inclusive comparator, rather than declaring

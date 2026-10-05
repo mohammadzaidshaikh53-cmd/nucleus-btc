@@ -1,5 +1,25 @@
 # Validation gates
 
+Current vNext local release: **117 tests, 116 passed, one optional HIP skip**,
+requiring native, OpenCL and authenticated SV2. New tests cover symbolic
+nonenumeration, exact inclusive/endian/padding/Merkle predicates, sound transfer
+regression, cross-domain precision, TOP widening, independent/tampered rejection,
+coverage gaps/overlaps, checkpoint/source/memory limits, scoped lemma proofs,
+worker payloads, exhausted-species suppression and research promotion denial.
+See [measured gates](PREDICATE-VNEXT-RESULTS.md) and append-only
+`results/predicate-vnext-tests-03.json`. The precision provenance supplement
+includes folded constants omitted from old live-node profiles; it preserves the
+measured round7/8 variable-state collapse and universal target conclusion.
+
+For large-scope rejection, random audits cannot substitute for independent
+sound transfer/certificate checks. Unknown/unsupported certificates retain
+work. K=256 has exhaustive predicate/fallback audits; larger measured families
+have explicitly sampled regression audits and actual retained GPU work. Huge
+conceptual-only scopes have no measured economic speedup. Full offline costs
+include graph construction, proof, checking, audits and fallback. The full-SHA
+target-information/useful-rejection gates fail, so no production pruning follows.
+Power remains null; hosted CPU/native/protocol CI is separate from local GPU.
+
 Phase-II local release: 90 tests, 89 passed, optional HIP skipped. New gates
 include exhaustive FamilyWord reconstruction, full SHA256d family parity,
 interior split coverage, executable genome transitions, independently reproduced

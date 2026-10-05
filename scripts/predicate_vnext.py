@@ -216,14 +216,60 @@ def supervisor(output, directory, steps):
     print(json.dumps({k: report[k] for k in ('completed_this_run','total_completed','next_kind','production_champion_modified')}), flush=True)
 
 
+def inverse_followup(output, champion_file):
+    verified = json.loads(champion_file.read_text())
+    report = dict(schema=1, source=source_fingerprint(), refinement_source=refinement_source(),
+                  mechanism='target demand on exact pre-packing digest state, through proved one-unknown inverses',
+                  causal_parent='predicate-vnext-experiments-01.json: backward demand stopped at byte-packing OR',
+                  champion_file=str(champion_file), rows=[], production_champion_modified=False,
+                  target_achieved=False, power_watts=None, joules_per_terahash=None)
+    with get_backend('opencl', **verified['config']) as engine:
+        report['session_metadata'] = metadata(engine)
+        for generation in range(3):
+            raw = heldout_headers(202610080+generation, 1)[0]
+            target = difficulty_target('256') if generation != 1 else compact_to_target(0x17020000)
+            w = make_workspace(raw, 24); header = w.header(0)
+            engine.scan(header, 0, w.count, target); samples = []
+            for _ in range(5):
+                before = perf_counter(); engine.scan(header, 0, w.count, target); samples.append(perf_counter()-before)
+            begin = perf_counter()
+            with patch.object(HeaderFamily, 'construct', side_effect=AssertionError('Enumeration')):
+                analysis = analyze_workspace(w, target, 'backward')
+            before = perf_counter(); p = TargetPredicate(w, target)
+            for i in [j*(w.count-1)//15 for j in range(16)]:
+                if p.evaluate(i) != (int.from_bytes(sha256d(w.header(i)), 'little') <= target): raise AssertionError('Follow-up parity failed')
+            audit_seconds = perf_counter()-before
+            if analysis['target_information'] != 0: raise AssertionError('Changed conclusion; holdout gate must be reopened')
+            fb = fallback(w, target, engine, max_candidates=1 << 24)
+            total = perf_counter()-begin; ordinary = median(samples)
+            report['rows'].append(dict(seed=202610080+generation, target=str(target),
+                target_fixture='share difficulty256' if generation != 1 else 'synthetic network nBits17020000',
+                conceptual_K=w.count, K_materialized=False, scope=w.fingerprint, analysis=analysis,
+                refinement_leaves=1, maximum_depth=0, coverage_proof_seconds=0.,
+                fallback={k:v for k,v in fb.items() if k!='solutions'},
+                audit_scope_K=16, audit_exhaustive=False, random_audit_is_proof=False,
+                independent_audit_seconds=audit_seconds+fb['independent_audit_seconds'],
+                baseline={'same_scope':True, 'warm':True, 'samples_seconds':samples, 'median_seconds':ordinary},
+                F_analysis=(analysis['total_seconds']+audit_seconds)/ordinary,
+                total_wall_seconds=total, effective_speedup=ordinary/total, normalized_total_cost=total/ordinary,
+                exact_rho=0., useful_rho=0., Q=0., equivalent_work_hps=w.count/total,
+                peak_memory_bytes=None, power_watts=None, joules_per_terahash=None,
+                cost_scope='full compile/rewrite/proof/check + sampled regression audit + actual unchanged champion fallback + solution validation'))
+    report['status']='B_INVERSE_DEMAND_FALSIFIED_AT_JOINT_UNKNOWN_ADD'
+    report['best_effective_speedup']=max(r['effective_speedup'] for r in report['rows'])
+    save(output, report)
+    print(json.dumps(dict(output=str(output), status=report['status'], best_speedup=report['best_effective_speedup'],
+          losses=[r['analysis']['backward']['losses'] for r in report['rows']])), flush=True)
+
+
 if __name__ == '__main__':
-    p = argparse.ArgumentParser(); p.add_argument('mode', choices=['champion','experiments','supervisor'])
+    p = argparse.ArgumentParser(); p.add_argument('mode', choices=['champion','experiments','supervisor','inverse-followup'])
     p.add_argument('--output', type=Path, required=True); p.add_argument('--champion', type=Path)
     p.add_argument('--directory', type=Path, default=ROOT/'results/evolution/predicate-vnext')
     p.add_argument('--steps', type=int, default=12); args = p.parse_args()
     if args.output.exists(): raise FileExistsError('Historical evidence cannot be overwritten')
     if args.mode == 'champion': champion(args.output)
-    elif args.mode == 'experiments':
+    elif args.mode in ('experiments','inverse-followup'):
         if not args.champion: p.error('--champion required')
-        experiment(args.output, args.champion)
+        (experiment if args.mode=='experiments' else inverse_followup)(args.output, args.champion)
     else: supervisor(args.output, args.directory, args.steps)

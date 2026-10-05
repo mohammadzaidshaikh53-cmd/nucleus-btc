@@ -1,5 +1,24 @@
 # Architecture and trust boundaries
 
+The current offline target-predicate path is:
+`SymbolicFamily -> exact Boolean TargetPredicate -> bounded reduced product ->
+independent certificate/coverage checking -> unchanged exact GPU fallback`.
+It lives alongside existing FamilyIR and does not enter production mining.
+Unsupported contradictions and UNKNOWN retain work. Fixed-bit partitions bind
+scope/target/source in a persisted tree; no candidate list serves as coverage.
+The workspace compiler uses established SV2 permission checks and labels local
+fixtures separately. See [vNext boundaries and results](PREDICATE-VNEXT-RESULTS.md).
+
+The predicate IR has one Boolean comparator root plus a digest analysis view.
+Worst-case equality still needs every word. Reduced products exchange known
+bits/residues/parity/sparse Boolean facts, track bounded carry envelopes and
+widen on relation budgets. The checker independently replays conservative
+mask/carry facts; general nonlinear lemma rejection is unsupported. Learned
+universal bit-local rewrites are checked and remain diagnostic. Bounded
+source-qualified lemma memory complements PROVEN/DEAD/FRONTIER knowledge.
+The explicit vNext selector profile excludes old exhausted species; all new
+research species remain barred from production promotion.
+
 FamilyIR lives in `nucleus_btc/family_ir/`, independently of scalar IR. It
 constructs only explicitly permitted finite header workspaces, preserves exact
 uint32 values across representations and maps strided candidate indices

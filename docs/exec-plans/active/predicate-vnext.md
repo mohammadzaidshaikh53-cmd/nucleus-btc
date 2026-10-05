@@ -25,3 +25,19 @@ Stop this bounded upgrade at either a reproducible new nonenumerating target
 advantage, or convincing falsification of tested mechanisms with a distinct
 unresolved frontier. Do not raise exhausted Phase-II/middle-cut budgets. Do not
 integrate production pruning or promote research-only evidence.
+
+## Verified execution checkpoint
+
+Steps 1–5 implemented and measured; outcome B. The full local suite has 117
+tests: 116 passed and optional HIP skipped. Fresh champion 1.541662 GH/s;
+120 primary pipelines, five conceptual widths, six refinement trials and three
+corrected inverse follow-ups all retain realistic work with useful rho=0.
+26 real isolated supervisor steps, including periodic regression/benchmark,
+resume to frontier-complete with no promotion. Initial inverse packing loss
+was corrected and the new species tested; the new stopping cause is a joint
+two-unknown ADD32. Historical files, production, oracle and old plans are intact.
+
+See `docs/PREDICATE-VNEXT-RESULTS.md` for costs, trust limitations, commands and
+the distinct unresolved frontier. Further work requires a concrete proved
+schedule/carry/Boolean invariant; this checkpoint does not claim the permanent
+20–30 TH/s goal achieved. Final publication/hosted CI is tracked in the chat.

@@ -1,5 +1,31 @@
 # Local project status - 5 October 2026
 
+## Current exact target-predicate checkpoint
+
+**Outcome B: tested vNext mechanisms falsified.** The in-place offline path now
+has guarded nonenumerating workspaces, an exact Boolean-root SHA256d target IR,
+bounded reduced products/rewrites, independent rejection certificates, persisted
+coverage/refinement, source-qualified lemma knowledge and lossless GPU fallback.
+See [measured results](docs/PREDICATE-VNEXT-RESULTS.md).
+
+Fresh verified production champion: **1.541662 GH/s**. The unchanged 20/30 TH/s
+goals require 12,973x/19,460x speedup and total cost budgets 0.0000770831/
+0.0000513887 relative to this champion. Across 120 pipelines and three corrected
+inverse follow-ups, useful rho=0; best realistic primary pipeline is 0.023071x
+the same-family GPU and best bounded refinement/fallback trial is 0.034073x.
+2^56 conceptual candidates use no candidate array, but target information=0.
+
+Local final suite: **117 tests, 116 passed, optional HIP skipped**, with native,
+OpenCL and authenticated SV2 required. The resumed isolated supervisor completed
+26 steps and exhausted eight bounded species. Production was not promoted.
+74 historical result files and 120 protected files remain unchanged. Power,
+live pool acceptance and BTC earnings remain unmeasured; testing stays local.
+
+Next distinct frontier: an independently proved nonenumerating joint schedule/
+carry/Boolean relation that retains full-target information. No such relation
+or 20–30 TH/s advantage is established. Earlier checkpoint history follows;
+its measured numbers and previous frontier descriptions remain historical.
+
 ## Target-directed continuation
 
 The original **20–30 TH/s** exact Bitcoin work target remains unchanged and

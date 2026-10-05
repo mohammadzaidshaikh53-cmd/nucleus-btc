@@ -48,10 +48,18 @@ class PredicateEngineTests(unittest.TestCase):
 
     def test_inverse_target_demand_stops_at_joint_unknowns_without_pruning(self):
         w = workspace(8); p = TargetPredicate(w, 1 << 192)
-        result = backward_demand(p, analyze(p))
+        abstract = analyze(p)
+        self.assertTrue(all(r['known_state_bits'] == 256 for r in abstract['round_precision'] if r['compression'] == 'header/first/0'))
+        result = backward_demand(p, abstract)
         self.assertFalse(result['pruning_authorized'])
         self.assertGreater(result['conditional_known_bits'], 0)
         self.assertTrue(result['losses'])
+        self.assertTrue(result['steps'])
+        self.assertEqual(result['losses'][0]['operation'], 'ADD32')
+        self.assertGreaterEqual(result['losses'][0]['unknown_operands'], 2)
+        inputs = w.inputs(13)
+        raw_view = Graph.deserialize(p.graph.serialize()); raw_view.outputs = list(p.digest_state)
+        self.assertEqual(raw_view.evaluate(inputs), p.graph.evaluate(inputs))
         self.assertEqual(backward_demand(TargetPredicate(w, (1 << 256)-1), {})['status'], 'UNKNOWN')
         # Verify the inverse add/rotate equations algebraically on fresh values.
         for step in result['steps']:

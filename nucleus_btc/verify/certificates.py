@@ -21,7 +21,10 @@ ROOT = Path(__file__).resolve().parents[2]
 def source_fingerprint():
     digest = sha256()
     for name in ('nucleus_btc/verify/certificates.py', 'nucleus_btc/ir/target_predicate.py',
-                 'nucleus_btc/family_ir/symbolic.py', 'nucleus_btc/ir/graph.py'):
+                 'nucleus_btc/family_ir/symbolic.py', 'nucleus_btc/ir/graph.py',
+                 'nucleus_btc/ir/nodes.py', 'nucleus_btc/ir/sha.py', 'nucleus_btc/ir/predicate_rewrite.py',
+                 'nucleus_btc/family_ir/__init__.py', 'nucleus_btc/bitcoin/block_header.py',
+                 'nucleus_btc/bitcoin/target.py', 'nucleus_btc/oracle/sha256.py'):
         digest.update(name.encode()); digest.update((ROOT/name).read_bytes())
     return digest.hexdigest()
 

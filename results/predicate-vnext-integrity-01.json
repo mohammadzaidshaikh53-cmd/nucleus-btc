@@ -1,0 +1,730 @@
+{
+  "baseline": "a319bde64ad2b80a217297cf858caa08f4ba0fd2",
+  "current_head": "8a46261ea2d97647ad0dc0e645bf0c5619c6c53d",
+  "protected_files": 120,
+  "historical_result_files": 74,
+  "all_unchanged": true,
+  "scope": "canonical Git blob comparison against original baseline; new vNext plan excluded by absence at baseline",
+  "files": [
+    {
+      "path": "docs/MIDDLE-CUT-RESULTS.md",
+      "baseline_git_blob": "b0598e980566796dfbdd0be1dbe2d64eb6472e63",
+      "current_git_blob": "b0598e980566796dfbdd0be1dbe2d64eb6472e63",
+      "unchanged": true
+    },
+    {
+      "path": "docs/PHASE-II-RESULTS.md",
+      "baseline_git_blob": "6284667faa1a39d8108d2a9d88c456ea5d92e1fd",
+      "current_git_blob": "6284667faa1a39d8108d2a9d88c456ea5d92e1fd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/exec-plans/active/middle-cut.md",
+      "baseline_git_blob": "7c16e3a6e4addfc4f6c1b36b9c5641aef67fdb05",
+      "current_git_blob": "7c16e3a6e4addfc4f6c1b36b9c5641aef67fdb05",
+      "unchanged": true
+    },
+    {
+      "path": "docs/exec-plans/active/nucleus-next.md",
+      "baseline_git_blob": "390f45c76d73117898d966b5c3aa9a60fce5a33f",
+      "current_git_blob": "390f45c76d73117898d966b5c3aa9a60fce5a33f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/exec-plans/active/phase-ii.md",
+      "baseline_git_blob": "98af0b7e9143a7389a2556da541f7333fda3a5bd",
+      "current_git_blob": "98af0b7e9143a7389a2556da541f7333fda3a5bd",
+      "unchanged": true
+    },
+    {
+      "path": "docs/exec-plans/completed/checkpoint-03.md",
+      "baseline_git_blob": "b37504221d2f4647ac2859790ffe0e96f8bcdcac",
+      "current_git_blob": "b37504221d2f4647ac2859790ffe0e96f8bcdcac",
+      "unchanged": true
+    },
+    {
+      "path": "native/hip/baseline.hip",
+      "baseline_git_blob": "be7ca7411068d4e0c35f46de1ecb0609bcb00318",
+      "current_git_blob": "be7ca7411068d4e0c35f46de1ecb0609bcb00318",
+      "unchanged": true
+    },
+    {
+      "path": "native/hip/family_matrix.hip",
+      "baseline_git_blob": "acf4aeba9aa205b2cebab3fcb3f0947c29497e15",
+      "current_git_blob": "acf4aeba9aa205b2cebab3fcb3f0947c29497e15",
+      "unchanged": true
+    },
+    {
+      "path": "native/include/nucleus/sha256.hpp",
+      "baseline_git_blob": "36facc0f5d9b792e19b6b8275b53917af72923fc",
+      "current_git_blob": "36facc0f5d9b792e19b6b8275b53917af72923fc",
+      "unchanged": true
+    },
+    {
+      "path": "native/src/core.cpp",
+      "baseline_git_blob": "10b5eed617e9b1cbe0833f0b623e97464b9a5c39",
+      "current_git_blob": "10b5eed617e9b1cbe0833f0b623e97464b9a5c39",
+      "unchanged": true
+    },
+    {
+      "path": "native/src/main.cpp",
+      "baseline_git_blob": "40533dc0e7f9ae82802fdaf0e482f4be40c60458",
+      "current_git_blob": "40533dc0e7f9ae82802fdaf0e482f4be40c60458",
+      "unchanged": true
+    },
+    {
+      "path": "native/sv2-noise/Cargo.lock",
+      "baseline_git_blob": "cc3c293072e897c9975acb3e32b67ba5dbe27f85",
+      "current_git_blob": "cc3c293072e897c9975acb3e32b67ba5dbe27f85",
+      "unchanged": true
+    },
+    {
+      "path": "native/sv2-noise/Cargo.toml",
+      "baseline_git_blob": "3026e042691f4925861625819dd1c1abcf21f02b",
+      "current_git_blob": "3026e042691f4925861625819dd1c1abcf21f02b",
+      "unchanged": true
+    },
+    {
+      "path": "native/sv2-noise/src/main.rs",
+      "baseline_git_blob": "b9d0ed4a40076bfef8e5fbf91eb09f345ee547cf",
+      "current_git_blob": "b9d0ed4a40076bfef8e5fbf91eb09f345ee547cf",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/__init__.py",
+      "baseline_git_blob": "9b615512ad5b13910f7a363f1c9d99324be5190b",
+      "current_git_blob": "9b615512ad5b13910f7a363f1c9d99324be5190b",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/block_header.py",
+      "baseline_git_blob": "7d45f1367272143b03c768b7ad8a2400c625087c",
+      "current_git_blob": "7d45f1367272143b03c768b7ad8a2400c625087c",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/coinbase.py",
+      "baseline_git_blob": "0866eb1530d65d00414f6dc591e0648edc36750f",
+      "current_git_blob": "0866eb1530d65d00414f6dc591e0648edc36750f",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/merkle.py",
+      "baseline_git_blob": "b2b76454bd5f81e012cafb8ab78099e850e24f76",
+      "current_git_blob": "b2b76454bd5f81e012cafb8ab78099e850e24f76",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/target.py",
+      "baseline_git_blob": "83217a95389d1125effad9c0618b6d9f5cab0dc8",
+      "current_git_blob": "83217a95389d1125effad9c0618b6d9f5cab0dc8",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/bitcoin/work_family.py",
+      "baseline_git_blob": "47a710ba54676eee7a46bf48ac9bc4353e567b30",
+      "current_git_blob": "47a710ba54676eee7a46bf48ac9bc4353e567b30",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/family_ir/__init__.py",
+      "baseline_git_blob": "f4337a12367ef80ce8faa72db67b2257d077aea3",
+      "current_git_blob": "f4337a12367ef80ce8faa72db67b2257d077aea3",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/__init__.py",
+      "baseline_git_blob": "404b9064217e6027456dfef8ccb9d47b77a0046a",
+      "current_git_blob": "404b9064217e6027456dfef8ccb9d47b77a0046a",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/backend.py",
+      "baseline_git_blob": "00a68b88ab647f335ac1874eaa6e782f9180164b",
+      "current_git_blob": "00a68b88ab647f335ac1874eaa6e782f9180164b",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/exact.cl",
+      "baseline_git_blob": "2bc3922a2797ba48f3dcb4ae1adbf4ca31390be5",
+      "current_git_blob": "2bc3922a2797ba48f3dcb4ae1adbf4ca31390be5",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/hip.py",
+      "baseline_git_blob": "8479e5efcd378ece1b9fa204b6edf2e92554b172",
+      "current_git_blob": "8479e5efcd378ece1b9fa204b6edf2e92554b172",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/native.py",
+      "baseline_git_blob": "00b66f38c34fea6bd4f5fcc2cca698d7fc6aed14",
+      "current_git_blob": "00b66f38c34fea6bd4f5fcc2cca698d7fc6aed14",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/gpu/opencl.py",
+      "baseline_git_blob": "6a9d5038fbf7bcb00ad1364054bb0677a50f4a18",
+      "current_git_blob": "6a9d5038fbf7bcb00ad1364054bb0677a50f4a18",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/oracle/__init__.py",
+      "baseline_git_blob": "5f19fd68ff9199361c8aeda92f58aea1dba53f70",
+      "current_git_blob": "5f19fd68ff9199361c8aeda92f58aea1dba53f70",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/oracle/sha256.py",
+      "baseline_git_blob": "860da1e3b61d741518c367b36492cb8e9adf740d",
+      "current_git_blob": "860da1e3b61d741518c367b36492cb8e9adf740d",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/__init__.py",
+      "baseline_git_blob": "4812738c808b4218a3b3d8407ac6fb3b216e7770",
+      "current_git_blob": "4812738c808b4218a3b3d8407ac6fb3b216e7770",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/recovering_backend.py",
+      "baseline_git_blob": "d86b05d7717bf660b34963ab95cf90e9e61064be",
+      "current_git_blob": "d86b05d7717bf660b34963ab95cf90e9e61064be",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/stratum_v1.py",
+      "baseline_git_blob": "0a2757983ec81c0a0b928b0c65ab1ca26e527b57",
+      "current_git_blob": "0a2757983ec81c0a0b928b0c65ab1ca26e527b57",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/stratum_v2.py",
+      "baseline_git_blob": "1878b4f6a8dd8d0056b46f775ac1d8c7cd75e353",
+      "current_git_blob": "1878b4f6a8dd8d0056b46f775ac1d8c7cd75e353",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/sv2_client.py",
+      "baseline_git_blob": "f81bf1b366f8c2d70c7e689e20c89a9e74cd16c0",
+      "current_git_blob": "f81bf1b366f8c2d70c7e689e20c89a9e74cd16c0",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/sv2_family.py",
+      "baseline_git_blob": "ee26d4d3ff95776df3d0ec2fecf65343dabada91",
+      "current_git_blob": "ee26d4d3ff95776df3d0ec2fecf65343dabada91",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/sv2_transport.py",
+      "baseline_git_blob": "848f0f576173463c6e637fab169a61481615a2d9",
+      "current_git_blob": "848f0f576173463c6e637fab169a61481615a2d9",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/protocol/sv2_wire.py",
+      "baseline_git_blob": "4c7d61fb7c97ef453f81c91ce2d3bb30d68e9105",
+      "current_git_blob": "4c7d61fb7c97ef453f81c91ce2d3bb30d68e9105",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/__init__.py",
+      "baseline_git_blob": "7fbb85b1c7f2592cc5d5d3fd3b73bbcac1a6a8ff",
+      "current_git_blob": "7fbb85b1c7f2592cc5d5d3fd3b73bbcac1a6a8ff",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/adaptive.py",
+      "baseline_git_blob": "76e98969e6ccd495ef2af1659478864208d6f536",
+      "current_git_blob": "76e98969e6ccd495ef2af1659478864208d6f536",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/constraints.py",
+      "baseline_git_blob": "0ab159ffd5cdf0534ec2ed5b93da0e843ba44ad2",
+      "current_git_blob": "0ab159ffd5cdf0534ec2ed5b93da0e843ba44ad2",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/family_search.py",
+      "baseline_git_blob": "0d42661d2725ac5230d3dc8040f15c7acd7d79d2",
+      "current_git_blob": "0d42661d2725ac5230d3dc8040f15c7acd7d79d2",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/family_split.py",
+      "baseline_git_blob": "a1f1fc2662718cc60f4667bfa9a58d17bea9e732",
+      "current_git_blob": "a1f1fc2662718cc60f4667bfa9a58d17bea9e732",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/pruning.py",
+      "baseline_git_blob": "aa7264cda5269ef7f40a772210b93551faddd997",
+      "current_git_blob": "aa7264cda5269ef7f40a772210b93551faddd997",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/scaling.py",
+      "baseline_git_blob": "1c9420695d3063cb2a9dbda5722a0fe10ed5c300",
+      "current_git_blob": "1c9420695d3063cb2a9dbda5722a0fe10ed5c300",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/smt.py",
+      "baseline_git_blob": "dc98a605c58920b6fa42adff764a7ba56c2db6b4",
+      "current_git_blob": "dc98a605c58920b6fa42adff764a7ba56c2db6b4",
+      "unchanged": true
+    },
+    {
+      "path": "nucleus_btc/solver/structural.py",
+      "baseline_git_blob": "9c71ca292847f95d7dcaaaf73e4ae34ba19eac14",
+      "current_git_blob": "9c71ca292847f95d7dcaaaf73e4ae34ba19eac14",
+      "unchanged": true
+    },
+    {
+      "path": "results/adaptive-family-01.json",
+      "baseline_git_blob": "65514e838e5efab1702287859ba2102548e90a17",
+      "current_git_blob": "65514e838e5efab1702287859ba2102548e90a17",
+      "unchanged": true
+    },
+    {
+      "path": "results/carry-nonlinear-boundary-01.json",
+      "baseline_git_blob": "0112f58d6d2d48a5534657f7241e591bca17c717",
+      "current_git_blob": "0112f58d6d2d48a5534657f7241e591bca17c717",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-01-tests.json",
+      "baseline_git_blob": "926c5a217882755579be12f7774f1afa6cffd4e6",
+      "current_git_blob": "926c5a217882755579be12f7774f1afa6cffd4e6",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-02-final-tests.json",
+      "baseline_git_blob": "e439882bf9b988157487e1c1f7cbeafacfd3639b",
+      "current_git_blob": "e439882bf9b988157487e1c1f7cbeafacfd3639b",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-02-pre-tests.json",
+      "baseline_git_blob": "91a742c492827336e387233fc3aeecd4bafa7ff7",
+      "current_git_blob": "91a742c492827336e387233fc3aeecd4bafa7ff7",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-02-tests.json",
+      "baseline_git_blob": "203aca0bef76d6ae07f668c64d6c8684d37c3b83",
+      "current_git_blob": "203aca0bef76d6ae07f668c64d6c8684d37c3b83",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-03-final-tests.json",
+      "baseline_git_blob": "7b454e698155e4ed9410647909ccb56c5a0a8f99",
+      "current_git_blob": "7b454e698155e4ed9410647909ccb56c5a0a8f99",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-03-initial-tests.json",
+      "baseline_git_blob": "32a286e15222173d32bed8fbc2173823b9f3dac8",
+      "current_git_blob": "32a286e15222173d32bed8fbc2173823b9f3dac8",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-03-integrity.json",
+      "baseline_git_blob": "c9e309680672c08d93ced6a49795271035e278ff",
+      "current_git_blob": "c9e309680672c08d93ced6a49795271035e278ff",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-03-release-tests.json",
+      "baseline_git_blob": "cb3b30d7e850c5c25e980289196ea40cd8bb4e77",
+      "current_git_blob": "cb3b30d7e850c5c25e980289196ea40cd8bb4e77",
+      "unchanged": true
+    },
+    {
+      "path": "results/checkpoint-start-confirmation.json",
+      "baseline_git_blob": "c58ddc2eb62de369c6cca7f8652c760482039bb4",
+      "current_git_blob": "c58ddc2eb62de369c6cca7f8652c760482039bb4",
+      "unchanged": true
+    },
+    {
+      "path": "results/ci-checkpoint-03.json",
+      "baseline_git_blob": "6288ebfd7c857ae541a16fb3a1dca109a7ca384f",
+      "current_git_blob": "6288ebfd7c857ae541a16fb3a1dca109a7ca384f",
+      "unchanged": true
+    },
+    {
+      "path": "results/ci-phase-ii-checkpoint-b.json",
+      "baseline_git_blob": "031c5f9c514d46092447fbb7ff8624b20f9514a3",
+      "current_git_blob": "031c5f9c514d46092447fbb7ff8624b20f9514a3",
+      "unchanged": true
+    },
+    {
+      "path": "results/ci-phase-ii-final.json",
+      "baseline_git_blob": "5510078221703e4f0b98d8f087df01f33269fa6a",
+      "current_git_blob": "5510078221703e4f0b98d8f087df01f33269fa6a",
+      "unchanged": true
+    },
+    {
+      "path": "results/confirmation.json",
+      "baseline_git_blob": "0a9fb32cdde83aaa57ef240bffbd395730a28c64",
+      "current_git_blob": "0a9fb32cdde83aaa57ef240bffbd395730a28c64",
+      "unchanged": true
+    },
+    {
+      "path": "results/dag-full-01.json",
+      "baseline_git_blob": "53d8792d7c98451277d704d5f3599d7c2f626881",
+      "current_git_blob": "53d8792d7c98451277d704d5f3599d7c2f626881",
+      "unchanged": true
+    },
+    {
+      "path": "results/dependency-frontier-phase-ii-01.csv",
+      "baseline_git_blob": "dce4e7d6245c9c1f8f2adddf4583fdcf06cbdf01",
+      "current_git_blob": "dce4e7d6245c9c1f8f2adddf4583fdcf06cbdf01",
+      "unchanged": true
+    },
+    {
+      "path": "results/dependency-frontier-phase-ii-01.json",
+      "baseline_git_blob": "09efb0b512a148dd2e923a64b2fac72d15addb28",
+      "current_git_blob": "09efb0b512a148dd2e923a64b2fac72d15addb28",
+      "unchanged": true
+    },
+    {
+      "path": "results/dependency-frontier-phase-ii-02.csv",
+      "baseline_git_blob": "dce4e7d6245c9c1f8f2adddf4583fdcf06cbdf01",
+      "current_git_blob": "dce4e7d6245c9c1f8f2adddf4583fdcf06cbdf01",
+      "unchanged": true
+    },
+    {
+      "path": "results/dependency-frontier-phase-ii-02.json",
+      "baseline_git_blob": "3e74be6ed1d0bdac867c34dab436f7c3fd4b854a",
+      "current_git_blob": "3e74be6ed1d0bdac867c34dab436f7c3fd4b854a",
+      "unchanged": true
+    },
+    {
+      "path": "results/family-scaling.json",
+      "baseline_git_blob": "7bfa63f5071acf32e69eb265a37416c47469e793",
+      "current_git_blob": "7bfa63f5071acf32e69eb265a37416c47469e793",
+      "unchanged": true
+    },
+    {
+      "path": "results/generated-search-01.json",
+      "baseline_git_blob": "644ef914d2b6665de0bca1b6c0aaa6b6ca183e2a",
+      "current_git_blob": "644ef914d2b6665de0bca1b6c0aaa6b6ca183e2a",
+      "unchanged": true
+    },
+    {
+      "path": "results/generated-search-02.json",
+      "baseline_git_blob": "3e806708bc4f32a245855de401dc73200321275b",
+      "current_git_blob": "3e806708bc4f32a245855de401dc73200321275b",
+      "unchanged": true
+    },
+    {
+      "path": "results/genesis-scan.json",
+      "baseline_git_blob": "bb111f40c758059f331669298ba5d753d2b86f64",
+      "current_git_blob": "bb111f40c758059f331669298ba5d753d2b86f64",
+      "unchanged": true
+    },
+    {
+      "path": "results/gpu-baseline.json",
+      "baseline_git_blob": "7d5b090b13766bafca07fd63903678eb7ebc09ed",
+      "current_git_blob": "7d5b090b13766bafca07fd63903678eb7ebc09ed",
+      "unchanged": true
+    },
+    {
+      "path": "results/gpu-champion.json",
+      "baseline_git_blob": "2bd0a4f4ee8e90b9f001ce5296edd92ff7bba54d",
+      "current_git_blob": "2bd0a4f4ee8e90b9f001ce5296edd92ff7bba54d",
+      "unchanged": true
+    },
+    {
+      "path": "results/hybrid-scaling-01.json",
+      "baseline_git_blob": "9a719c0aeecbd19d8bc973f100dcbc476ee2e07a",
+      "current_git_blob": "9a719c0aeecbd19d8bc973f100dcbc476ee2e07a",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-algebraic-01.json",
+      "baseline_git_blob": "1421f151e316a168275e003475ec2a8f6945a143",
+      "current_git_blob": "1421f151e316a168275e003475ec2a8f6945a143",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-final-tests-01.json",
+      "baseline_git_blob": "26b03031ee2ab22bedca3bead9695e9cd491628f",
+      "current_git_blob": "26b03031ee2ab22bedca3bead9695e9cd491628f",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-frontier-01.json",
+      "baseline_git_blob": "9fbaf8bf10e3e36e44c7dd676ee1d317109c477b",
+      "current_git_blob": "9fbaf8bf10e3e36e44c7dd676ee1d317109c477b",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-integrity-01.json",
+      "baseline_git_blob": "cee99a691b475245bc3624ee89b8ea4ce5e5f47f",
+      "current_git_blob": "cee99a691b475245bc3624ee89b8ea4ce5e5f47f",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-release-tests-01.json",
+      "baseline_git_blob": "b43b3ff041c35145cdd1ce99c05fad602cfb0553",
+      "current_git_blob": "b43b3ff041c35145cdd1ce99c05fad602cfb0553",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-start-tests-01.json",
+      "baseline_git_blob": "252d7a1424ccf5a1d71ee7df0047e6b77a4b0d72",
+      "current_git_blob": "252d7a1424ccf5a1d71ee7df0047e6b77a4b0d72",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-start-tests-02.json",
+      "baseline_git_blob": "3ab8a828f765126d983e2178c886582b9f043f6f",
+      "current_git_blob": "3ab8a828f765126d983e2178c886582b9f043f6f",
+      "unchanged": true
+    },
+    {
+      "path": "results/middle-cut-target-rank-hunt-01.json",
+      "baseline_git_blob": "da382299b8443fc0a738e8c12842a63daf829409",
+      "current_git_blob": "da382299b8443fc0a738e8c12842a63daf829409",
+      "unchanged": true
+    },
+    {
+      "path": "results/native-verification.json",
+      "baseline_git_blob": "54c5aa9fb7208b2f623f8cee591f771773abce85",
+      "current_git_blob": "54c5aa9fb7208b2f623f8cee591f771773abce85",
+      "unchanged": true
+    },
+    {
+      "path": "results/optimizer.json",
+      "baseline_git_blob": "da2855d17db3205557df976f232b9e9da89edfab",
+      "current_git_blob": "da2855d17db3205557df976f232b9e9da89edfab",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-checkpoint-tests-01.json",
+      "baseline_git_blob": "d089e6398d0adb52302dfa7f616148181f7fa72a",
+      "current_git_blob": "d089e6398d0adb52302dfa7f616148181f7fa72a",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-checkpoint-tests-02.json",
+      "baseline_git_blob": "75c48bb4cd8065904eebb8d3ae48ba60adcfbe3d",
+      "current_git_blob": "75c48bb4cd8065904eebb8d3ae48ba60adcfbe3d",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-conditional-residual-01.json",
+      "baseline_git_blob": "b48d13c914ed5d781db8c810cbdca007b806f282",
+      "current_git_blob": "b48d13c914ed5d781db8c810cbdca007b806f282",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-egraph-01.json",
+      "baseline_git_blob": "528c9790385b9841f5bf0745ad6a9481f0de074f",
+      "current_git_blob": "528c9790385b9841f5bf0745ad6a9481f0de074f",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-family-scaling-01.json",
+      "baseline_git_blob": "4d202aa936a19e7621035de3aa6e82c786164b30",
+      "current_git_blob": "4d202aa936a19e7621035de3aa6e82c786164b30",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-final-supervisor.json",
+      "baseline_git_blob": "37e357bb9aae26c10d4343f636291c33a4fcabb4",
+      "current_git_blob": "37e357bb9aae26c10d4343f636291c33a4fcabb4",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-final-tests-02.json",
+      "baseline_git_blob": "55c5e0466bbf0be8e3ce360e56970a86c74db014",
+      "current_git_blob": "55c5e0466bbf0be8e3ce360e56970a86c74db014",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-final-tests.json",
+      "baseline_git_blob": "41f9dab1f1796df48aeb5addbd3567669cf05603",
+      "current_git_blob": "41f9dab1f1796df48aeb5addbd3567669cf05603",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-integrity.json",
+      "baseline_git_blob": "f86527af98a7fd5f5edcf8f7c51164c85a2973ed",
+      "current_git_blob": "f86527af98a7fd5f5edcf8f7c51164c85a2973ed",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-local-sizes-01.json",
+      "baseline_git_blob": "5c2fe642303ca6f975cc627677c9e8058d7c3f3d",
+      "current_git_blob": "5c2fe642303ca6f975cc627677c9e8058d7c3f3d",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-prefix-metric-correction.json",
+      "baseline_git_blob": "9cdbdac78c59a5dcf94fdbc6ca357fb8ff3d7687",
+      "current_git_blob": "9cdbdac78c59a5dcf94fdbc6ca357fb8ff3d7687",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-release-tests-02.json",
+      "baseline_git_blob": "78d5a9ab8340fed71fbbc1fad66317f14426b7f2",
+      "current_git_blob": "78d5a9ab8340fed71fbbc1fad66317f14426b7f2",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-release-tests.json",
+      "baseline_git_blob": "6cde029956dbc4ca9fa243c829f86566cfe2e6d3",
+      "current_git_blob": "6cde029956dbc4ca9fa243c829f86566cfe2e6d3",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-solver-cones-01.json",
+      "baseline_git_blob": "9e6464cd1423d0365dc87bdc5a9cec3b2cdccc10",
+      "current_git_blob": "9e6464cd1423d0365dc87bdc5a9cec3b2cdccc10",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-start-tests.json",
+      "baseline_git_blob": "09dcaaba53c5922a81f4ec50cebb99807da80a85",
+      "current_git_blob": "09dcaaba53c5922a81f4ec50cebb99807da80a85",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-structure-probes-01.json",
+      "baseline_git_blob": "1268496c3383e1925000ae6165ae486913133500",
+      "current_git_blob": "1268496c3383e1925000ae6165ae486913133500",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-structure-probes-02.json",
+      "baseline_git_blob": "ef6994df8c9002b127c51084344f8d127dd49672",
+      "current_git_blob": "ef6994df8c9002b127c51084344f8d127dd49672",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-structure-probes-03.json",
+      "baseline_git_blob": "ae836f060c9a7d8ef2800eecaece282dcd0e29ae",
+      "current_git_blob": "ae836f060c9a7d8ef2800eecaece282dcd0e29ae",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-supervisor-01.json",
+      "baseline_git_blob": "9f44138e44cd7d2f02ae57e2275348944e247375",
+      "current_git_blob": "9f44138e44cd7d2f02ae57e2275348944e247375",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-supervisor-02.json",
+      "baseline_git_blob": "91084f0e47ab47d43bfaed350d748d26afaa729f",
+      "current_git_blob": "91084f0e47ab47d43bfaed350d748d26afaa729f",
+      "unchanged": true
+    },
+    {
+      "path": "results/phase-ii-supervisor-resume.json",
+      "baseline_git_blob": "eb16a146c595e4729cd4825f558112352db67478",
+      "current_git_blob": "eb16a146c595e4729cd4825f558112352db67478",
+      "unchanged": true
+    },
+    {
+      "path": "results/planes-08.json",
+      "baseline_git_blob": "16cd44a959b7e78443c0dc64125eb93bfb5414c6",
+      "current_git_blob": "16cd44a959b7e78443c0dc64125eb93bfb5414c6",
+      "unchanged": true
+    },
+    {
+      "path": "results/representation-scaling-01.json",
+      "baseline_git_blob": "009edae19d633ad22025bef77c07d55dcee93c39",
+      "current_git_blob": "009edae19d633ad22025bef77c07d55dcee93c39",
+      "unchanged": true
+    },
+    {
+      "path": "results/representation-scaling-context-01.json",
+      "baseline_git_blob": "990348036b110fe9bce9f69369dd2668f0e2fcc1",
+      "current_git_blob": "990348036b110fe9bce9f69369dd2668f0e2fcc1",
+      "unchanged": true
+    },
+    {
+      "path": "results/research-portfolio.json",
+      "baseline_git_blob": "8af6c71e67a7c6df2a2105d1e9c8f2c82497f0de",
+      "current_git_blob": "8af6c71e67a7c6df2a2105d1e9c8f2c82497f0de",
+      "unchanged": true
+    },
+    {
+      "path": "results/sat-full-01.json",
+      "baseline_git_blob": "b5de8a07b8c121af9121219758cc413f750fa620",
+      "current_git_blob": "b5de8a07b8c121af9121219758cc413f750fa620",
+      "unchanged": true
+    },
+    {
+      "path": "results/smt-family-01.json",
+      "baseline_git_blob": "d71ff5890965ee923a6d35f2725f994ae7f081e4",
+      "current_git_blob": "d71ff5890965ee923a6d35f2725f994ae7f081e4",
+      "unchanged": true
+    },
+    {
+      "path": "results/smt-templates-01.json",
+      "baseline_git_blob": "a9e9b233d7d45eccf313ff360e585ac81b947003",
+      "current_git_blob": "a9e9b233d7d45eccf313ff360e585ac81b947003",
+      "unchanged": true
+    },
+    {
+      "path": "results/source-snapshots/middle-cut-01/nucleus_btc/family_ir/middle_cut.py",
+      "baseline_git_blob": "acf17c3d8ed7eba133b5d2db0b91e859f5a37973",
+      "current_git_blob": "acf17c3d8ed7eba133b5d2db0b91e859f5a37973",
+      "unchanged": true
+    },
+    {
+      "path": "results/source-snapshots/middle-cut-01/scripts/middle_cut.py",
+      "baseline_git_blob": "902dc0b6e7c94ce2abe80f1c80ebe71bda26016c",
+      "current_git_blob": "902dc0b6e7c94ce2abe80f1c80ebe71bda26016c",
+      "unchanged": true
+    },
+    {
+      "path": "results/supervisor-checkpoint-01.json",
+      "baseline_git_blob": "0d670f89c32bd7e0624477350246566beb78599e",
+      "current_git_blob": "0d670f89c32bd7e0624477350246566beb78599e",
+      "unchanged": true
+    },
+    {
+      "path": "results/supervisor-checkpoint-03.json",
+      "baseline_git_blob": "38cc0556872298cb0784e61a53c0b589aa22b3a1",
+      "current_git_blob": "38cc0556872298cb0784e61a53c0b589aa22b3a1",
+      "unchanged": true
+    },
+    {
+      "path": "results/supervisor-resume-03.json",
+      "baseline_git_blob": "4ff25e19d421933f615b4489fc001b898433c8e3",
+      "current_git_blob": "4ff25e19d421933f615b4489fc001b898433c8e3",
+      "unchanged": true
+    },
+    {
+      "path": "results/symbolic-bdd.json",
+      "baseline_git_blob": "9f4df4c04f45a77330873edf295fa6a2332cb6ed",
+      "current_git_blob": "9f4df4c04f45a77330873edf295fa6a2332cb6ed",
+      "unchanged": true
+    },
+    {
+      "path": "results/symbolic-dag.json",
+      "baseline_git_blob": "466007ced6a59b691f265a7df8539d7bb2b6b82b",
+      "current_git_blob": "466007ced6a59b691f265a7df8539d7bb2b6b82b",
+      "unchanged": true
+    },
+    {
+      "path": "results/test-suite.json",
+      "baseline_git_blob": "babf337f5564859ff6dc43776026d7b2b2c6e842",
+      "current_git_blob": "babf337f5564859ff6dc43776026d7b2b2c6e842",
+      "unchanged": true
+    },
+    {
+      "path": "results/verification.json",
+      "baseline_git_blob": "54c5aa9fb7208b2f623f8cee591f771773abce85",
+      "current_git_blob": "54c5aa9fb7208b2f623f8cee591f771773abce85",
+      "unchanged": true
+    }
+  ]
+}

@@ -23,7 +23,8 @@ def refinement_source():
     from hashlib import sha256
     root = Path(__file__).resolve().parent
     digest = sha256(source_fingerprint().encode())
-    for path in (Path(__file__), root/'family_ir/domains.py', root/'family_ir/observables.py', root/'ir/predicate_rewrite.py'):
+    for path in (Path(__file__), root/'family_ir/domains.py', root/'family_ir/observables.py', root/'ir/predicate_rewrite.py',
+                 root/'verify/coverage.py', root/'verify/lemmas.py', root/'family_ir/workspace_compiler.py'):
         digest.update(path.read_bytes())
     return digest.hexdigest()
 

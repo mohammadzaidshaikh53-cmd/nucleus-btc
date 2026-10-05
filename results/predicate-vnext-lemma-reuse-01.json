@@ -1,0 +1,51 @@
+{
+  "source": "a059b2f9c43440453bc43f0c98fee165568496b01abf9e24d04b72279f8eb430",
+  "stale_reuse_rejected": true,
+  "lemma": {
+    "checker": "lemma/v1",
+    "costs": {
+      "construction": 4.7599998652003706e-05,
+      "proof": 1.7599995771888644e-05,
+      "verification": 0.00010110000584973022
+    },
+    "domains": [
+      "sparse-nonlinear",
+      "parity",
+      "predicate-rewrite"
+    ],
+    "failure_boundaries": "local Boolean identity, no full-SHA target advantage",
+    "fingerprint": "de83fb552ce751cabdceea58bd37a66b66cde56022fafc45752cd1d85e3b8482",
+    "information_gain": 0.0,
+    "preconditions": "all uint32 inputs; bit-local operators only",
+    "proof": {
+      "cases": 4,
+      "type": "bit-local-universal"
+    },
+    "reuse_count": 1,
+    "source": "7732be24741a4ff253ec1406ab6cd8cb0c6e2f8176ac792d0b41e8d25d415a11",
+    "statement": "{\"nodes\":[[\"INPUT\",[],\"x\"],[\"INPUT\",[],\"y\"],[\"AND\",[0,1],null],[\"XOR\",[0,2],null],[\"NOT\",[1],null],[\"AND\",[0,4],null]],\"outputs\":[3,5],\"schema\":1}",
+    "supersedes": null
+  },
+  "rewrite": {
+    "status": "EXACT",
+    "seconds": 0.0001655000014579855,
+    "input_nodes": 4,
+    "output_nodes": 4,
+    "proofs": [
+      {
+        "rule": "learned-bit-local-universal",
+        "proof_identity": "de83fb552ce751cabdceea58bd37a66b66cde56022fafc45752cd1d85e3b8482"
+      }
+    ],
+    "analyses": {
+      "precision": "complement-carry elimination",
+      "opencl": "Boolean selection form"
+    },
+    "candidate_count_materialized": 0
+  },
+  "reuse_seconds": 0.001368700002785772,
+  "scope": "proved universal local uint32 identity; actual store/rewrite consumption; no mining gain",
+  "independent_regression_cases": 16,
+  "useful_rho": 0.0,
+  "target_achieved": false
+}

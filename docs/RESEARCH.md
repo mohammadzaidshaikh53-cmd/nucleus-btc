@@ -1,5 +1,22 @@
 # Research contract
 
+Current [vNext evidence](PREDICATE-VNEXT-RESULTS.md) evaluates a nonenumerating
+exact target IR, reduced products, opaque carry/Boolean parity atoms and
+target-conditioned inverse demands. This is a change of mechanism from finite
+affine/cube frontier probes, but all tested realistic target bounds become
+universal. Useful rho=0. Bounded refinement stops at one retained leaf; its
+small tree is an abort, not a sublinear mining result. The corrected inverse
+reaches a two-unknown ADD32 and exposes the missing joint relation.
+
+The current distinct frontier is a nonenumerating joint schedule/carry/Boolean
+invariant with full-SHA target information and an independent proof. No such
+invariant is established. Do not raise exhausted domain budgets or reopen old
+species unchanged. The explicit vNext selector records bounded DEAD mechanisms,
+keeps proof-qualified scoped lemmas, and never promotes lab-only evidence.
+Fresh champion-derived cost requirements are 0.0000770831 for 20 TH/s and
+0.0000513887 for 30 TH/s; neither is achieved. Earlier hypotheses follow as
+historical context.
+
 The permanent performance objective remains 20–30 TH/s equivalent exact valid
 Bitcoin work. [Middle-cut evidence](MIDDLE-CUT-RESULTS.md) now evaluates the
 signed-carry hypothesis and two subsequent changes of mechanism: algebraic

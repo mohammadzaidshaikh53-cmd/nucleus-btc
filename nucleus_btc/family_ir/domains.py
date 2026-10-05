@@ -270,8 +270,12 @@ def analyze(predicate, budget=None, nonlinear=True):
     for row in predicate.trace:
         known = sum(values[i].known.known.bit_count() for i in row['state'] if i is not None)
         nonlinear_bits = sum(p is not None for i in row['state'] if i is not None for p in values[i].polynomial)
+        constants = row.get('constant_state', (None,)*8)
+        folded_bits = 32*sum(i is None and c is not None for i, c in zip(row['state'], constants))
+        untracked_bits = 32*sum(i is None and c is None for i, c in zip(row['state'], constants))
         rounds.append({'compression': row['compression'], 'round': row['round'],
-                       'known_state_bits': known, 'retained_sparse_nonlinear_bits': nonlinear_bits})
+                       'known_state_bits': known+folded_bits, 'retained_sparse_nonlinear_bits': nonlinear_bits+folded_bits,
+                       'constant_folded_state_bits': folded_bits, 'untracked_dead_state_bits': untracked_bits})
     # Logical storage is explicit; process peak is measured by the runner.
     monomials = sum(len(p) for word in values for p in word.polynomial if p is not None)
     return {'status': bounds.status, 'bounds': (bounds.lower, bounds.upper),

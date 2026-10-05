@@ -1,6 +1,14 @@
 # Step-by-step development and acceptance gates
 
-The latest target-directed checkpoint is [MIDDLE-CUT-RESULTS.md](MIDDLE-CUT-RESULTS.md).
+The latest checkpoint is [PREDICATE-VNEXT-RESULTS.md](PREDICATE-VNEXT-RESULTS.md).
+The offline exact predicate engine is implemented and tested. Outcome B:
+reduced products, opaque carry/XOR lineage, refinement and inverse demands
+provide no useful realistic-target rejection. The next branch requires a
+concrete joint schedule/carry/Boolean invariant, sound transformer, independent
+certificate and measurable target information before economic optimization.
+The 20–30 TH/s objective is unchanged. Previous milestones follow.
+
+The previous target-directed checkpoint is [MIDDLE-CUT-RESULTS.md](MIDDLE-CUT-RESULTS.md).
 The original 20–30 TH/s objective stays active. Signed carries, joint affine
 boundary projections, algebraic certificates and target-rank family alignment
 have been evaluated without a useful speedup. A nonenumerating nonlinear

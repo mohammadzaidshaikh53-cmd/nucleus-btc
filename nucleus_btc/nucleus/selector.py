@@ -2,7 +2,7 @@
 from math import log,sqrt
 
 PHASE_II=("family-ir","carry-factor","conditional","program","differential","mitm","cone","egraph")
-VNEXT=('predicate-ir','abstract-domain','reduced-product','refinement','certificate','lemma-discovery','workspace-compiler')
+VNEXT=('predicate-ir','abstract-domain','reduced-product','refinement','certificate','lemma-discovery','workspace-compiler','inverse-demand')
 RESEARCH=PHASE_II+("generated","family","carry","structural","sat","representation")+VNEXT
 
 class ExperimentSelector:

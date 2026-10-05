@@ -1,0 +1,10 @@
+{
+  "commit": "fa5276f0e2c8aaabbf1c34acec860ca602d6dd87",
+  "run_id": 37303131310,
+  "run_url": "https://github.com/mohammadzaidshaikh53-cmd/nucleus-btc/actions/runs/37303131310",
+  "jobs": [
+    {"id": 111740375987, "name": "test (windows-latest)", "conclusion": "success"},
+    {"id": 111740376252, "name": "test (ubuntu-latest)", "conclusion": "success"}
+  ],
+  "scope": "Hosted CPU/native/optional SMT and encrypted SV2 validation; no GPU/live pool proof"
+}

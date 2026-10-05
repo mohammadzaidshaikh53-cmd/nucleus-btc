@@ -1,0 +1,1161 @@
+{
+  "status": "measured",
+  "rows": [
+    {
+      "local_size": 32,
+      "config": {
+        "alt_boolean": true,
+        "device_index": 0,
+        "full_unroll": true,
+        "local_size": 32
+      },
+      "parity": {
+        "headers_tested": 4096,
+        "independent_reference_headers": 16,
+        "scan_cases": 20,
+        "passed": true,
+        "proof_of_universal_equivalence": false
+      },
+      "confidence": {
+        "geometric_speedup": 1.001731335417301,
+        "ci95_low": 0.9939512717654778,
+        "ci95_high": 1.010551616365235,
+        "pairs": 9,
+        "method": "paired bootstrap; timing noise only, not all systematic effects"
+      },
+      "fresh_holdout": null,
+      "raw_pairs": [
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 281018368,
+            "seconds": 0.20301040000049397,
+            "hashes_per_second": 1384256018.4075112,
+            "iterations": 67,
+            "batch_size": 4194304,
+            "fixture_sha256": "5f34a52b8a7e0eea3636dbdc8d4c07b4fa062066610b330839c998a02ea92ba8",
+            "host_and_queue_seconds": 0.02725252000049397,
+            "kernel_seconds": 0.17575788,
+            "kernel_hashes_per_second": 1598894843.2923746
+          },
+          "challenger": {
+            "hashes": 289406976,
+            "seconds": 0.2029236000016681,
+            "hashes_per_second": 1426186880.1737254,
+            "iterations": 69,
+            "batch_size": 4194304,
+            "fixture_sha256": "5f34a52b8a7e0eea3636dbdc8d4c07b4fa062066610b330839c998a02ea92ba8",
+            "host_and_queue_seconds": 0.026331360001668108,
+            "kernel_seconds": 0.17659223999999998,
+            "kernel_hashes_per_second": 1638843111.1129234
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 297795584,
+            "seconds": 0.20264940000197385,
+            "hashes_per_second": 1469511303.7447898,
+            "iterations": 71,
+            "batch_size": 4194304,
+            "fixture_sha256": "81cc3aa05a4b3df51a426f648874bc11765697d010bad60b8444700db8bd9722",
+            "host_and_queue_seconds": 0.027416120001973826,
+            "kernel_seconds": 0.17523328000000002,
+            "kernel_hashes_per_second": 1699423671.1200063
+          },
+          "challenger": {
+            "hashes": 289406976,
+            "seconds": 0.20009329999811598,
+            "hashes_per_second": 1446360153.0022492,
+            "iterations": 69,
+            "batch_size": 4194304,
+            "fixture_sha256": "81cc3aa05a4b3df51a426f648874bc11765697d010bad60b8444700db8bd9722",
+            "host_and_queue_seconds": 0.026322499998115922,
+            "kernel_seconds": 0.17377080000000006,
+            "kernel_hashes_per_second": 1665452285.424248
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 301989888,
+            "seconds": 0.20060930000181543,
+            "hashes_per_second": 1505363350.5389187,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "956a7c80cdf409613040b28cb1a67d68d298490bfc050885444bb10a2e0954d2",
+            "host_and_queue_seconds": 0.025345060001815495,
+            "kernel_seconds": 0.17526423999999993,
+            "kernel_hashes_per_second": 1723054788.5866513
+          },
+          "challenger": {
+            "hashes": 306184192,
+            "seconds": 0.20104240000000573,
+            "hashes_per_second": 1522983171.709009,
+            "iterations": 73,
+            "batch_size": 4194304,
+            "fixture_sha256": "956a7c80cdf409613040b28cb1a67d68d298490bfc050885444bb10a2e0954d2",
+            "host_and_queue_seconds": 0.026219960000005704,
+            "kernel_seconds": 0.17482244000000002,
+            "kernel_hashes_per_second": 1751400975.7557437
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.20270410000011907,
+            "hashes_per_second": 1551881782.3606687,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "bbb8127cffa14bb71b451bc454064c18d34ca37366190825514647d99a2f9aa2",
+            "host_and_queue_seconds": 0.02732386000011902,
+            "kernel_seconds": 0.17538024000000005,
+            "kernel_hashes_per_second": 1793661589.2417521
+          },
+          "challenger": {
+            "hashes": 310378496,
+            "seconds": 0.2020907999976771,
+            "hashes_per_second": 1535836841.674968,
+            "iterations": 74,
+            "batch_size": 4194304,
+            "fixture_sha256": "bbb8127cffa14bb71b451bc454064c18d34ca37366190825514647d99a2f9aa2",
+            "host_and_queue_seconds": 0.027207079997677103,
+            "kernel_seconds": 0.17488372,
+            "kernel_hashes_per_second": 1774770664.7594185
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.200409099998069,
+            "hashes_per_second": 1569653274.2426915,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "64f6efa362d29a76f068bbfae99b63b953af7886cf9f4930d95beb15237f61fe",
+            "host_and_queue_seconds": 0.026621419998068996,
+            "kernel_seconds": 0.17378768,
+            "kernel_hashes_per_second": 1810098391.3244023
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.20254060000297613,
+            "hashes_per_second": 1573842992.4435694,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "64f6efa362d29a76f068bbfae99b63b953af7886cf9f4930d95beb15237f61fe",
+            "host_and_queue_seconds": 0.027789520002976076,
+            "kernel_seconds": 0.17475108000000006,
+            "kernel_hashes_per_second": 1824120938.193915
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 322961408,
+            "seconds": 0.20237149999957182,
+            "hashes_per_second": 1595883847.2842436,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "4b1ea43d5b3a28d52758ebbf5136413c6770f6312b8da881c9219d8f01106216",
+            "host_and_queue_seconds": 0.026783659999571746,
+            "kernel_seconds": 0.17558784000000008,
+            "kernel_hashes_per_second": 1839315342.11025
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.20156959999803803,
+            "hashes_per_second": 1581424500.5353124,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "4b1ea43d5b3a28d52758ebbf5136413c6770f6312b8da881c9219d8f01106216",
+            "host_and_queue_seconds": 0.027771439998037994,
+            "kernel_seconds": 0.17379816000000003,
+            "kernel_hashes_per_second": 1834122432.5965242
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.20051729999977397,
+            "hashes_per_second": 1589723699.652645,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "231464e6db7815e7c36e7e1620b50281db318af20abd4468352f74ca7ad3aa51",
+            "host_and_queue_seconds": 0.02872477999977391,
+            "kernel_seconds": 0.17179252000000006,
+            "kernel_hashes_per_second": 1855535409.8071318
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.20193660000222735,
+            "hashes_per_second": 1599320816.5158656,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "231464e6db7815e7c36e7e1620b50281db318af20abd4468352f74ca7ad3aa51",
+            "host_and_queue_seconds": 0.02845320000222737,
+            "kernel_seconds": 0.17348339999999998,
+            "kernel_hashes_per_second": 1861627152.799634
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 327155712,
+            "seconds": 0.20210150000275462,
+            "hashes_per_second": 1618769341.125825,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "b59dc93bddffd8ccecf6d642815ab567a354ca4ac623a6f7d5d05e2a4504f28d",
+            "host_and_queue_seconds": 0.027946700002754538,
+            "kernel_seconds": 0.17415480000000008,
+            "kernel_hashes_per_second": 1878533993.8950856
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.20048150000002352,
+            "hashes_per_second": 1610928729.0845397,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "b59dc93bddffd8ccecf6d642815ab567a354ca4ac623a6f7d5d05e2a4504f28d",
+            "host_and_queue_seconds": 0.0280926600000235,
+            "kernel_seconds": 0.17238884000000002,
+            "kernel_hashes_per_second": 1873447306.6818013
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 327155712,
+            "seconds": 0.20104089999949792,
+            "hashes_per_second": 1627309229.1211243,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "f76e8cf79ea0fe871f28ec97ad63fa0254213dc269d945138b101f01dec98c1c",
+            "host_and_queue_seconds": 0.02722641999949793,
+            "kernel_seconds": 0.17381448,
+            "kernel_hashes_per_second": 1882212068.8679104
+          },
+          "challenger": {
+            "hashes": 331350016,
+            "seconds": 0.2024740999986534,
+            "hashes_per_second": 1636505686.4171946,
+            "iterations": 79,
+            "batch_size": 4194304,
+            "fixture_sha256": "f76e8cf79ea0fe871f28ec97ad63fa0254213dc269d945138b101f01dec98c1c",
+            "host_and_queue_seconds": 0.02714021999865343,
+            "kernel_seconds": 0.17533387999999997,
+            "kernel_hashes_per_second": 1889823096.3690534
+          }
+        }
+      ],
+      "median_hps": 1573842992.4435694,
+      "metadata": {
+        "timestamp_utc": "2026-10-05T11:28:59.066116+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": {
+          "name": "gfx1102",
+          "vendor": "Advanced Micro Devices, Inc.",
+          "driver": "3679.0 (PAL,LC)",
+          "memory_bytes": 17163091968,
+          "compute_units": 16,
+          "unified_memory": false,
+          "max_work_group": 256,
+          "vendor_id": 4098,
+          "pci_address": null,
+          "uuid": null
+        },
+        "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+        "physical_pci_id": null,
+        "device_uuid": null,
+        "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+        "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+        "compilation_seconds": 2.3408423000000766,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "scope": "workgroup size; actual wavefront mode not measured"
+    },
+    {
+      "local_size": 64,
+      "config": {
+        "alt_boolean": true,
+        "device_index": 0,
+        "full_unroll": true,
+        "local_size": 64
+      },
+      "parity": {
+        "headers_tested": 4096,
+        "independent_reference_headers": 16,
+        "scan_cases": 20,
+        "passed": true,
+        "proof_of_universal_equivalence": false
+      },
+      "confidence": {
+        "geometric_speedup": 1.002933270335852,
+        "ci95_low": 0.9938840348674619,
+        "ci95_high": 1.0127891107477558,
+        "pairs": 9,
+        "method": "paired bootstrap; timing noise only, not all systematic effects"
+      },
+      "fresh_holdout": null,
+      "raw_pairs": [
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 276824064,
+            "seconds": 0.202006600000459,
+            "hashes_per_second": 1370371383.9021645,
+            "iterations": 66,
+            "batch_size": 4194304,
+            "fixture_sha256": "e1cd602db2d539f20003202fc4c9bb87cce5645774b0fc8576a195245e8b7b82",
+            "host_and_queue_seconds": 0.029094640000459027,
+            "kernel_seconds": 0.17291195999999998,
+            "kernel_hashes_per_second": 1600953826.4443944
+          },
+          "challenger": {
+            "hashes": 285212672,
+            "seconds": 0.20104450000144425,
+            "hashes_per_second": 1418654437.1915228,
+            "iterations": 68,
+            "batch_size": 4194304,
+            "fixture_sha256": "e1cd602db2d539f20003202fc4c9bb87cce5645774b0fc8576a195245e8b7b82",
+            "host_and_queue_seconds": 0.02623086000144431,
+            "kernel_seconds": 0.17481363999999994,
+            "kernel_hashes_per_second": 1631524130.4969115
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 297795584,
+            "seconds": 0.20171560000017053,
+            "hashes_per_second": 1476314097.6689372,
+            "iterations": 71,
+            "batch_size": 4194304,
+            "fixture_sha256": "6b5208630713b61ebe9840bcd574616f0f23bcf6d819bb5cef1884b977774b87",
+            "host_and_queue_seconds": 0.0256613200001706,
+            "kernel_seconds": 0.17605427999999992,
+            "kernel_hashes_per_second": 1691498690.0630882
+          },
+          "challenger": {
+            "hashes": 293601280,
+            "seconds": 0.2029861000009987,
+            "hashes_per_second": 1446410764.0796857,
+            "iterations": 70,
+            "batch_size": 4194304,
+            "fixture_sha256": "6b5208630713b61ebe9840bcd574616f0f23bcf6d819bb5cef1884b977774b87",
+            "host_and_queue_seconds": 0.026088660000998742,
+            "kernel_seconds": 0.17689743999999996,
+            "kernel_hashes_per_second": 1659725997.1653636
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 301989888,
+            "seconds": 0.2021366000008129,
+            "hashes_per_second": 1493989153.863207,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "f23921ef43db93e8d5281d49bac57f368475a1379546c644ee68354709a8c3a3",
+            "host_and_queue_seconds": 0.026804120000812892,
+            "kernel_seconds": 0.17533248,
+            "kernel_hashes_per_second": 1722384169.7784688
+          },
+          "challenger": {
+            "hashes": 306184192,
+            "seconds": 0.20203810000020894,
+            "hashes_per_second": 1515477486.670501,
+            "iterations": 73,
+            "batch_size": 4194304,
+            "fixture_sha256": "f23921ef43db93e8d5281d49bac57f368475a1379546c644ee68354709a8c3a3",
+            "host_and_queue_seconds": 0.02688698000020895,
+            "kernel_seconds": 0.17515112,
+            "kernel_hashes_per_second": 1748114382.597154
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 310378496,
+            "seconds": 0.2003179999992426,
+            "hashes_per_second": 1549428888.0738304,
+            "iterations": 74,
+            "batch_size": 4194304,
+            "fixture_sha256": "97de13f2ccb66af17109442682a154dfcd4f13bd45bb81f5ae174e4ee1c1af86",
+            "host_and_queue_seconds": 0.02738567999924263,
+            "kernel_seconds": 0.17293231999999997,
+            "kernel_hashes_per_second": 1794797502.2829742
+          },
+          "challenger": {
+            "hashes": 310378496,
+            "seconds": 0.20240589999957592,
+            "hashes_per_second": 1533445892.6377654,
+            "iterations": 74,
+            "batch_size": 4194304,
+            "fixture_sha256": "97de13f2ccb66af17109442682a154dfcd4f13bd45bb81f5ae174e4ee1c1af86",
+            "host_and_queue_seconds": 0.026901659999575944,
+            "kernel_seconds": 0.17550423999999998,
+            "kernel_hashes_per_second": 1768495712.6961722
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.20150829999693087,
+            "hashes_per_second": 1561091032.006082,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "40b1a2e7f97b56ff6d08cdaa74a09bd04d00072d2741d28c719cf02b091e98f1",
+            "host_and_queue_seconds": 0.02719193999693087,
+            "kernel_seconds": 0.17431636,
+            "kernel_hashes_per_second": 1804608586.365617
+          },
+          "challenger": {
+            "hashes": 314572800,
+            "seconds": 0.2007064999997965,
+            "hashes_per_second": 1567327415.9049106,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "40b1a2e7f97b56ff6d08cdaa74a09bd04d00072d2741d28c719cf02b091e98f1",
+            "host_and_queue_seconds": 0.027755259999796528,
+            "kernel_seconds": 0.17295123999999998,
+            "kernel_hashes_per_second": 1818852527.4522462
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.20103569999992033,
+            "hashes_per_second": 1585624364.2304642,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "110858efc9648435686c63d695a24a27598e1daed8d3bc5d581e5efe9fa79b86",
+            "host_and_queue_seconds": 0.027219419999920336,
+            "kernel_seconds": 0.17381628,
+            "kernel_hashes_per_second": 1833931228.9965014
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.2020806000000448,
+            "hashes_per_second": 1577425561.879415,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "110858efc9648435686c63d695a24a27598e1daed8d3bc5d581e5efe9fa79b86",
+            "host_and_queue_seconds": 0.02750560000004476,
+            "kernel_seconds": 0.17457500000000004,
+            "kernel_hashes_per_second": 1825960784.7629955
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.20042439999815542,
+            "hashes_per_second": 1590460562.700618,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "d232353943f8e9ce7dc548f34de330d14b92b5a2b10f4025379b52d83157873c",
+            "host_and_queue_seconds": 0.027810839998155423,
+            "kernel_seconds": 0.17261356,
+            "kernel_hashes_per_second": 1846709516.9116495
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.20168240000202786,
+            "hashes_per_second": 1601336596.533722,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "d232353943f8e9ce7dc548f34de330d14b92b5a2b10f4025379b52d83157873c",
+            "host_and_queue_seconds": 0.027371960002027906,
+            "kernel_seconds": 0.17431043999999996,
+            "kernel_hashes_per_second": 1852794405.2002857
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 322961408,
+            "seconds": 0.20102309999856516,
+            "hashes_per_second": 1606588536.3538082,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "1a63186a43c314e4657457c68fa42f961ec314e72efd0c0f56a658f0adb8af10",
+            "host_and_queue_seconds": 0.02815109999856516,
+            "kernel_seconds": 0.172872,
+            "kernel_hashes_per_second": 1868211208.292841
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.20071000000098138,
+            "hashes_per_second": 1609094753.6167648,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "1a63186a43c314e4657457c68fa42f961ec314e72efd0c0f56a658f0adb8af10",
+            "host_and_queue_seconds": 0.0275288000009814,
+            "kernel_seconds": 0.17318119999999998,
+            "kernel_hashes_per_second": 1864875679.3462572
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 327155712,
+            "seconds": 0.2015066999992996,
+            "hashes_per_second": 1623547564.4290593,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "5910964a51ccd01c9c4eaeb105205ee68bc3d9f896bf4d7b2e446926233235c2",
+            "host_and_queue_seconds": 0.0274526199992996,
+            "kernel_seconds": 0.17405408,
+            "kernel_hashes_per_second": 1879621046.5161173
+          },
+          "challenger": {
+            "hashes": 327155712,
+            "seconds": 0.2012834000015573,
+            "hashes_per_second": 1625348697.396153,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "5910964a51ccd01c9c4eaeb105205ee68bc3d9f896bf4d7b2e446926233235c2",
+            "host_and_queue_seconds": 0.02755476000155732,
+            "kernel_seconds": 0.17372864,
+            "kernel_hashes_per_second": 1883142077.2073045
+          }
+        }
+      ],
+      "median_hps": 1567327415.9049106,
+      "metadata": {
+        "timestamp_utc": "2026-10-05T11:29:05.828400+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": {
+          "name": "gfx1102",
+          "vendor": "Advanced Micro Devices, Inc.",
+          "driver": "3679.0 (PAL,LC)",
+          "memory_bytes": 17163091968,
+          "compute_units": 16,
+          "unified_memory": false,
+          "max_work_group": 256,
+          "vendor_id": 4098,
+          "pci_address": null,
+          "uuid": null
+        },
+        "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+        "physical_pci_id": null,
+        "device_uuid": null,
+        "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+        "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+        "compilation_seconds": 2.4234446000009484,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "scope": "workgroup size; actual wavefront mode not measured"
+    },
+    {
+      "local_size": 128,
+      "config": {
+        "alt_boolean": true,
+        "device_index": 0,
+        "full_unroll": true,
+        "local_size": 128
+      },
+      "parity": {
+        "headers_tested": 4096,
+        "independent_reference_headers": 16,
+        "scan_cases": 20,
+        "passed": true,
+        "proof_of_universal_equivalence": false
+      },
+      "confidence": {
+        "geometric_speedup": 1.0019510271262166,
+        "ci95_low": 0.9921685251577274,
+        "ci95_high": 1.0136348090685912,
+        "pairs": 9,
+        "method": "paired bootstrap; timing noise only, not all systematic effects"
+      },
+      "fresh_holdout": null,
+      "raw_pairs": [
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 272629760,
+            "seconds": 0.20123719999901368,
+            "hashes_per_second": 1354768203.897372,
+            "iterations": 65,
+            "batch_size": 4194304,
+            "fixture_sha256": "24262fb7856dbed77c7e35c69322556cb1c451572169e8c3327eadfcd1ae40d9",
+            "host_and_queue_seconds": 0.029624559999013672,
+            "kernel_seconds": 0.17161264,
+            "kernel_hashes_per_second": 1588634496.8529124
+          },
+          "challenger": {
+            "hashes": 285212672,
+            "seconds": 0.20162290000007488,
+            "hashes_per_second": 1414584712.3510973,
+            "iterations": 68,
+            "batch_size": 4194304,
+            "fixture_sha256": "24262fb7856dbed77c7e35c69322556cb1c451572169e8c3327eadfcd1ae40d9",
+            "host_and_queue_seconds": 0.025401020000074936,
+            "kernel_seconds": 0.17622187999999994,
+            "kernel_hashes_per_second": 1618486149.393027
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 293601280,
+            "seconds": 0.20044210000196472,
+            "hashes_per_second": 1464768529.1519203,
+            "iterations": 70,
+            "batch_size": 4194304,
+            "fixture_sha256": "de8de8b8d95d4d52d49e47b040e0cd8f5aff427eeb998eeabec46490730de12d",
+            "host_and_queue_seconds": 0.025830700001964607,
+            "kernel_seconds": 0.1746114000000001,
+            "kernel_hashes_per_second": 1681455391.8014507
+          },
+          "challenger": {
+            "hashes": 289406976,
+            "seconds": 0.20131140000012238,
+            "hashes_per_second": 1437608481.1879709,
+            "iterations": 69,
+            "batch_size": 4194304,
+            "fixture_sha256": "de8de8b8d95d4d52d49e47b040e0cd8f5aff427eeb998eeabec46490730de12d",
+            "host_and_queue_seconds": 0.026315440000122398,
+            "kernel_seconds": 0.17499595999999998,
+            "kernel_hashes_per_second": 1653792327.5485904
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 301989888,
+            "seconds": 0.2027736999989429,
+            "hashes_per_second": 1489295150.217086,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "73ab88b2441d8c63d1634e9f258fc02421bbe61dac36bb52f13e902e30f8af4c",
+            "host_and_queue_seconds": 0.026533179998942863,
+            "kernel_seconds": 0.17624052000000004,
+            "kernel_hashes_per_second": 1713509969.2170672
+          },
+          "challenger": {
+            "hashes": 301989888,
+            "seconds": 0.20134089999919524,
+            "hashes_per_second": 1499893404.6743958,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "73ab88b2441d8c63d1634e9f258fc02421bbe61dac36bb52f13e902e30f8af4c",
+            "host_and_queue_seconds": 0.02801949999919523,
+            "kernel_seconds": 0.17332140000000001,
+            "kernel_hashes_per_second": 1742369309.2716765
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 310378496,
+            "seconds": 0.20089499999812688,
+            "hashes_per_second": 1544978700.3304908,
+            "iterations": 74,
+            "batch_size": 4194304,
+            "fixture_sha256": "86f49433f32c31f82f8a4d77e872df16386f6b77ad2bcbc116336f11619b5d21",
+            "host_and_queue_seconds": 0.02674979999812685,
+            "kernel_seconds": 0.17414520000000003,
+            "kernel_hashes_per_second": 1782297163.5164216
+          },
+          "challenger": {
+            "hashes": 306184192,
+            "seconds": 0.20114140000077896,
+            "hashes_per_second": 1522233572.9930003,
+            "iterations": 73,
+            "batch_size": 4194304,
+            "fixture_sha256": "86f49433f32c31f82f8a4d77e872df16386f6b77ad2bcbc116336f11619b5d21",
+            "host_and_queue_seconds": 0.027462320000778973,
+            "kernel_seconds": 0.17367907999999999,
+            "kernel_hashes_per_second": 1762930757.1182437
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.202325700000074,
+            "hashes_per_second": 1554784192.0224912,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "b35b1c182435ddf7e901cda5235fb3dbf299d76ed6f3eac02f01fbc9416eaa31",
+            "host_and_queue_seconds": 0.02733606000007399,
+            "kernel_seconds": 0.17498964,
+            "kernel_hashes_per_second": 1797665278.9273696
+          },
+          "challenger": {
+            "hashes": 314572800,
+            "seconds": 0.20033869999679155,
+            "hashes_per_second": 1570204858.0980008,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "b35b1c182435ddf7e901cda5235fb3dbf299d76ed6f3eac02f01fbc9416eaa31",
+            "host_and_queue_seconds": 0.026789979996791558,
+            "kernel_seconds": 0.17354872,
+            "kernel_hashes_per_second": 1812590723.8036675
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.2012472999995225,
+            "hashes_per_second": 1583957171.106178,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "79e5f86ddb1041be2e6c9e980653bea3ea10677795a8d26218e09d69fe35f9f5",
+            "host_and_queue_seconds": 0.02731993999952248,
+            "kernel_seconds": 0.17392736000000003,
+            "kernel_hashes_per_second": 1832759975.1988413
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.20259060000171303,
+            "hashes_per_second": 1573454563.0315752,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "79e5f86ddb1041be2e6c9e980653bea3ea10677795a8d26218e09d69fe35f9f5",
+            "host_and_queue_seconds": 0.02755680000171301,
+            "kernel_seconds": 0.17503380000000002,
+            "kernel_hashes_per_second": 1821174561.7132232
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.20048990000213962,
+            "hashes_per_second": 1589940959.6024444,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "89bcc39d30b7f92f6c7ff251a1acce71f705acd1626246d8fc89b33168e627a5",
+            "host_and_queue_seconds": 0.02702750000213963,
+            "kernel_seconds": 0.1734624,
+            "kernel_hashes_per_second": 1837672625.3066947
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.20082389999879524,
+            "hashes_per_second": 1587296651.4538972,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "89bcc39d30b7f92f6c7ff251a1acce71f705acd1626246d8fc89b33168e627a5",
+            "host_and_queue_seconds": 0.028064659998795205,
+            "kernel_seconds": 0.17275924000000004,
+            "kernel_hashes_per_second": 1845152270.8713
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 322961408,
+            "seconds": 0.20058889999927487,
+            "hashes_per_second": 1610066200.0797029,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "4edf2dd57e48e8d35540afd0504826145bab00e5d55d7b09e90f4340cf3031d8",
+            "host_and_queue_seconds": 0.02748105999927483,
+            "kernel_seconds": 0.17310784000000004,
+            "kernel_hashes_per_second": 1865665980.2352102
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.2012829999985115,
+            "hashes_per_second": 1604514082.1747901,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "4edf2dd57e48e8d35540afd0504826145bab00e5d55d7b09e90f4340cf3031d8",
+            "host_and_queue_seconds": 0.02752403999851158,
+            "kernel_seconds": 0.17375895999999993,
+            "kernel_hashes_per_second": 1858674844.7389426
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 322961408,
+            "seconds": 0.20009059999938472,
+            "hashes_per_second": 1614075863.6387372,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "9e2590b4b95e38fdda1da344f3787a820c4791d5385109f88c7a3b6176024ca8",
+            "host_and_queue_seconds": 0.0276445599993847,
+            "kernel_seconds": 0.17244604000000002,
+            "kernel_hashes_per_second": 1872825888.02851
+          },
+          "challenger": {
+            "hashes": 327155712,
+            "seconds": 0.20214360000318266,
+            "hashes_per_second": 1618432203.6158903,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "9e2590b4b95e38fdda1da344f3787a820c4791d5385109f88c7a3b6176024ca8",
+            "host_and_queue_seconds": 0.027866040003182657,
+            "kernel_seconds": 0.17427756,
+            "kernel_hashes_per_second": 1877210766.549635
+          }
+        }
+      ],
+      "median_hps": 1570204858.0980008,
+      "metadata": {
+        "timestamp_utc": "2026-10-05T11:29:12.493876+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": {
+          "name": "gfx1102",
+          "vendor": "Advanced Micro Devices, Inc.",
+          "driver": "3679.0 (PAL,LC)",
+          "memory_bytes": 17163091968,
+          "compute_units": 16,
+          "unified_memory": false,
+          "max_work_group": 256,
+          "vendor_id": 4098,
+          "pci_address": null,
+          "uuid": null
+        },
+        "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+        "physical_pci_id": null,
+        "device_uuid": null,
+        "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+        "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+        "compilation_seconds": 2.3922695999972348,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "scope": "workgroup size; actual wavefront mode not measured"
+    },
+    {
+      "local_size": 256,
+      "config": {
+        "alt_boolean": true,
+        "device_index": 0,
+        "full_unroll": true,
+        "local_size": 256
+      },
+      "parity": {
+        "headers_tested": 4096,
+        "independent_reference_headers": 16,
+        "scan_cases": 20,
+        "passed": true,
+        "proof_of_universal_equivalence": false
+      },
+      "confidence": {
+        "geometric_speedup": 1.0023162384061548,
+        "ci95_low": 0.9913368248221737,
+        "ci95_high": 1.0148921413629235,
+        "pairs": 9,
+        "method": "paired bootstrap; timing noise only, not all systematic effects"
+      },
+      "fresh_holdout": null,
+      "raw_pairs": [
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 272629760,
+            "seconds": 0.20241769999847747,
+            "hashes_per_second": 1346867195.9124653,
+            "iterations": 65,
+            "batch_size": 4194304,
+            "fixture_sha256": "1b626c5531cb0eddb903e4991c4862984a40a3ebf32bc1e31a314834f76f6442",
+            "host_and_queue_seconds": 0.03167113999847748,
+            "kernel_seconds": 0.17074656,
+            "kernel_hashes_per_second": 1596692548.3008268
+          },
+          "challenger": {
+            "hashes": 285212672,
+            "seconds": 0.20244069999898784,
+            "hashes_per_second": 1408870212.370467,
+            "iterations": 68,
+            "batch_size": 4194304,
+            "fixture_sha256": "1b626c5531cb0eddb903e4991c4862984a40a3ebf32bc1e31a314834f76f6442",
+            "host_and_queue_seconds": 0.027174179998987885,
+            "kernel_seconds": 0.17526651999999995,
+            "kernel_hashes_per_second": 1627308353.015739
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 293601280,
+            "seconds": 0.20011389999854146,
+            "hashes_per_second": 1467170846.2137809,
+            "iterations": 70,
+            "batch_size": 4194304,
+            "fixture_sha256": "5770b943cac23b04298c202ebe2bac2f40e95d0ea3abfb736f84b5b0628ce954",
+            "host_and_queue_seconds": 0.02584733999854147,
+            "kernel_seconds": 0.17426656,
+            "kernel_hashes_per_second": 1684782668.5739365
+          },
+          "challenger": {
+            "hashes": 289406976,
+            "seconds": 0.2026170999997703,
+            "hashes_per_second": 1428344280.9137437,
+            "iterations": 69,
+            "batch_size": 4194304,
+            "fixture_sha256": "5770b943cac23b04298c202ebe2bac2f40e95d0ea3abfb736f84b5b0628ce954",
+            "host_and_queue_seconds": 0.028374419999770223,
+            "kernel_seconds": 0.17424268000000007,
+            "kernel_hashes_per_second": 1660941946.026082
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 301989888,
+            "seconds": 0.2026635999973223,
+            "hashes_per_second": 1490104231.8600383,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "6915a6db7e72e5a5ba9bdd1c1becae1a5f629854dbb913f8b2428e84f5ba454b",
+            "host_and_queue_seconds": 0.026023719997322364,
+            "kernel_seconds": 0.17663987999999994,
+            "kernel_hashes_per_second": 1709635944.046158
+          },
+          "challenger": {
+            "hashes": 301989888,
+            "seconds": 0.20020870000007562,
+            "hashes_per_second": 1508375450.217128,
+            "iterations": 72,
+            "batch_size": 4194304,
+            "fixture_sha256": "6915a6db7e72e5a5ba9bdd1c1becae1a5f629854dbb913f8b2428e84f5ba454b",
+            "host_and_queue_seconds": 0.026182180000075633,
+            "kernel_seconds": 0.17402652,
+            "kernel_hashes_per_second": 1735309583.849634
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 310378496,
+            "seconds": 0.20149899999887566,
+            "hashes_per_second": 1540347574.934525,
+            "iterations": 74,
+            "batch_size": 4194304,
+            "fixture_sha256": "1c4b8e31382b2ee20ad85167dd82571f5f246369c95ada9369a3786cb05ed4bc",
+            "host_and_queue_seconds": 0.027091919998875613,
+            "kernel_seconds": 0.17440708000000005,
+            "kernel_hashes_per_second": 1779620964.928717
+          },
+          "challenger": {
+            "hashes": 306184192,
+            "seconds": 0.20104470000296715,
+            "hashes_per_second": 1522965748.390687,
+            "iterations": 73,
+            "batch_size": 4194304,
+            "fixture_sha256": "1c4b8e31382b2ee20ad85167dd82571f5f246369c95ada9369a3786cb05ed4bc",
+            "host_and_queue_seconds": 0.02707058000296711,
+            "kernel_seconds": 0.17397412000000004,
+            "kernel_hashes_per_second": 1759941030.3095653
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.20164809999914723,
+            "hashes_per_second": 1560008747.9194217,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "4ccc48667cff8ff40748658fa8530c72ecf0a743580e45cb6f935cdc665efdb1",
+            "host_and_queue_seconds": 0.026648459999147223,
+            "kernel_seconds": 0.17499964,
+            "kernel_hashes_per_second": 1797562554.9858272
+          },
+          "challenger": {
+            "hashes": 314572800,
+            "seconds": 0.2015482000024349,
+            "hashes_per_second": 1560781986.622553,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "4ccc48667cff8ff40748658fa8530c72ecf0a743580e45cb6f935cdc665efdb1",
+            "host_and_queue_seconds": 0.027960320002434924,
+            "kernel_seconds": 0.17358787999999997,
+            "kernel_hashes_per_second": 1812181818.223715
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 314572800,
+            "seconds": 0.20036350000009406,
+            "hashes_per_second": 1570010505.9047797,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "c330f903b2dbf5477a82856da8f68ea8bc4c7de1e09c5e5353d13d96350e878e",
+            "host_and_queue_seconds": 0.028779780000094096,
+            "kernel_seconds": 0.17158371999999997,
+            "kernel_hashes_per_second": 1833348758.262148
+          },
+          "challenger": {
+            "hashes": 314572800,
+            "seconds": 0.20033360000161338,
+            "hashes_per_second": 1570244831.6082106,
+            "iterations": 75,
+            "batch_size": 4194304,
+            "fixture_sha256": "c330f903b2dbf5477a82856da8f68ea8bc4c7de1e09c5e5353d13d96350e878e",
+            "host_and_queue_seconds": 0.027526200001613432,
+            "kernel_seconds": 0.17280739999999994,
+            "kernel_hashes_per_second": 1820366488.935081
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 318767104,
+            "seconds": 0.20223120000082417,
+            "hashes_per_second": 1576250865.339774,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "6d633e2835321d794a00df3074c5af1cb90e75c80d8125aa70b1fd24aa7abbc5",
+            "host_and_queue_seconds": 0.029289240000824168,
+            "kernel_seconds": 0.17294196,
+            "kernel_hashes_per_second": 1843202794.7410796
+          },
+          "challenger": {
+            "hashes": 318767104,
+            "seconds": 0.20043340000120224,
+            "hashes_per_second": 1590389146.7095203,
+            "iterations": 76,
+            "batch_size": 4194304,
+            "fixture_sha256": "6d633e2835321d794a00df3074c5af1cb90e75c80d8125aa70b1fd24aa7abbc5",
+            "host_and_queue_seconds": 0.0281667600012023,
+            "kernel_seconds": 0.17226663999999994,
+            "kernel_hashes_per_second": 1850428521.7381618
+          }
+        },
+        {
+          "order": "BA",
+          "champion": {
+            "hashes": 322961408,
+            "seconds": 0.20096810000177356,
+            "hashes_per_second": 1607028219.8873842,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "0911a027b29c1c49e7e813478a419407b3b3ec6b1623a2ccdeb6938a744622de",
+            "host_and_queue_seconds": 0.027800980001773556,
+            "kernel_seconds": 0.17316712,
+            "kernel_hashes_per_second": 1865027310.034376
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.2013753999999608,
+            "hashes_per_second": 1603777859.6594365,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "0911a027b29c1c49e7e813478a419407b3b3ec6b1623a2ccdeb6938a744622de",
+            "host_and_queue_seconds": 0.027552039999960726,
+            "kernel_seconds": 0.17382336000000007,
+            "kernel_hashes_per_second": 1857986222.335133
+          }
+        },
+        {
+          "order": "AB",
+          "champion": {
+            "hashes": 327155712,
+            "seconds": 0.2019845999966492,
+            "hashes_per_second": 1619706215.2531793,
+            "iterations": 78,
+            "batch_size": 4194304,
+            "fixture_sha256": "155bfe236046d4b11d4f81d60f01497fea4e3e97cc9dc6bfee8229111876014e",
+            "host_and_queue_seconds": 0.02732627999664916,
+            "kernel_seconds": 0.17465832000000003,
+            "kernel_hashes_per_second": 1873118394.8179505
+          },
+          "challenger": {
+            "hashes": 322961408,
+            "seconds": 0.20054549999986193,
+            "hashes_per_second": 1610414634.0866404,
+            "iterations": 77,
+            "batch_size": 4194304,
+            "fixture_sha256": "155bfe236046d4b11d4f81d60f01497fea4e3e97cc9dc6bfee8229111876014e",
+            "host_and_queue_seconds": 0.028181219999862034,
+            "kernel_seconds": 0.1723642799999999,
+            "kernel_hashes_per_second": 1873714252.1640806
+          }
+        }
+      ],
+      "median_hps": 1560781986.622553,
+      "metadata": {
+        "timestamp_utc": "2026-10-05T11:29:19.161970+00:00",
+        "python": "3.12.14",
+        "os": "Windows-11-10.0.26200-SP0",
+        "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+        "device": {
+          "name": "gfx1102",
+          "vendor": "Advanced Micro Devices, Inc.",
+          "driver": "3679.0 (PAL,LC)",
+          "memory_bytes": 17163091968,
+          "compute_units": 16,
+          "unified_memory": false,
+          "max_work_group": 256,
+          "vendor_id": 4098,
+          "pci_address": null,
+          "uuid": null
+        },
+        "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+        "physical_pci_id": null,
+        "device_uuid": null,
+        "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+        "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+        "compilation_seconds": 2.3939585000007355,
+        "gpu_clock_mhz": null,
+        "gpu_temperature_c": null,
+        "power_watts": null,
+        "joules_per_terahash": null,
+        "sensors": "not available; no TDP inference"
+      },
+      "scope": "workgroup size; actual wavefront mode not measured"
+    }
+  ],
+  "champion_config": {
+    "alt_boolean": true,
+    "device_index": 0,
+    "full_unroll": true,
+    "local_size": 64
+  },
+  "production_promoted": false,
+  "environment": {
+    "hip_compiler": null,
+    "HIP_PATH_present": false,
+    "hip_status": "unavailable",
+    "matrix_hardware_status": "requires optional HIP/rocWMMA compiler and headers",
+    "pool_config_exists": false,
+    "power_watts": null
+  },
+  "matrix": {
+    "status": "DEAD portable proxy",
+    "K": 64,
+    "ordinary_seconds": 3.5300003219163045e-05,
+    "matrix_total_seconds": 0.004598499999701744,
+    "effective_speedup": 0.0076764169232255266,
+    "exact": true,
+    "conversion_cost_included": true,
+    "hardware_WMMA_executed": false,
+    "numerics": "0/1 inputs, dot product <=3, integer-exact float sum; reduce mod 2"
+  },
+  "algorithmic_alpha": 1,
+  "conventional_optimization": true
+}

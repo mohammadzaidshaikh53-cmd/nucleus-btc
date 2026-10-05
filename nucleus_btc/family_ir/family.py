@@ -17,7 +17,7 @@ class HeaderFamily:
     merkle_branch: tuple[bytes, ...] = ()
 
     def __post_init__(self):
-        if self.width > 320: raise ValueError("Header workspace exceeds supported dimension count")
+        if self.width > 352: raise ValueError("Header workspace exceeds supported dimension count")
         seen = {}
         for d in self.dimensions:
             mask = sum(1 << b for b in d.bits)
@@ -71,6 +71,7 @@ class HeaderFamily:
     def construct(self):
         if self.count > 1<<20: raise ValueError("Materialization budget exceeded; split the conceptual workspace first")
         t = perf_counter(); headers = [self.candidate(i).serialize() for i in range(self.count)]
+        if len(set(headers))!=len(headers): raise ValueError("Derived header alias detected; explicit duplicate accounting required")
         return headers, perf_counter() - t
 
     def hierarchy(self):

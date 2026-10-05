@@ -1,5 +1,20 @@
 # Verified boundary and runnable frontier
 
+## Phase-II decision
+
+**NO LARGE ADVANTAGE FOUND.** New exact mechanisms and full-hash scaling are in
+[PHASE-II-RESULTS.md](PHASE-II-RESULTS.md). Best descriptive alpha=0.98;
+output-residue beta=1. Carry-only beta=0.06271 does not reduce total work.
+Conditional affine descriptors lose their advantage by round 4. Guided
+nonce-bit-11 splitting costs more than unsplit work. Prefix rejection is exact
+but F≈1020 versus the GPU; useful rho=0, useful Q=0. UNKNOWN retains work.
+
+Next mechanism: signed carry relations at a backward middle cut, with explicit
+schedule constraints and independently verified projection proof. The finite
+cone/MITM runners are available; a useful relation remains unresolved. HIP/WMMA
+compilation, external pool interoperability and power need external setup.
+Do not repeat the historical exhausted branches below unchanged.
+
 The engineering checkpoint provides exact oracle/native/OpenCL execution,
 generated word IR, validated mutation/crossover, protected champion, isolated
 resumable supervision, bounded knowledge, adaptive economic splitting,

@@ -1,5 +1,14 @@
 # Validation gates
 
+Phase-II local release: 90 tests, 89 passed, optional HIP skipped. New gates
+include exhaustive FamilyWord reconstruction, full SHA256d family parity,
+interior split coverage, executable genome transitions, independently reproduced
+solver UNSAT cones, inclusive little-endian early target comparisons, SV2 mask
+and exhaustion accounting, bounded worker payloads and saturation completion.
+Family scaling independently checks every digest through K=16384. Local-size
+timings have nine alternating fresh pairs each. Hosted CI covers CPU/native/
+encrypted-protocol paths; GPU and optional HIP hardware remain separate.
+
 The immutable reference is `nucleus_btc/oracle/sha256.py`; hashlib supplies an
 additional independent implementation. Generated candidates do not edit either.
 

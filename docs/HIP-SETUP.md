@@ -20,6 +20,17 @@ Copying the resulting DLL into the normal build directory is optional; run
 independent digest parity before selecting HIP. The current project provides
 HIP digest hashing, not a production HIP scan implementation.
 
+If the installed Windows CMake/generator does not support HIP language, use the
+SDK compiler directly in an SDK/Visual Studio developer terminal instead:
+
+```powershell
+hipcc.bat --offload-arch=gfx1102 -std=c++20 -O3 -shared native/hip/baseline.hip -o build/nucleus_hip.dll
+hipcc.bat --offload-arch=gfx1102 -std=c++20 -O3 -I C:/path/to/rocWMMA/library/include native/hip/family_matrix.hip -o build/nucleus-family-matrix.exe
+```
+
+Both routes are unverified in the present SDK-free environment. Record the
+compiler/runtime versions and perform parity before any timing or backend switch.
+
 The bounded matrix probe maps only Sigma1's exact GF(2) transform. Binary 0/1
 inputs are represented exactly in half precision, dot products are at most 3,
 and float accumulators contain exact integers. Parity is taken only afterward.

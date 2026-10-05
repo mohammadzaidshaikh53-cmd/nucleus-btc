@@ -4,6 +4,8 @@ from .cost import fitness
 from ..gpu.backend import get_backend
 
 def prefix_experiment(family,target=1):
+    if len(family.dimensions)!=1 or family.dimensions[0].kind.value!='nonce' or family.dimensions[0].bits!=tuple(range(family.width)) or family.header.nonce!=0:
+        raise ValueError('Paired scan baseline requires the same zero-based contiguous nonce family')
     raw=family.header.serialize()
     with get_backend('opencl',full_unroll=True,alt_boolean=True,local_size=64) as engine:
         engine.scan(raw,0,family.count,target);t=perf_counter();result=engine.scan(raw,0,family.count,target)

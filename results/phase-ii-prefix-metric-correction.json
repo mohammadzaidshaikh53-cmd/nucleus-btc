@@ -1,0 +1,32 @@
+{
+  "source_path": "results\\phase-ii-structure-probes-03.json",
+  "source_sha256": "3ae970db63188566a5a84b26b619c1245732013f5533ab53c580322a1e84ba17",
+  "correction": "Earlier Q was rho/F; timings and rejection observations unchanged",
+  "corrected_metrics": {
+    "status": "DEAD",
+    "failure_cause": "proof_cost_dominated",
+    "K": 256,
+    "target": "1",
+    "proof_seconds": 0.8534979000032763,
+    "independent_audit_seconds": 0.001881100000900915,
+    "ordinary_gpu_seconds": 0.0008364000022993423,
+    "rho_exact": 1.0,
+    "useful_rho": 0.0,
+    "saved_compression_rounds": 768,
+    "saved_feedforward_additions_net": 1792,
+    "fully_retained_on_UNKNOWN": true,
+    "eligible": true,
+    "effective_speedup": 0.0009778121771697199,
+    "F": 1020.4422497093858,
+    "rho": 1,
+    "pruning_speedup": 0.000979967264472627,
+    "construction_seconds": 0.0009771000004548114,
+    "transition_seconds": 0.0,
+    "hunt_seconds": 0,
+    "total_cost_seconds": 0.8553790000041772,
+    "all_costs_included": true,
+    "rho_per_F": 0.000979967264472627,
+    "Q": null,
+    "Q_scope": "existing contract -log10(1-rho); all-rejected finite-family Q undefined"
+  }
+}

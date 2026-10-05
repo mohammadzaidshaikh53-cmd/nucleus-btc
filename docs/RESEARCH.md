@@ -1,5 +1,19 @@
 # Research contract
 
+Phase-II measurements and kill decisions are in
+[PHASE-II-RESULTS.md](PHASE-II-RESULTS.md). FamilyIR is separate from scalar IR.
+Carry signatures alone compress but output residues remain linear; conditional
+affine factoring loses its early advantage by round 4. Probe costs exceed
+ordinary GPU hashing. Exact prefix rho=1 is not cheap pruning: useful rho=0,
+useful Q=0, F≈1020. Earlier raw rho/F fields mislabeled Q are corrected by an
+append-only provenance record; Q continues to mean -log10(1-rho).
+
+The selector tracks saturation/novelty/failure diversity and removes exhausted
+classes from exploration. Old scalar, BDD and generic full-SHA SAT experiments
+remain explicit commands but are not automatically reopened by Phase II.
+Next distinct hypothesis: signed carry-constrained backward middle cuts;
+independently verify a necessary relation before authorizing any rejection.
+
 Production computes full exact Bitcoin SHA-256d. Reduced-round, symbolic,
 carry, SAT and algebra experiments are research tools. Midstate reuse,
 unrolling, Boolean identities, occupancy and batching are ordinary engineering.

@@ -7,7 +7,7 @@ Cost extraction uses measured lowering, conversion, carry and register proxies.
 from time import perf_counter
 from .factor import factored_boolean,blocked_sum
 from .word import FamilyWord
-from ..oracle.sha256 import rotr
+from ..oracle.sha256 import rotr,K
 
 class FamilyEGraph:
     def __init__(self,node_budget=32):self.node_budget=node_budget;self.classes={};self.nodes=[]
@@ -44,3 +44,25 @@ def saturate(words,node_budget=32):
                      'cost_model_choices':{model:graph.extract(class_id,model)['name'] for model in ('opencl_scalar','wave32','family_symbolic','carry_residual','register_pressure')}})
     return {'status':'measured','rows':rows,'nodes':len(graph.nodes),'bounded':True,
             'family_equivalence_exhaustive':True,'whole_hash_speedup_demonstrated':False}
+
+def saturate_and_evaluate(family):
+    from .state import evaluate_family
+    sample={}
+    def capture(r,name,word,metric):
+        if r==3 and name in ('h','e','f','g'):sample['previous_'+name]=word
+        if r==4 and name in ('W','Sigma1','Ch'):sample[name]=word
+    ds0,baseline=evaluate_family(family,observer=capture)
+    words=(sample['previous_h'],sample['Sigma1'],sample['Ch'],FamilyWord((K[4],)*family.count),sample['W'])
+    local=saturate(words)
+    nodes=[m for row in local['rows'] for m in row['members']]
+    block=min((n for n in nodes if n['name'].startswith('blocked')),key=lambda n:n['seconds'])
+    ch=min((n for n in nodes if n['name'].startswith('Ch-')),key=lambda n:n['seconds'])
+    maj=min((n for n in nodes if n['name'].startswith('Maj-')),key=lambda n:n['seconds'])
+    forms={'Ch':'select' if ch['name']=='Ch-select' else 'canonical','Maj':'factored' if maj['name']=='Maj-factored' else 'canonical'}
+    ds1,changed=evaluate_family(family,block_bits=int(block['name'].rsplit('-',1)[1]),boolean_forms=forms)
+    if ds0!=ds1 or ds1!=[family.candidate(i).digest() for i in range(family.count)]:raise AssertionError('Extracted family cone failed downstream full-hash audit')
+    local.update({'downstream_baseline_seconds':baseline['total_seconds'],'downstream_extracted_seconds':changed['total_seconds'],
+                  'downstream_effective_speedup':baseline['total_seconds']/changed['total_seconds'],
+                  'extracted_boolean_forms':forms,'extracted_block_bits':int(block['name'].rsplit('-',1)[1]),
+                  'full_sha256d_audited':True,'scope':'bounded measured family cone; no comparison victory over production GPU'})
+    return local

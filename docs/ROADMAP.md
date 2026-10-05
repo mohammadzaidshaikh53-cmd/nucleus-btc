@@ -1,5 +1,14 @@
 # Step-by-step development and acceptance gates
 
+Phase II is locally evaluated: exact FamilyIR; dependency/rank/schedule/carry
+frontier; 4/8/16-bit blocked factoring; executable genomes; strided splits;
+saturation-aware allocation; differential/conditional/MITM/solver probes;
+SV2 version workspace; full-family scaling and explicit local-size comparison.
+Outcome B: **NO LARGE ADVANTAGE FOUND**. See
+[Phase-II results](PHASE-II-RESULTS.md). Efficient compiled FamilyIR lowering,
+a useful signed middle-cut relation, external pool interoperability, measured
+power and optional HIP/WMMA compilation remain open; none is claimed complete.
+
 | Stage | Implementation and current gate | Remaining evidence |
 | --- | --- | --- |
 | 0: independent oracle | Pure Python SHA, known vectors, padding boundaries, genesis and target semantics pass | Continue differential validation when code changes |

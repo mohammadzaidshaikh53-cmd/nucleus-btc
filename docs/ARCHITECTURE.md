@@ -1,5 +1,13 @@
 # Architecture and trust boundaries
 
+FamilyIR lives in `nucleus_btc/family_ir/`, independently of scalar IR. It
+constructs only explicitly permitted finite header workspaces, preserves exact
+uint32 values across representations and maps strided candidate indices
+deterministically. Conceptual large workspaces require splitting before bounded
+materialization. Carry transfer tables and conditional models are research
+representations, not production replacements. Unknown projections retain work;
+UNSAT cones require independent reproduction. See the measured Phase-II report.
+
 ```text
                     pool job / supplied header / fixture
                                    |

@@ -1,0 +1,403 @@
+{
+  "schema": 1,
+  "status": "checkpointed",
+  "completed_this_run": 7,
+  "total_completed": 39,
+  "next_kind": "egraph",
+  "pending": null,
+  "history": [
+    {
+      "attempts": 1,
+      "id": "37c9d999fcfcf40eeacc22fa85443dc8cc772babd34bb4452d168e9e1971f164",
+      "kind": "benchmark",
+      "status": "measured"
+    },
+    {
+      "attempts": 1,
+      "id": "4bb77d14646ee25b701ea98c205a3cd843a9241d12169d2bb498374c1d1eed0e",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "f52286e599cced1fe852bb80e97d07a7952204f7c58a7acf5a3069ed37dc7b62",
+      "kind": "representation",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "0d9d3d9fd692097dc6fda41a2ed00f7a4209aec5a2f014d4cccc638e38e3db8e",
+      "kind": "sat",
+      "status": "UNKNOWN"
+    },
+    {
+      "attempts": 1,
+      "id": "6084ce8777b3553715c097bf8aa2bd393363ea239f8a99d443c5581f11493eb7",
+      "kind": "family",
+      "status": "exact_family_solved"
+    },
+    {
+      "attempts": 1,
+      "id": "3f5729ffed0db2b5a7586d8fb5dbde629debb9169c1b4ef70509fdd492bed440",
+      "kind": "structural",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "f35672ba18bdaf5dfbccea56b475eab39a0040deaafe20458553b7de6b79ca86",
+      "kind": "generated",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "d6091f3d87181d5a166d217d3b501f8c60fcc01e4455e6ce4e949d98a48349a6",
+      "kind": "regression",
+      "status": "exactness_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "1919cff84939f1de17810bf711da1ceb58ffaf22d3d54179f7c7e73ce850eddb",
+      "kind": "benchmark",
+      "status": "measured"
+    },
+    {
+      "attempts": 1,
+      "id": "7b2e48dd25b89cdbdae29e21c4d210d45ed0e60e8885fcc896aaf2d3504bd160",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "f0b07d426aed9a3a04cbf8d479e0fcee71762acc192f8c381cbd2df2191498b5",
+      "kind": "representation",
+      "status": "resource_budget_collapsed"
+    },
+    {
+      "attempts": 1,
+      "id": "9afc609b6d65fdb72d2c363ec7230f98b20b7b3d808136502ed30a770bff6181",
+      "kind": "sat",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "e0b83953ba0bad53f5f6f6fdef1cc73b0ccf052c8115d4e1be4830efa24740d2",
+      "kind": "family",
+      "status": "exact_family_solved"
+    },
+    {
+      "attempts": 1,
+      "id": "595efca0e2be9f8d8636ce04da5e216af0a5299978844109a34935d83d16edd8",
+      "kind": "structural",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "9c7a2165cc71ad7c5e158ba1a0362785ba8c699037ebf8dafe9ccb1b562e8857",
+      "kind": "generated",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "9f5e91ec10bf5c1434e8d4009e020e14296c49664ae050482618f637fa3bf8ce",
+      "kind": "regression",
+      "status": "exactness_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "97a1a9c20b7e3b97251bd78e1c72c2cd8436c1930e47512edd565eeef9ce6550",
+      "kind": "benchmark",
+      "status": "measured"
+    },
+    {
+      "attempts": 1,
+      "id": "33ca625316ed4d3e6b5cc7a58176ea6a4af8b8b3375decd119f87f295255b985",
+      "kind": "carry",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "8103e692a5020aef11466fa023cbe749ee71a31eb1692763f97fc93a03ab35b5",
+      "kind": "representation",
+      "status": "full_sha256d_parity_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "edc951959bdcdf8c48106c23434d9e87a2ec828525cb49cde59a3f63a7ffb57f",
+      "kind": "sat",
+      "status": "UNKNOWN"
+    },
+    {
+      "attempts": 1,
+      "id": "159ddc3b67ad17f4eb8ab0512b2d1f8dea210e6d6d31cbf44826b97321377f97",
+      "kind": "family",
+      "status": "exact_family_solved"
+    },
+    {
+      "attempts": 1,
+      "id": "46cd34c9eb3777eaa8391e01773a2e092d34d78097539d1bc8a6a75b14b009d3",
+      "kind": "structural",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "82d8318bfe9ee99c515e0c1b44d5094d24438a9e2c74e7739b1f82a5c4d24343",
+      "kind": "generated",
+      "status": "economically_dominated"
+    },
+    {
+      "attempts": 1,
+      "id": "94931cbbbe134a3bdb5b24727fe128463dffcfc1a985a647efc5886474605d1d",
+      "kind": "regression",
+      "status": "exactness_passed"
+    },
+    {
+      "attempts": 1,
+      "id": "522205c1864739c138eaf20f6a7488b0e9c57fe7d3fdaa6465a6662f7c36bae5",
+      "kind": "benchmark",
+      "status": "measured"
+    },
+    {
+      "id": "79297dc59bbb52e440519de436a5a7f265cf5d7837dac08e1f99bb65ba7790f5",
+      "kind": "family-ir",
+      "status": "measured",
+      "attempts": 1
+    },
+    {
+      "id": "238b49ac2217f552eb9141b963ef92badc1c9d081dc72c2db4f89fbd9ffc7d2a",
+      "kind": "carry-factor",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "80d6bbcf4e796b38dc9eaa7722dbec822ef241c899387c4740ff577d2e736be0",
+      "kind": "program",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "2426f1b2f77c318465d25d59f0cbd86fedc47eae94ba0b4d89d432f169d2aed0",
+      "kind": "differential",
+      "status": "failed",
+      "attempts": 1
+    },
+    {
+      "id": "878a76aee37682a525829160b3edf1435067f2441d1bcb3e1575bb6135d1018c",
+      "kind": "mitm",
+      "status": "INCONCLUSIVE",
+      "attempts": 1
+    },
+    {
+      "id": "72a4595f1c5636326ea734056a1c8913f8f988b111c4e3ef98c62f467f7ccfde",
+      "kind": "cone",
+      "status": "UNSAT",
+      "attempts": 1
+    },
+    {
+      "id": "a8a832db7719e3bed1ccf2864a1f87478c8d75be762626ee874d3efc3b86721c",
+      "kind": "egraph",
+      "status": "measured",
+      "attempts": 1
+    }
+  ],
+  "source_sha256": "a5c6ab2a083d1a9ff31e55450bf650db2e1e68f0652c68a423780a2fe6c387f5",
+  "storage_bytes": 1009188,
+  "production_champion_modified": false,
+  "selector_estimates": {
+    "family-ir": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 1.0469999999986612,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.36287038731545757
+    },
+    "carry-factor": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.4529999999995198,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.5516654277998244
+    },
+    "program": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.31300000000010186,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.6636707850862508
+    },
+    "differential": {
+      "P_valid": 0.3333333333333333,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.35900000000037835,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.30984725225888654
+    },
+    "mitm": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.43800000000010186,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.5610322334561038
+    },
+    "cone": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.2029999999995198,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.824094185922813
+    },
+    "egraph": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 0.125,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 1.050194797686014
+    },
+    "generated": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 8.367250000000297,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.0032450484722748793
+    },
+    "family": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 3.1132500000001073,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.005319925648123418
+    },
+    "carry": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 0.12499999999982947,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.026549573844099145
+    },
+    "structural": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 3.4297499999996717,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.005068521914702974
+    },
+    "sat": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 1.9884999999999309,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.005325246925476121
+    },
+    "representation": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 0.20324999999991178,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.016656635067732857
+    },
+    "regression": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 11.023749999999836,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.0028271436967465544
+    },
+    "benchmark": {
+      "P_valid": 0.8333333333333334,
+      "P_better": 0.16666666666666666,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.45056120886630463,
+      "expected_cost": 3.449000000000183,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.005054357581660517
+    }
+  },
+  "live_pool_acceptance": false
+}

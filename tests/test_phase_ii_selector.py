@@ -21,3 +21,14 @@ class PhaseIISelectorTests(unittest.TestCase):
         result=worker_experiment('differential')
         self.assertLess(len(json.dumps(result,indent=2).encode()),65536)
         self.assertTrue(result['full_sha256d_audited'])
+
+    def test_exhausted_branch_is_removed_from_exploration_floor(self):
+        selector=ExperimentSelector()
+        selector.observe('carry-factor',{'status':'DEAD','branch_exhausted':True},.01)
+        self.assertEqual(selector.estimates('carry-factor')['saturation'],1.)
+        for cursor in range(32):self.assertNotEqual(selector.select(cursor),'carry-factor')
+
+    def test_complete_phase_does_not_reopen_old_scalar_or_bdd_branches(self):
+        selector=ExperimentSelector()
+        for kind in PHASE_II:selector.observe(kind,{'status':'DEAD','branch_exhausted':True},.1)
+        for cursor in range(32):self.assertEqual(selector.select(cursor),'frontier-complete')

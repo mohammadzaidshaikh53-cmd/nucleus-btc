@@ -79,6 +79,7 @@ class Supervisor:
                 while not self.stop and (forever or completed<steps) and monotonic()-started<seconds:
                     if state["pending"] is None:
                         cursor=state["cursor"];kind=selector.select(cursor)
+                        if kind=='frontier-complete':break
                         config={"kind":kind,"generation":selector.statistics.get(kind,{}).get("trials",0),"source_sha256":fingerprint}
                         if kind=="family":config["split_policy"]=store.get_state("split_policy",{})
                         ident=sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
@@ -118,7 +119,7 @@ class Supervisor:
                             promotions+=1
                         except Exception as error:
                             category,_=classify(error);result={"status":"failed","failure_class":category,"reason":str(error)[:2048]}
-                    kind="DEAD" if result.get("status") in ("failed","resource_budget_collapsed","economic_budget_collapsed","economically_dominated") else "FRONTIER"
+                    kind="DEAD" if result.get("status") in ("DEAD","failed","resource_budget_collapsed","economic_budget_collapsed","economically_dominated") else "FRONTIER"
                     # Worker validation does not itself authorize a production replacement.
                     store.put(kind,{"species":experiment["kind"],"candidate_id":experiment["id"]},result,
                               result.get("reason","Finite exact experiment; production champion retained"))

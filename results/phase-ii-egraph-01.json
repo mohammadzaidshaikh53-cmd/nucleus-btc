@@ -1,0 +1,223 @@
+{
+  "status": "measured",
+  "rows": [
+    {
+      "equivalence_class": 0,
+      "members": [
+        {
+          "name": "Ch-canonical",
+          "class": 0,
+          "seconds": 2.2899999748915434e-05,
+          "models": {
+            "opencl_scalar": 192,
+            "wave32": 6,
+            "family_symbolic": 192,
+            "carry_residual": 2048,
+            "register_pressure": 96
+          }
+        },
+        {
+          "name": "Ch-select",
+          "class": 0,
+          "seconds": 1.979999797185883e-05,
+          "models": {
+            "opencl_scalar": 192,
+            "wave32": 6,
+            "family_symbolic": 192,
+            "carry_residual": 2048,
+            "register_pressure": 96
+          }
+        }
+      ],
+      "measured_extraction": {
+        "name": "Ch-select",
+        "class": 0,
+        "seconds": 1.979999797185883e-05,
+        "models": {
+          "opencl_scalar": 192,
+          "wave32": 6,
+          "family_symbolic": 192,
+          "carry_residual": 2048,
+          "register_pressure": 96
+        }
+      },
+      "cost_model_choices": {
+        "opencl_scalar": "Ch-canonical",
+        "wave32": "Ch-canonical",
+        "family_symbolic": "Ch-canonical",
+        "carry_residual": "Ch-canonical",
+        "register_pressure": "Ch-canonical"
+      }
+    },
+    {
+      "equivalence_class": 1,
+      "members": [
+        {
+          "name": "Maj-canonical",
+          "class": 1,
+          "seconds": 2.179999864893034e-05,
+          "models": {
+            "opencl_scalar": 192,
+            "wave32": 6,
+            "family_symbolic": 192,
+            "carry_residual": 2048,
+            "register_pressure": 96
+          }
+        },
+        {
+          "name": "Maj-factored",
+          "class": 1,
+          "seconds": 1.9499999325489625e-05,
+          "models": {
+            "opencl_scalar": 192,
+            "wave32": 6,
+            "family_symbolic": 192,
+            "carry_residual": 2048,
+            "register_pressure": 96
+          }
+        }
+      ],
+      "measured_extraction": {
+        "name": "Maj-factored",
+        "class": 1,
+        "seconds": 1.9499999325489625e-05,
+        "models": {
+          "opencl_scalar": 192,
+          "wave32": 6,
+          "family_symbolic": 192,
+          "carry_residual": 2048,
+          "register_pressure": 96
+        }
+      },
+      "cost_model_choices": {
+        "opencl_scalar": "Maj-canonical",
+        "wave32": "Maj-canonical",
+        "family_symbolic": "Maj-canonical",
+        "carry_residual": "Maj-canonical",
+        "register_pressure": "Maj-canonical"
+      }
+    },
+    {
+      "equivalence_class": 2,
+      "members": [
+        {
+          "name": "blocked-T1-4",
+          "class": 2,
+          "seconds": 0.0005536999997275416,
+          "models": {
+            "opencl_scalar": 256,
+            "wave32": 8,
+            "family_symbolic": 290,
+            "carry_residual": 45,
+            "register_pressure": 160
+          }
+        },
+        {
+          "name": "blocked-T1-8",
+          "class": 2,
+          "seconds": 0.00032840000130818225,
+          "models": {
+            "opencl_scalar": 256,
+            "wave32": 8,
+            "family_symbolic": 400,
+            "carry_residual": 5,
+            "register_pressure": 160
+          }
+        },
+        {
+          "name": "blocked-T1-16",
+          "class": 2,
+          "seconds": 0.0002437999974063132,
+          "models": {
+            "opencl_scalar": 256,
+            "wave32": 8,
+            "family_symbolic": 640,
+            "carry_residual": 3,
+            "register_pressure": 160
+          }
+        }
+      ],
+      "measured_extraction": {
+        "name": "blocked-T1-16",
+        "class": 2,
+        "seconds": 0.0002437999974063132,
+        "models": {
+          "opencl_scalar": 256,
+          "wave32": 8,
+          "family_symbolic": 640,
+          "carry_residual": 3,
+          "register_pressure": 160
+        }
+      },
+      "cost_model_choices": {
+        "opencl_scalar": "blocked-T1-4",
+        "wave32": "blocked-T1-4",
+        "family_symbolic": "blocked-T1-4",
+        "carry_residual": "blocked-T1-16",
+        "register_pressure": "blocked-T1-4"
+      }
+    },
+    {
+      "equivalence_class": 3,
+      "members": [
+        {
+          "name": "Sigma1-direct",
+          "class": 3,
+          "seconds": 1.21000011858996e-05,
+          "models": {
+            "opencl_scalar": 320,
+            "wave32": 10,
+            "family_symbolic": 5,
+            "carry_residual": 32,
+            "register_pressure": 96
+          }
+        },
+        {
+          "name": "Sigma1-composed",
+          "class": 3,
+          "seconds": 1.0200001270277426e-05,
+          "models": {
+            "opencl_scalar": 320,
+            "wave32": 10,
+            "family_symbolic": 5,
+            "carry_residual": 32,
+            "register_pressure": 96
+          }
+        }
+      ],
+      "measured_extraction": {
+        "name": "Sigma1-composed",
+        "class": 3,
+        "seconds": 1.0200001270277426e-05,
+        "models": {
+          "opencl_scalar": 320,
+          "wave32": 10,
+          "family_symbolic": 5,
+          "carry_residual": 32,
+          "register_pressure": 96
+        }
+      },
+      "cost_model_choices": {
+        "opencl_scalar": "Sigma1-direct",
+        "wave32": "Sigma1-direct",
+        "family_symbolic": "Sigma1-direct",
+        "carry_residual": "Sigma1-direct",
+        "register_pressure": "Sigma1-direct"
+      }
+    }
+  ],
+  "nodes": 9,
+  "bounded": true,
+  "family_equivalence_exhaustive": true,
+  "whole_hash_speedup_demonstrated": false,
+  "downstream_baseline_seconds": 0.23758969999835244,
+  "downstream_extracted_seconds": 0.1412096999993082,
+  "downstream_effective_speedup": 1.6825310159253677,
+  "extracted_boolean_forms": {
+    "Ch": "select",
+    "Maj": "factored"
+  },
+  "extracted_block_bits": 16,
+  "full_sha256d_audited": true,
+  "scope": "bounded measured family cone; no comparison victory over production GPU"
+}

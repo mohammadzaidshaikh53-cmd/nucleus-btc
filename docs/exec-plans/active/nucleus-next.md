@@ -1,5 +1,9 @@
 # Nucleus next: execution checkpoint
 
+Current continuation: [Phase-II execution plan](phase-ii.md), with measured
+decision in [PHASE-II-RESULTS.md](../../PHASE-II-RESULTS.md). The original
+checkpoint history below remains preserved. Phase II found no large advantage.
+
 ## Objective
 Advance exact Bitcoin work on the existing Ryzen/RDNA3 system. Preserve the
 independent oracle, verified ordinary GPU champion and historical evidence.

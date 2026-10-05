@@ -20,6 +20,10 @@ def fixture(bits=6,seed=810203,positions=None):
     return HeaderFamily(h,(Dimension(D.NONCE32,tuple(range(bits)) if positions is None else tuple(positions),0xffffffff),))
 
 def worker_experiment(kind,generation=0):
+    if generation>=3:
+        return {'status':'DEAD','branch_exhausted':True,'failure_cause':'bounded_phase_ii_branch_budget_exhausted',
+                'reason':'Three distinct configurations/fixtures evaluated; require a changed mechanism before reopening',
+                'next_hypothesis':counterfactual('residual_saturation' if kind in ('carry-factor','program','family-ir') else 'carry_saturation').to_dict()}
     family=fixture(6,810203+generation,positions=(0,5,11,17,23,31))
     if kind=='family-ir':
         from .profile import dependency_profile
@@ -32,6 +36,9 @@ def worker_experiment(kind,generation=0):
         r=next(m for m in metrics['carry'] if m['round']==15)
         return {'status':'DEAD' if r['Uresidual']>=.95*family.count else 'INCONCLUSIVE','failure_cause':'residual_saturation',
                 'frontier':r,'total_seconds':metrics['total_seconds'],'next_hypothesis':counterfactual('residual_saturation').to_dict()}
+    if kind=='conditional':
+        from .conditional import conditioned_residual_probe
+        return conditioned_residual_probe(family)
     if kind=='program':
         from .program import RepresentationProgram,Stage,execute_program
         baseline=RepresentationProgram((Stage(0,'carry-residual'),Stage(8,'native')))
@@ -55,9 +62,8 @@ def worker_experiment(kind,generation=0):
         from .cones import carry_cone
         return carry_cone()
     if kind=='egraph':
-        from .egraph import saturate
-        words=[FamilyWord(tuple((i*(j+31)+generation)&0xffffffff for i in range(family.count))) for j in range(5)]
-        return saturate(words)
+        from .egraph import saturate_and_evaluate
+        return saturate_and_evaluate(family)
     raise ValueError('Unregistered Phase-II branch')
 
 def scaling(powers=(8,10,12,14),repeats=3):

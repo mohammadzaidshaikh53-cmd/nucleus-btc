@@ -7,6 +7,8 @@ Continue the existing exact Bitcoin project. Read `STATUS.md` first.
 - Exactness and measurement gates: `docs/VALIDATION.md`.
 - Milestones and external blockers: `docs/ROADMAP.md`.
 - Current execution checkpoint: `docs/exec-plans/active/nucleus-next.md`.
+- Phase-II continuation and measured decision: `docs/exec-plans/active/phase-ii.md`
+  and `docs/PHASE-II-RESULTS.md`; do not reopen exhausted branches unchanged.
 - Completed checkpoints: `docs/exec-plans/completed/`.
 
 The independent oracle and Bitcoin serialization are authoritative. Generated

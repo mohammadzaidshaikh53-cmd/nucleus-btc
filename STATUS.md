@@ -1,5 +1,35 @@
 # Local project status - 5 October 2026
 
+## Phase-II current checkpoint
+
+**NO LARGE ADVANTAGE FOUND.** Exact FamilyIR, blocked T1 factoring, executable
+representation programs, interior strided splits, saturation-aware allocation,
+differential/neutral-bit probes, bounded MITM/solver cones and SV2 24-bit version
+workspaces are implemented and locally evaluated. See
+[measured results](docs/PHASE-II-RESULTS.md) and the
+[active plan](docs/exec-plans/active/phase-ii.md).
+
+Current champion: OpenCL full unroll/alternate Boolean/local size 64, **1.567
+GH/s fresh** (earlier 1.634 GH/s preserved). Power=null; algorithmic alpha=1.
+Best family descriptive alpha=0.98; best carry-signature beta=0.06271,
+output-residue beta=1. Economic Rc=0 in the prefix fixture; global optimum
+unmeasured. Exact prefix rho=1, useful rho=0, useful Q=0 (all-rejected exact Q
+null), F=1020.44. Best new full-family/GPU speedup=0.001394x. No live accepted
+share or proven BTC payout. HIP/WMMA hardware and measured power are external gates.
+
+Failed: residual compression, split economics, hunt amortization, cheap backward
+pruning and local-size promotion. Learned: small carry pools leave linear
+output work; conditional compression disappears by round 4. Never repeat
+unchanged generic full-SHA SAT, larger BDD budgets or cosmetic carry-save
+variants. Next distinct hypothesis: signed carry-constrained backward middle
+cuts with independently verified necessary relations.
+
+Earlier checkpoint history follows; its historical measurements are unchanged.
+
+Phase-II local release: **90 tests, 89 passed, one optional HIP skip**. Published
+checkpoint fa5276f passed Windows/Linux CI; final evidence checkpoint is checked
+separately. Eighteen isolated Phase-II steps are persisted with no pending work.
+
 The runnable foundation and first research loop are implemented and tested.
 The requested long-term SHA-256 advantage remains unproven. The user selected
 continued local testing; no live pool mining was started.

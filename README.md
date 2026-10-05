@@ -1,5 +1,10 @@
 # Nucleus-BTC
 
+Phase II is implemented and locally evaluated. **NO LARGE ADVANTAGE FOUND.**
+Read the [measured family research report](docs/PHASE-II-RESULTS.md) for exact
+mechanisms, scaling, limits and runnable experiments. Fresh champion: 1.567
+GH/s; no measured power, live accepted share or proven BTC payout.
+
 For GitHub setup and future updates, follow [docs/GITHUB.md](docs/GITHUB.md).
 
 An executable Bitcoin proof-of-work research project for this Windows machine.

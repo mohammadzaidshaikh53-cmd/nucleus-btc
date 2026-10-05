@@ -40,3 +40,24 @@ class PhaseIIProbeTests(unittest.TestCase):
         result=hierarchy_baseline(family)
         self.assertEqual(result['unique_midstates'],2);self.assertEqual(result['unique_second_block_schedules'],4)
         self.assertFalse(result['novel_algorithmic_advantage'])
+
+    def test_extracted_egraph_is_audited_downstream(self):
+        from nucleus_btc.family_ir.egraph import saturate_and_evaluate
+        family=HeaderFamily(GENESIS,(Dimension(D.NONCE32,(5,17),0xffffffff),))
+        result=saturate_and_evaluate(family)
+        self.assertTrue(result['full_sha256d_audited'])
+
+    def test_conditional_affine_models_reconstruct_irregular_subspaces(self):
+        from nucleus_btc.family_ir.conditional import fit_group
+        indices=[0,3,5,7];values=[0x1234^(i*17) for i in indices]
+        coeffs,residual=fit_group(indices,values,3)
+        for i,expected in zip(indices,values):
+            actual=coeffs[0]^residual.get(i,0)
+            for bit in range(3):
+                if i&(1<<bit):actual^=coeffs[bit+1]
+            self.assertEqual(actual,expected)
+
+    def test_pruning_Q_matches_existing_fitness_contract(self):
+        from nucleus_btc.family_ir.cost import fitness
+        self.assertAlmostEqual(fitness(True,1,1,rho=.5,proof=.1)['Q'],.3010299956639812)
+        self.assertIsNone(fitness(True,1,1,rho=1,proof=.1)['Q'])

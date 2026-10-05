@@ -5,7 +5,9 @@ from .word import FamilyWord, MASK
 from .factor import blocked_sum, factored_boolean
 from ..oracle.sha256 import IV, K, compress, rotr
 
-def evaluate_family(family, block_bits=8, observer=None, program=None, prefix_target=None):
+def evaluate_family(family, block_bits=8, observer=None, program=None, prefix_target=None,boolean_forms=None):
+    forms=boolean_forms or {'Ch':'canonical','Maj':'canonical'}
+    if forms.get('Ch','canonical') not in ('canonical','select') or forms.get('Maj','canonical') not in ('canonical','factored'):raise ValueError('Unvalidated Boolean form')
     started = perf_counter(); headers, construction = family.construct(); size = family.count
     cache = {}; midstates = []
     for h in headers:
@@ -63,10 +65,10 @@ def evaluate_family(family, block_bits=8, observer=None, program=None, prefix_ta
                 w.append(add((w[t-16],x,w[t-7],y),r,"schedule_add"))
             emit(r,"W",w[t])
             s1 = boolean((e,),lambda x: rotr(x,6)^rotr(x,11)^rotr(x,25)); emit(r,"Sigma1",s1)
-            ch = boolean((e,f,g),lambda x,y,z:(x&y)^((~x)&z)); emit(r,"Ch",ch)
+            ch = boolean((e,f,g),(lambda x,y,z:z^(x&(y^z))) if forms.get('Ch')=='select' else (lambda x,y,z:(x&y)^((~x)&z))); emit(r,"Ch",ch)
             t1 = add((h,s1,ch,FamilyWord((K[t],)*size),w[t]),r,"T1")
             s0 = boolean((a,),lambda x: rotr(x,2)^rotr(x,13)^rotr(x,22)); emit(r,"Sigma0",s0)
-            maj = boolean((a,b,c),lambda x,y,z:(x&y)^(x&z)^(y&z)); emit(r,"Maj",maj)
+            maj = boolean((a,b,c),(lambda x,y,z:(x&y)|(z&(x|y))) if forms.get('Maj')=='factored' else (lambda x,y,z:(x&y)^(x&z)^(y&z))); emit(r,"Maj",maj)
             t2 = add((s0,maj),r,"T2")
             a,b,c,d,e,f,g,h = add((t1,t2),r,"a_add"),a,b,c,add((d,t1),r,"e_add"),e,f,g
             for name, word in zip("abcdefgh",(a,b,c,d,e,f,g,h)): emit(r,name,word)

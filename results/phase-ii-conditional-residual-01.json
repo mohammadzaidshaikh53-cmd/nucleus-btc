@@ -1,0 +1,83 @@
+{
+  "status": "DEAD",
+  "failure_cause": "conditional_description_cost",
+  "rows": [
+    {
+      "round": 3,
+      "groups": 2,
+      "nonlinear_exceptions": 0,
+      "description_bits": 832,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 0.1015625,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 4,
+      "groups": 16,
+      "nonlinear_exceptions": 181,
+      "description_bits": 12872,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 1.5712890625,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 7,
+      "groups": 51,
+      "nonlinear_exceptions": 94,
+      "description_bits": 19984,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 2.439453125,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 15,
+      "groups": 57,
+      "nonlinear_exceptions": 74,
+      "description_bits": 20912,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 2.552734375,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 31,
+      "groups": 83,
+      "nonlinear_exceptions": 32,
+      "description_bits": 26976,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 3.29296875,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 63,
+      "groups": 80,
+      "nonlinear_exceptions": 44,
+      "description_bits": 26592,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 3.24609375,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 95,
+      "groups": 85,
+      "nonlinear_exceptions": 48,
+      "description_bits": 28192,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 3.44140625,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    },
+    {
+      "round": 127,
+      "groups": 77,
+      "nonlinear_exceptions": 31,
+      "description_bits": 25208,
+      "explicit_word_bits": 8192,
+      "ratio_to_explicit": 3.0771484375,
+      "scope": "single T1 word; excludes carry-signature dictionary, hence optimistic description bound"
+    }
+  ],
+  "total_hunt_and_fit_seconds": 0.8723583999999391,
+  "full_sha256d_audited": true,
+  "rho": 0,
+  "whole_hash_advantage_demonstrated": false,
+  "mechanism": "condition GF2 affine coefficients on carry transfer signatures, then exact XOR exceptions"
+}

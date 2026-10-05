@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "metadata": {
+    "timestamp_utc": "2026-10-05T16:47:07.355770+00:00",
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "device": {
+      "name": "gfx1102",
+      "vendor": "Advanced Micro Devices, Inc.",
+      "driver": "3679.0 (PAL,LC)",
+      "memory_bytes": 17163091968,
+      "compute_units": 16,
+      "unified_memory": false,
+      "max_work_group": 256,
+      "vendor_id": 4098,
+      "pci_address": null,
+      "uuid": null
+    },
+    "device_fingerprint": "546db40a83d987d84fb8a8b11d917da2c1c57f21295a99d689c456c620e83e17",
+    "physical_pci_id": null,
+    "device_uuid": null,
+    "source_sha256": "c010952dc1b7f2437955503c53ddfc6d1fe4e3a34589231bb7adf50dc33b3195",
+    "build_options": "-cl-std=CL1.2 -DFULL_UNROLL=1 -DALT_BOOLEAN=1",
+    "compilation_seconds": 2.3168570999987423,
+    "gpu_clock_mhz": null,
+    "gpu_temperature_c": null,
+    "power_watts": null,
+    "joules_per_terahash": null,
+    "sensors": "not available; no TDP inference"
+  },
+  "config": {
+    "device_index": 0,
+    "full_unroll": true,
+    "alt_boolean": true,
+    "local_size": 64
+  },
+  "parity": {
+    "headers_tested": 16384,
+    "independent_reference_headers": 16,
+    "scan_cases": 20,
+    "passed": true,
+    "proof_of_universal_equivalence": false
+  },
+  "source": "4114fd6d30597a1259a169f0118bf23d79bc78df371676a64adbb71d449cecc5",
+  "hashes_per_second": 1541662010.8649433,
+  "gh_per_second": 1.5416620108649433,
+  "samples": [
+    {
+      "hashes": 289406976,
+      "seconds": 0.20060129999910714,
+      "hashes_per_second": 1442697410.2425463,
+      "iterations": 69,
+      "batch_size": 4194304,
+      "fixture_sha256": "f9622e7d276685d0ef6d10dd37e03e8433d76ddcea74f02f45cc956e92dd07ef",
+      "host_and_queue_seconds": 0.019068899999107075,
+      "kernel_seconds": 0.18153240000000007,
+      "kernel_hashes_per_second": 1594244201.0351865
+    },
+    {
+      "hashes": 297795584,
+      "seconds": 0.20109559999400517,
+      "hashes_per_second": 1480865737.5341754,
+      "iterations": 71,
+      "batch_size": 4194304,
+      "fixture_sha256": "e7f19a2c496ddf5fdf6566a3269ad4ca1402b92c67a6c20b581069d40881121e",
+      "host_and_queue_seconds": 0.017913599994005214,
+      "kernel_seconds": 0.18318199999999996,
+      "kernel_hashes_per_second": 1625681475.2541192
+    },
+    {
+      "hashes": 301989888,
+      "seconds": 0.20152380000217818,
+      "hashes_per_second": 1498532123.7329583,
+      "iterations": 72,
+      "batch_size": 4194304,
+      "fixture_sha256": "96ef4bbc7ca5948fcaad5d283a763946fa93ec901e6cf59d59fe8713d41ddecd",
+      "host_and_queue_seconds": 0.019759160002178144,
+      "kernel_seconds": 0.18176464000000003,
+      "kernel_hashes_per_second": 1661433642.9791842
+    },
+    {
+      "hashes": 306184192,
+      "seconds": 0.20152840000082506,
+      "hashes_per_second": 1519310389.9934027,
+      "iterations": 73,
+      "batch_size": 4194304,
+      "fixture_sha256": "7dbe9be15f365c55068ec86b900bad64fb8b38102874eeb586e5e8bdcfec770d",
+      "host_and_queue_seconds": 0.01976268000082504,
+      "kernel_seconds": 0.18176572000000002,
+      "kernel_hashes_per_second": 1684499101.3707094
+    },
+    {
+      "hashes": 310378496,
+      "seconds": 0.20132720000401605,
+      "hashes_per_second": 1541662010.8649433,
+      "iterations": 74,
+      "batch_size": 4194304,
+      "fixture_sha256": "0bd424caf790ea41925d499d495186597224f2b19448b63e5175851a052aa224",
+      "host_and_queue_seconds": 0.020065480004016062,
+      "kernel_seconds": 0.18126172,
+      "kernel_hashes_per_second": 1712322359.0728369
+    },
+    {
+      "hashes": 314572800,
+      "seconds": 0.2012285000018892,
+      "hashes_per_second": 1563261665.2067013,
+      "iterations": 75,
+      "batch_size": 4194304,
+      "fixture_sha256": "3690dd556888c38fcfe92438cddf05cc935681015dedc7e96df927043f1548fb",
+      "host_and_queue_seconds": 0.020546940001889225,
+      "kernel_seconds": 0.18068155999999996,
+      "kernel_hashes_per_second": 1741034336.8742225
+    },
+    {
+      "hashes": 318767104,
+      "seconds": 0.2006011999983457,
+      "hashes_per_second": 1589058809.232591,
+      "iterations": 76,
+      "batch_size": 4194304,
+      "fixture_sha256": "14225b69c16543ba495cd8a741889a07657c0494c177f83ea6c0799d500fc223",
+      "host_and_queue_seconds": 0.01944735999834568,
+      "kernel_seconds": 0.18115384,
+      "kernel_hashes_per_second": 1759648616.8882756
+    },
+    {
+      "hashes": 322961408,
+      "seconds": 0.2013784000009764,
+      "hashes_per_second": 1603753967.6471465,
+      "iterations": 77,
+      "batch_size": 4194304,
+      "fixture_sha256": "1bb65f1e9481983484b04f1d0af23602dbc3ccb3795cc690fa692173c1df9214",
+      "host_and_queue_seconds": 0.020265080000976377,
+      "kernel_seconds": 0.18111332000000002,
+      "kernel_hashes_per_second": 1783200749.674292
+    },
+    {
+      "hashes": 322961408,
+      "seconds": 0.20002089999616146,
+      "hashes_per_second": 1614638310.32756,
+      "iterations": 77,
+      "batch_size": 4194304,
+      "fixture_sha256": "3b639a47c62f932f28c1f230c87dec7900ccc1ce942e9c774449f5dfe2967a61",
+      "host_and_queue_seconds": 0.020642579996161564,
+      "kernel_seconds": 0.1793783199999999,
+      "kernel_hashes_per_second": 1800448393.094551
+    }
+  ],
+  "startup_compilation_excluded_from_steady_state": true,
+  "target_budgets": [
+    {
+      "target_thps": 20,
+      "required_speedup": 12973.012151203675,
+      "normalized_total_cost_budget": 7.708310054324717e-05
+    },
+    {
+      "target_thps": 30,
+      "required_speedup": 19459.51822680551,
+      "normalized_total_cost_budget": 5.138873369549811e-05
+    }
+  ],
+  "power_watts": null,
+  "joules_per_terahash": null,
+  "original_target_achieved": false,
+  "work_source": "fresh held-out local serialized jobs; no live pool acceptance"
+}

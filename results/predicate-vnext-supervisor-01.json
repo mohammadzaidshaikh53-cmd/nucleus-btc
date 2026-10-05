@@ -1,0 +1,1255 @@
+{
+  "schema": 1,
+  "status": "checkpointed",
+  "completed_this_run": 12,
+  "total_completed": 12,
+  "next_kind": "lemma-discovery",
+  "pending": null,
+  "history": [
+    {
+      "id": "92c93bf32004e119fb6c9785e509ac3cc365def4acf36674313b85847ed2cb80",
+      "kind": "predicate-ir",
+      "status": "EXACT_PARITY",
+      "attempts": 1
+    },
+    {
+      "id": "8eacd6504bce8f86f6a22e86b753d93fdd13c218de48c6f02c3d886efccf34cd",
+      "kind": "abstract-domain",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "609675500409f0cb0904780d68a03331a7245fa69f3e7085a758fc1207f1550c",
+      "kind": "reduced-product",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "25b2a4aa1a1060ad01a509efc1e3ccd03fb841111a4a7b86a4d8753955e087b1",
+      "kind": "refinement",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "0e0a88747658c94e83d2f7b82965a282613b366d62cd232738127e677f647d78",
+      "kind": "certificate",
+      "status": "EXACT_CERTIFICATE",
+      "attempts": 1
+    },
+    {
+      "id": "3fd840312fb264010f12ccd10214b3b3bb17aba8e10867e2bb083241b740e38d",
+      "kind": "lemma-discovery",
+      "status": "PROVEN_LOCAL_LEMMA",
+      "attempts": 1
+    },
+    {
+      "id": "f498121a07d9dbe6aad7d512c801002135b6871889a494a91d8ac5d51b2aaa22",
+      "kind": "workspace-compiler",
+      "status": "SYMBOLIC_WORKSPACE",
+      "attempts": 1
+    },
+    {
+      "id": "c5e8c6a06792b9b953f0a5a5675c4ce582d016723beac25d30dbffd7f42d3c61",
+      "kind": "lemma-discovery",
+      "status": "PROVEN_LOCAL_LEMMA",
+      "attempts": 1
+    },
+    {
+      "id": "67661eb0ce748108fdaedd42434628af26e3f7e5aaeedb39d568097144215d22",
+      "kind": "workspace-compiler",
+      "status": "SYMBOLIC_WORKSPACE",
+      "attempts": 1
+    },
+    {
+      "id": "707b490dc22e9d04c9f1fccd3caf2dbaadf00a384be1a94f07675e2928b99d6e",
+      "kind": "abstract-domain",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "e28e530978854d6ff5a2df8e5507339b93d6917ad7a945e5cc3d1c569049ff61",
+      "kind": "reduced-product",
+      "status": "DEAD",
+      "attempts": 1
+    },
+    {
+      "id": "cf6593e9e55aa73d3ff2df97dbd651e21c17e26d838058781304b231828ac1ed",
+      "kind": "predicate-ir",
+      "status": "EXACT_PARITY",
+      "attempts": 1
+    }
+  ],
+  "source_sha256": "78373c151b29469c4e8d7c1e6b2f7c7f3046ba55214eaef28a95c4749574d3f4",
+  "profile": "predicate-vnext",
+  "storage_bytes": 176011,
+  "production_champion_modified": false,
+  "selector_estimates": {
+    "family-ir": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "carry-factor": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "conditional": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "program": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "differential": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "mitm": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "cone": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "egraph": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "generated": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "family": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "carry": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "structural": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "sat": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "representation": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "predicate-ir": {
+      "P_valid": 0.75,
+      "P_better": 0.25,
+      "expected_gain": 1.0,
+      "novelty": 0.5,
+      "expected_information_gain": 0.5623351446188083,
+      "expected_cost": 0.75,
+      "saturation": 0.28125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 1,
+      "priority": 0.13126078096471566
+    },
+    "abstract-domain": {
+      "P_valid": 0.75,
+      "P_better": 0.25,
+      "expected_gain": 1.0,
+      "novelty": 0.5,
+      "expected_information_gain": 0.5623351446188083,
+      "expected_cost": 0.4219999999986612,
+      "saturation": 0.28125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 1,
+      "priority": 0.17498845232476706
+    },
+    "reduced-product": {
+      "P_valid": 0.75,
+      "P_better": 0.25,
+      "expected_gain": 1.0,
+      "novelty": 0.5,
+      "expected_information_gain": 0.5623351446188083,
+      "expected_cost": 0.49200000000200816,
+      "saturation": 0.28125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 1,
+      "priority": 0.16206269779740515
+    },
+    "refinement": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 1.7969999999986612,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.2769815431694143
+    },
+    "certificate": {
+      "P_valid": 0.6666666666666666,
+      "P_better": 0.3333333333333333,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6365141682948128,
+      "expected_cost": 2.0780000000013388,
+      "saturation": 0.125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.2575740445377162
+    },
+    "lemma-discovery": {
+      "P_valid": 0.75,
+      "P_better": 0.25,
+      "expected_gain": 1.0,
+      "novelty": 0.5,
+      "expected_information_gain": 0.5623351446188083,
+      "expected_cost": 0.11750000000029104,
+      "saturation": 0.28125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 1,
+      "priority": 0.33162455654996986
+    },
+    "workspace-compiler": {
+      "P_valid": 0.75,
+      "P_better": 0.25,
+      "expected_gain": 1.0,
+      "novelty": 0.5,
+      "expected_information_gain": 0.5623351446188083,
+      "expected_cost": 0.2734999999993306,
+      "saturation": 0.28125,
+      "failure_diversity": 1,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 1,
+      "priority": 0.21736366602450408
+    },
+    "regression": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    },
+    "benchmark": {
+      "P_valid": 0.5,
+      "P_better": 0.5,
+      "expected_gain": 1.0,
+      "novelty": 1.0,
+      "expected_information_gain": 0.6931471805599453,
+      "expected_cost": 1.0,
+      "saturation": 0.0,
+      "failure_diversity": 0,
+      "recent_improvement_slope": 0.0,
+      "time_since_new_result": 0,
+      "priority": 0.02599301927099795
+    }
+  },
+  "live_pool_acceptance": false,
+  "records": [
+    {
+      "id": "539ad2f6a15107d3286011ea7057d26b0a7ceaa90c375c850005567184519675",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:32.401553+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "92c93bf32004e119fb6c9785e509ac3cc365def4acf36674313b85847ed2cb80",
+        "species": "predicate-ir"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "audit_materialized_K": true,
+        "audit_scope_K": 8,
+        "branch_exhausted": false,
+        "conceptual": {
+          "K_materialized": false,
+          "comparator_words": 8,
+          "compile_seconds": 0.19830799999908777,
+          "conceptual_K": 16777216,
+          "cost_grows_with_K": false,
+          "dead_nodes_removed": 2104,
+          "graph_bytes": 91633,
+          "nodes": 3967,
+          "predicate_bytes": 115277,
+          "predicate_fingerprint": "73cd3d653b5f40dcd1b9faebbbc118c9fb7a031499c3bc657163aeb973d5216e",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "raw_nodes": 6071,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "storage_includes_digest_view": true
+        },
+        "generation": 0,
+        "independent_cases": 24,
+        "kind": "predicate-ir",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "EXACT_PARITY",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.621405899997626,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "55d7a2f0d7d32734f9430ef91705c9db7a3afa3ee8e8cd7e01e1e25583737a8e",
+      "class": "DEAD",
+      "created": "2026-10-05T16:51:32.831327+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "8eacd6504bce8f86f6a22e86b753d93fdd13c218de48c6f02c3d886efccf34cd",
+        "species": "abstract-domain"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "analysis": {
+          "K_materialized": false,
+          "abstract_nodes": 3967,
+          "bounds": [
+            0,
+            115792089237316195423570985008687907853269984665640564039457584007913129639935
+          ],
+          "candidate_count_materialized": 0,
+          "certificate": null,
+          "certificate_check_seconds": 0.0,
+          "comparator_words": 8,
+          "compile_seconds": 0.20047759999579284,
+          "conceptual_K": 16777216,
+          "construction_seconds": 0.20047759999579284,
+          "cost_grows_with_K": false,
+          "counts": {
+            "iterations": 2,
+            "known_to_congruence": 1260,
+            "nonlinear_to_parity": 5843,
+            "widened_bit_expressions": 123360
+          },
+          "dead_nodes_removed": 2104,
+          "domain_seconds": 0.07168059999821708,
+          "enumerated_candidates": 0,
+          "graph_bytes": 91633,
+          "logical_representation_bytes_estimate": 435488,
+          "monomial_count": 1708,
+          "nodes": 3967,
+          "observable": "masks",
+          "precision_collapse": {
+            "compression": "header/first/1",
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0,
+            "round": 7
+          },
+          "predicate_bytes": 115277,
+          "predicate_fingerprint": "73cd3d653b5f40dcd1b9faebbbc118c9fb7a031499c3bc657163aeb973d5216e",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "production_promotion_allowed": false,
+          "proof_seconds": 0.07168059999821708,
+          "raw_nodes": 6071,
+          "representation_byte_scope": "logical estimate excludes Python object overhead",
+          "rewrite_seconds": 0.02904080000007525,
+          "rewrites": {
+            "analyses": {
+              "opencl": "Boolean selection form",
+              "precision": "complement-carry elimination"
+            },
+            "candidate_count_materialized": 0,
+            "input_nodes": 3967,
+            "output_nodes": 3967,
+            "seconds": 0.02904080000007525,
+            "status": "EXACT"
+          },
+          "rewritten_nodes": 3967,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "status": "UNKNOWN",
+          "storage_includes_digest_view": true,
+          "target_information": 0.0,
+          "total_seconds": 0.3094448999981978
+        },
+        "branch_exhausted": false,
+        "failure_cause": "target_bounds_universal_after_nonlinear_loss",
+        "generation": 0,
+        "kind": "abstract-domain",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "DEAD",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.31030940000346163,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "5d9f4b415a9873e6cb14e722a6be5b50ceea3e279dbe415397060a83753f721d",
+      "class": "DEAD",
+      "created": "2026-10-05T16:51:33.289473+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "609675500409f0cb0904780d68a03331a7245fa69f3e7085a758fc1207f1550c",
+        "species": "reduced-product"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "analysis": {
+          "K_materialized": false,
+          "abstract_nodes": 3967,
+          "bounds": [
+            0,
+            115792089237316195423570985008687907853269984665640564039457584007913129639935
+          ],
+          "candidate_count_materialized": 0,
+          "certificate": null,
+          "certificate_check_seconds": 0.0,
+          "comparator_words": 8,
+          "compile_seconds": 0.19888409999839496,
+          "conceptual_K": 16777216,
+          "construction_seconds": 0.19888409999839496,
+          "cost_grows_with_K": false,
+          "counts": {
+            "iterations": 2,
+            "known_to_congruence": 1262,
+            "nonlinear_to_known": 2,
+            "nonlinear_to_parity": 6234,
+            "widened_bit_expressions": 117097
+          },
+          "dead_nodes_removed": 2104,
+          "domain_seconds": 0.0995963000023039,
+          "enumerated_candidates": 0,
+          "graph_bytes": 91633,
+          "logical_representation_bytes_estimate": 457664,
+          "monomial_count": 2401,
+          "nodes": 3967,
+          "observable": "product",
+          "precision_collapse": {
+            "compression": "header/first/1",
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0,
+            "round": 7
+          },
+          "predicate_bytes": 115277,
+          "predicate_fingerprint": "73cd3d653b5f40dcd1b9faebbbc118c9fb7a031499c3bc657163aeb973d5216e",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "production_promotion_allowed": false,
+          "proof_seconds": 0.0995963000023039,
+          "raw_nodes": 6071,
+          "representation_byte_scope": "logical estimate excludes Python object overhead",
+          "rewrite_seconds": 0.028585200001543853,
+          "rewrites": {
+            "analyses": {
+              "opencl": "Boolean selection form",
+              "precision": "complement-carry elimination"
+            },
+            "candidate_count_materialized": 0,
+            "input_nodes": 3967,
+            "output_nodes": 3967,
+            "seconds": 0.028585200001543853,
+            "status": "EXACT"
+          },
+          "rewritten_nodes": 3967,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "status": "UNKNOWN",
+          "storage_includes_digest_view": true,
+          "target_information": 0.0,
+          "total_seconds": 0.3349152000009781
+        },
+        "branch_exhausted": false,
+        "failure_cause": "target_bounds_universal_after_nonlinear_loss",
+        "generation": 0,
+        "kind": "reduced-product",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "DEAD",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.3357920999987982,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "ab22c7a63533a0b22ba3610cc5fad3826f625544fe5d21d7a79a8c6cc67c1b80",
+      "class": "DEAD",
+      "created": "2026-10-05T16:51:35.090369+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "25b2a4aa1a1060ad01a509efc1e3ccd03fb841111a4a7b86a4d8753955e087b1",
+        "species": "refinement"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "abort_reason": "no_target_information_gain",
+        "branch_exhausted": false,
+        "coverage": {
+          "covered": 16777216,
+          "leaves": 1,
+          "proof": "recursive legal fixed-bit binary partitions; no candidate enumeration",
+          "rejected": 0,
+          "retained": 16777216,
+          "valid": true
+        },
+        "failure_cause": "no_target_information_gain",
+        "generation": 0,
+        "kind": "refinement",
+        "leaves": 1,
+        "maximum_depth": 0,
+        "pilots": [
+          {
+            "information_gain": 0.0,
+            "parent": "root",
+            "seconds": 0.6688933000041288,
+            "variable": 0
+          },
+          {
+            "information_gain": 0.0,
+            "parent": "root",
+            "seconds": 0.6754543999995803,
+            "variable": 1
+          }
+        ],
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "DEAD",
+        "target_information_gain": 0.0,
+        "total_seconds": 1.6822252999991179,
+        "tree_bytes": 22949,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "c3e83fda3812d386779ece7d10f91d2e74ce3178aafc1e8761c2cdfe16206bf0",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:37.180407+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "0e0a88747658c94e83d2f7b82965a282613b366d62cd232738127e677f647d78",
+        "species": "certificate"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "branch_exhausted": false,
+        "certificate": {
+          "byte_order": "raw-digest-little-endian",
+          "checker": "target-certificate/v1",
+          "inclusive": true,
+          "lower": "86202909495234791804935827334794847568560686217543302638023732538581253997417",
+          "predicate": "b77b9c50cb37f9e20149e71f58fa7fb4492211c06c9e372302b76e667d36f595",
+          "proof_identities": [
+            {
+              "fingerprint": "0295a4ea7c2a27442168a069b1c9430b6c61c0a37c27c38c73e0a217a37509a7",
+              "rule": "add-reassociate"
+            },
+            {
+              "fingerprint": "2f0f59ccf9f587d2b386752b02bd58f47ed333e9b19e0a07251fa46119340742",
+              "rule": "rotate-compose"
+            }
+          ],
+          "rule": "known-mask-carry-envelope/v1",
+          "schema": 1,
+          "source": "11d7f926a12048fcf99936812b0d4bff93e29cb1b2e8b4ba23b4afd2e46892fd",
+          "target": "411376139330301510538742295639337626245683966408394965837152256",
+          "type": "interval",
+          "workspace": "406724800c3afcd12e56ee061a59f6106d611c5086eb054226a8a1b6f85d3556"
+        },
+        "checker": {
+          "check_seconds": 0.6594566999992821,
+          "checker": "target-certificate/v1",
+          "enumerated_candidates": 0,
+          "valid": true
+        },
+        "failure_cause": "singleton_diagnostic_not_large_family_evidence",
+        "generation": 0,
+        "kind": "certificate",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "scope_K": 1,
+        "soundness_verified": true,
+        "status": "EXACT_CERTIFICATE",
+        "target_information_gain": 0.0,
+        "total_seconds": 1.9671759999982896,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "c30d17dfc7440abeffd7430645c5b7ca06c496211c84ee393fd9406813a87c26",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:37.299508+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "3fd840312fb264010f12ccd10214b3b3bb17aba8e10867e2bb083241b740e38d",
+        "species": "lemma-discovery"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "branch_exhausted": false,
+        "failure_cause": "proved_local_identity_not_cryptanalytic_advantage",
+        "generation": 0,
+        "kind": "lemma-discovery",
+        "lemma": {
+          "checker": "lemma/v1",
+          "costs": {
+            "construction": 0.0,
+            "proof": 0.0,
+            "verification": 9.370000043418258e-05
+          },
+          "domains": [
+            "sparse-nonlinear",
+            "parity",
+            "predicate-rewrite"
+          ],
+          "failure_boundaries": "local Boolean identity, no full-SHA target advantage",
+          "fingerprint": "de83fb552ce751cabdceea58bd37a66b66cde56022fafc45752cd1d85e3b8482",
+          "information_gain": 0.0,
+          "preconditions": "all uint32 inputs; bit-local operators only",
+          "proof": {
+            "cases": 4,
+            "type": "bit-local-universal"
+          },
+          "reuse_count": 0,
+          "source": "d2f2caff4f90065ea12974249810cce53140008490b7cfa4e3e66a79bf6fa2cf",
+          "statement": "{\"nodes\":[[\"INPUT\",[],\"x\"],[\"INPUT\",[],\"y\"],[\"AND\",[0,1],null],[\"XOR\",[0,2],null],[\"NOT\",[1],null],[\"AND\",[0,4],null]],\"outputs\":[3,5],\"schema\":1}",
+          "supersedes": null
+        },
+        "lemma_class": "PROVEN",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "PROVEN_LOCAL_LEMMA",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.000872900003741961,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "8737e204bfb5f15f5107646609b2e54763862d3d951f0e96fc8ad0a38ac87f6b",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:37.577945+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "f498121a07d9dbe6aad7d512c801002135b6871889a494a91d8ac5d51b2aaa22",
+        "species": "workspace-compiler"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "branch_exhausted": false,
+        "failure_cause": "hierarchy_ready_but_target_precision_unresolved",
+        "generation": 0,
+        "kind": "workspace-compiler",
+        "plan": {
+          "K_materialized": false,
+          "conceptual_K": 268435456,
+          "explicit_audit_or_fallback_headers": 0,
+          "inner": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "outer": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "permissions": "explicit local fixture; no live permission assertion",
+          "production_pruning_allowed": false,
+          "scope": "eb1dd38d53c4fe444d97a1d4e1b42e8d7055383a2ad36f302878ccdc42fbfd25",
+          "scope_bytes": 689,
+          "selection_basis": "midstate/derived-Merkle invalidation and reasoning cost; no probability prediction",
+          "storage_complexity": "O(template bytes + workspace variables), independent of K",
+          "workspace_variables": 28
+        },
+        "predicate": {
+          "K_materialized": false,
+          "comparator_words": 8,
+          "compile_seconds": 0.14809609999792883,
+          "conceptual_K": 268435456,
+          "cost_grows_with_K": false,
+          "dead_nodes_removed": 206,
+          "graph_bytes": 137133,
+          "nodes": 5884,
+          "predicate_bytes": 160777,
+          "predicate_fingerprint": "c0d1a3661a5b31ac4fcaeeb726928552e11c02cc7521c0a1165a939f1bab1e0c",
+          "predicate_nodes": 6904,
+          "predicate_root_outputs": 1,
+          "raw_nodes": 6090,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "storage_includes_digest_view": true
+        },
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "SYMBOLIC_WORKSPACE",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.15641589999722783,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "2c4ddbc0f1f23a0938613d9a55dc89fe844ab73ad7a63a1c46ca865e0bbc8b31",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:37.701487+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "c5e8c6a06792b9b953f0a5a5675c4ce582d016723beac25d30dbffd7f42d3c61",
+        "species": "lemma-discovery"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "branch_exhausted": false,
+        "failure_cause": "proved_local_identity_not_cryptanalytic_advantage",
+        "generation": 1,
+        "kind": "lemma-discovery",
+        "lemma": {
+          "checker": "lemma/v1",
+          "costs": {
+            "construction": 0.0,
+            "proof": 0.0,
+            "verification": 9.320000390289351e-05
+          },
+          "domains": [
+            "sparse-nonlinear",
+            "parity",
+            "predicate-rewrite"
+          ],
+          "failure_boundaries": "local Boolean identity, no full-SHA target advantage",
+          "fingerprint": "de83fb552ce751cabdceea58bd37a66b66cde56022fafc45752cd1d85e3b8482",
+          "information_gain": 0.0,
+          "preconditions": "all uint32 inputs; bit-local operators only",
+          "proof": {
+            "cases": 4,
+            "type": "bit-local-universal"
+          },
+          "reuse_count": 0,
+          "source": "d2f2caff4f90065ea12974249810cce53140008490b7cfa4e3e66a79bf6fa2cf",
+          "statement": "{\"nodes\":[[\"INPUT\",[],\"x\"],[\"INPUT\",[],\"y\"],[\"AND\",[0,1],null],[\"XOR\",[0,2],null],[\"NOT\",[1],null],[\"AND\",[0,4],null]],\"outputs\":[3,5],\"schema\":1}",
+          "supersedes": null
+        },
+        "lemma_class": "PROVEN",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "PROVEN_LOCAL_LEMMA",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.0010216000009677373,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "9b98569e7d4ab1542185b2e2d18516f2c1e3b5b9d8ba82d7ebf78d03236efe10",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:37.978152+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "67661eb0ce748108fdaedd42434628af26e3f7e5aaeedb39d568097144215d22",
+        "species": "workspace-compiler"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "branch_exhausted": false,
+        "failure_cause": "hierarchy_ready_but_target_precision_unresolved",
+        "generation": 1,
+        "kind": "workspace-compiler",
+        "plan": {
+          "K_materialized": false,
+          "conceptual_K": 268435456,
+          "explicit_audit_or_fallback_headers": 0,
+          "inner": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "outer": [
+            24,
+            25,
+            26,
+            27
+          ],
+          "permissions": "explicit local fixture; no live permission assertion",
+          "production_pruning_allowed": false,
+          "scope": "5893032e442b96f7f8873ad72f18f4919cc48f1e7cbf0e2138648e2eb4a21434",
+          "scope_bytes": 689,
+          "selection_basis": "midstate/derived-Merkle invalidation and reasoning cost; no probability prediction",
+          "storage_complexity": "O(template bytes + workspace variables), independent of K",
+          "workspace_variables": 28
+        },
+        "predicate": {
+          "K_materialized": false,
+          "comparator_words": 8,
+          "compile_seconds": 0.14964870000403607,
+          "conceptual_K": 268435456,
+          "cost_grows_with_K": false,
+          "dead_nodes_removed": 200,
+          "graph_bytes": 137135,
+          "nodes": 5884,
+          "predicate_bytes": 160779,
+          "predicate_fingerprint": "411e8e42b8869ff86b276af7ef490ef0f76646f7929cac2915a60a47bb4d6e0c",
+          "predicate_nodes": 6904,
+          "predicate_root_outputs": 1,
+          "raw_nodes": 6084,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "storage_includes_digest_view": true
+        },
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "SYMBOLIC_WORKSPACE",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.15806299999530893,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "55f63ad90b5d8059ddb343781ac1c921aa897a9dc0ba16aa8c5f2292fbb5f3d6",
+      "class": "DEAD",
+      "created": "2026-10-05T16:51:38.401700+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "707b490dc22e9d04c9f1fccd3caf2dbaadf00a384be1a94f07675e2928b99d6e",
+        "species": "abstract-domain"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "analysis": {
+          "K_materialized": false,
+          "abstract_nodes": 3967,
+          "bounds": [
+            0,
+            115792089237316195423570985008687907853269984665640564039457584007913129639935
+          ],
+          "candidate_count_materialized": 0,
+          "certificate": null,
+          "certificate_check_seconds": 0.0,
+          "comparator_words": 8,
+          "compile_seconds": 0.1939942000026349,
+          "conceptual_K": 16777216,
+          "construction_seconds": 0.1939942000026349,
+          "cost_grows_with_K": false,
+          "counts": {
+            "iterations": 2,
+            "known_to_congruence": 1271,
+            "nonlinear_to_parity": 5848,
+            "widened_bit_expressions": 123360
+          },
+          "dead_nodes_removed": 2100,
+          "domain_seconds": 0.0714600999999675,
+          "enumerated_candidates": 0,
+          "graph_bytes": 91631,
+          "logical_representation_bytes_estimate": 434496,
+          "monomial_count": 1677,
+          "nodes": 3967,
+          "observable": "masks",
+          "precision_collapse": {
+            "compression": "header/first/1",
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0,
+            "round": 7
+          },
+          "predicate_bytes": 115275,
+          "predicate_fingerprint": "89cd04bfcca5a4528444c3de9b6522846f4f8a3c7e6a5993eb3ef58cca1a55de",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "production_promotion_allowed": false,
+          "proof_seconds": 0.0714600999999675,
+          "raw_nodes": 6067,
+          "representation_byte_scope": "logical estimate excludes Python object overhead",
+          "rewrite_seconds": 0.02882569999928819,
+          "rewrites": {
+            "analyses": {
+              "opencl": "Boolean selection form",
+              "precision": "complement-carry elimination"
+            },
+            "candidate_count_materialized": 0,
+            "input_nodes": 3967,
+            "output_nodes": 3967,
+            "seconds": 0.02882569999928819,
+            "status": "EXACT"
+          },
+          "rewritten_nodes": 3967,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "status": "UNKNOWN",
+          "storage_includes_digest_view": true,
+          "target_information": 0.0,
+          "total_seconds": 0.30240110000158893
+        },
+        "branch_exhausted": false,
+        "failure_cause": "target_bounds_universal_after_nonlinear_loss",
+        "generation": 1,
+        "kind": "abstract-domain",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "DEAD",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.3032584000029601,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "dc53b6de168e407978cfaba0198c909eec697def74ae012b7b8958adc0acbdb5",
+      "class": "DEAD",
+      "created": "2026-10-05T16:51:38.940982+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "e28e530978854d6ff5a2df8e5507339b93d6917ad7a945e5cc3d1c569049ff61",
+        "species": "reduced-product"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "analysis": {
+          "K_materialized": false,
+          "abstract_nodes": 3967,
+          "bounds": [
+            0,
+            115792089237316195423570985008687907853269984665640564039457584007913129639935
+          ],
+          "candidate_count_materialized": 0,
+          "certificate": null,
+          "certificate_check_seconds": 0.0,
+          "comparator_words": 8,
+          "compile_seconds": 0.1963361000016448,
+          "conceptual_K": 16777216,
+          "construction_seconds": 0.1963361000016448,
+          "cost_grows_with_K": false,
+          "counts": {
+            "iterations": 2,
+            "known_to_congruence": 1271,
+            "nonlinear_to_known": 2,
+            "nonlinear_to_parity": 6245,
+            "widened_bit_expressions": 117089
+          },
+          "dead_nodes_removed": 2100,
+          "domain_seconds": 0.09971219999715686,
+          "enumerated_candidates": 0,
+          "graph_bytes": 91631,
+          "lineage": {
+            "candidate_count_materialized": 0,
+            "contract": "affine equations in inputs and existential exact Boolean/carry atoms; support overflow widens to TOP",
+            "counts": {
+              "opaque_carry_atoms": 31976,
+              "opaque_nonlinear_atoms": 3046,
+              "support_widenings": 112597
+            },
+            "known_output_bits": 0,
+            "seconds": 0.07906070000171894
+          },
+          "logical_representation_bytes_estimate": 456480,
+          "monomial_count": 2364,
+          "nodes": 3967,
+          "observable": "lineage",
+          "precision_collapse": {
+            "compression": "header/first/1",
+            "known_state_bits": 0,
+            "retained_sparse_nonlinear_bits": 0,
+            "round": 7
+          },
+          "predicate_bytes": 115275,
+          "predicate_fingerprint": "89cd04bfcca5a4528444c3de9b6522846f4f8a3c7e6a5993eb3ef58cca1a55de",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "production_promotion_allowed": false,
+          "proof_seconds": 0.1787728999988758,
+          "raw_nodes": 6067,
+          "representation_byte_scope": "logical estimate excludes Python object overhead",
+          "rewrite_seconds": 0.028970499995921273,
+          "rewrites": {
+            "analyses": {
+              "opencl": "Boolean selection form",
+              "precision": "complement-carry elimination"
+            },
+            "candidate_count_materialized": 0,
+            "input_nodes": 3967,
+            "output_nodes": 3967,
+            "seconds": 0.028970499995921273,
+            "status": "EXACT"
+          },
+          "rewritten_nodes": 3967,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "status": "UNKNOWN",
+          "storage_includes_digest_view": true,
+          "target_information": 0.0,
+          "total_seconds": 0.4130217000056291
+        },
+        "branch_exhausted": false,
+        "failure_cause": "target_bounds_universal_after_nonlinear_loss",
+        "generation": 1,
+        "kind": "reduced-product",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "DEAD",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.4143690999990213,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    },
+    {
+      "id": "205159f5823d7b1e253ec347107abfa5de81e7fd5ad9bf45e25ece3d4c3cbba9",
+      "class": "FRONTIER",
+      "created": "2026-10-05T16:51:39.686545+00:00",
+      "utility": 0.0,
+      "config": {
+        "candidate_id": "cf6593e9e55aa73d3ff2df97dbd651e21c17e26d838058781304b231828ac1ed",
+        "species": "predicate-ir"
+      },
+      "metrics": {
+        "K_materialized": false,
+        "audit_materialized_K": true,
+        "audit_scope_K": 8,
+        "branch_exhausted": false,
+        "conceptual": {
+          "K_materialized": false,
+          "comparator_words": 8,
+          "compile_seconds": 0.19859330000326736,
+          "conceptual_K": 16777216,
+          "cost_grows_with_K": false,
+          "dead_nodes_removed": 2100,
+          "graph_bytes": 91631,
+          "nodes": 3967,
+          "predicate_bytes": 115275,
+          "predicate_fingerprint": "89cd04bfcca5a4528444c3de9b6522846f4f8a3c7e6a5993eb3ef58cca1a55de",
+          "predicate_nodes": 4987,
+          "predicate_root_outputs": 1,
+          "raw_nodes": 6067,
+          "root": "exact inclusive little-endian uint256 comparator",
+          "setup_headers": 1,
+          "storage_includes_digest_view": true
+        },
+        "generation": 1,
+        "independent_cases": 24,
+        "kind": "predicate-ir",
+        "production_promotion_allowed": false,
+        "proof_scope": "proved transfer schemas; finite parity tests are regression evidence",
+        "soundness_verified": true,
+        "status": "EXACT_PARITY",
+        "target_information_gain": 0.0,
+        "total_seconds": 0.6236315000060131,
+        "useful_rho": 0.0
+      },
+      "reason": "Finite exact experiment; production champion retained"
+    }
+  ],
+  "lemmas": [
+    {
+      "class": "PROVEN",
+      "checker": "lemma/v1",
+      "costs": {
+        "construction": 0.0,
+        "proof": 0.0,
+        "verification": 9.320000390289351e-05
+      },
+      "domains": [
+        "sparse-nonlinear",
+        "parity",
+        "predicate-rewrite"
+      ],
+      "failure_boundaries": "local Boolean identity, no full-SHA target advantage",
+      "fingerprint": "de83fb552ce751cabdceea58bd37a66b66cde56022fafc45752cd1d85e3b8482",
+      "information_gain": 0.0,
+      "preconditions": "all uint32 inputs; bit-local operators only",
+      "proof": {
+        "cases": 4,
+        "type": "bit-local-universal"
+      },
+      "reuse_count": 0,
+      "source": "d2f2caff4f90065ea12974249810cce53140008490b7cfa4e3e66a79bf6fa2cf",
+      "statement": "{\"nodes\":[[\"INPUT\",[],\"x\"],[\"INPUT\",[],\"y\"],[\"AND\",[0,1],null],[\"XOR\",[0,2],null],[\"NOT\",[1],null],[\"AND\",[0,4],null]],\"outputs\":[3,5],\"schema\":1}",
+      "supersedes": null
+    }
+  ]
+}

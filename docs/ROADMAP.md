@@ -1,5 +1,11 @@
 # Step-by-step development and acceptance gates
 
+The latest target-directed checkpoint is [MIDDLE-CUT-RESULTS.md](MIDDLE-CUT-RESULTS.md).
+The original 20–30 TH/s objective stays active. Signed carries, joint affine
+boundary projections, algebraic certificates and target-rank family alignment
+have been evaluated without a useful speedup. A nonenumerating nonlinear
+boundary relation remains unresolved; it is the research requirement now.
+
 Phase II is locally evaluated: exact FamilyIR; dependency/rank/schedule/carry
 frontier; 4/8/16-bit blocked factoring; executable genomes; strided splits;
 saturation-aware allocation; differential/conditional/MITM/solver probes;
@@ -26,8 +32,8 @@ No amount of repeated retries can guarantee that the desired shortcut exists.
 Retries here are bounded, change the mechanism or resource budget, preserve
 failure evidence, and never relax exactness to manufacture success.
 
-The next practical milestone is a finite session against a user-configured
-Bitcoin pool, with accepted/rejected/stale/unacknowledged counts preserved.
-Power should be measured concurrently. A genuine full-SHA pruning discovery
+The user has selected local testing while pursuing the original performance
+target. A later finite pool session must preserve accepted/rejected/stale/
+unacknowledged counts, and power needs independent measurement. A full-SHA pruning discovery
 needs an exactness argument, independent implementation, unseen live jobs and
 cost accounting before it can enter production.

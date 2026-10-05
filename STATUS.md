@@ -1,5 +1,18 @@
 # Local project status - 5 October 2026
 
+## Target-directed continuation
+
+The original **20–30 TH/s** exact Bitcoin work target remains unchanged and
+unachieved. [Middle-cut results](docs/MIDDLE-CUT-RESULTS.md) add signed-carry
+suffix constraints, nonenumerating cubes, joint affine boundary correlations,
+solver-free parity certificates and a 168-family target-rank hunt. None beats
+the GPU: best complete new pipeline 0.24457x; useful rho=0. Target-word affine
+rank reaches 32 at K=64, and joint rank reaches all 512 dimensions at K=1024 in
+the measured fixtures. Local suite: 98 tests, 97 passed, optional HIP skipped.
+The last measured production champion remains 1.567 GH/s. Next unresolved
+mechanism: a nonlinear cross-word relation constructed without enumerating the
+family. No such cheaper relation is yet established. Keep testing local.
+
 ## Phase-II current checkpoint
 
 **NO LARGE ADVANTAGE FOUND.** Exact FamilyIR, blocked T1 factoring, executable

@@ -1,5 +1,20 @@
 # Verified boundary and runnable frontier
 
+## Target-directed middle-cut checkpoint
+
+The 20–30 TH/s target remains open. The next signed-carry experiment has now
+been evaluated: [MIDDLE-CUT-RESULTS.md](MIDDLE-CUT-RESULTS.md). Independent-bit
+cubes admit exact inverse-round witnesses; joint affine boundary constraints
+vanish at rank 512 for K=1024. Direct algebraic target-word proofs remove solver
+overhead, but the projected rank is already 32 at K=64. A further 168-family
+nonce/version alignment hunt finds no nonuniversal target-word projection.
+Best complete pipeline 0.24457x GPU; no promotion or useful pruning.
+
+Do not repeat those mechanisms unchanged. The remaining requirement is a
+nonlinear boundary relation with nonenumerating construction and a cheaper
+independent proof. No such relation is established. Historical frontier below
+is retained as checkpoint history, not an instruction to rerun exhausted work.
+
 ## Phase-II decision
 
 **NO LARGE ADVANTAGE FOUND.** New exact mechanisms and full-hash scaling are in

@@ -1,5 +1,13 @@
 # Research contract
 
+The permanent performance objective remains 20–30 TH/s equivalent exact valid
+Bitcoin work. [Middle-cut evidence](MIDDLE-CUT-RESULTS.md) now evaluates the
+signed-carry hypothesis and two subsequent changes of mechanism: algebraic
+target-word elimination and subspace alignment. Exactness passes; economics and
+large-family affine constraints fail. Require a concrete nonenumerating nonlinear
+cross-word relation before opening the next branch. No smaller milestone or
+synthetic SAT witness substitutes for the original objective.
+
 Phase-II measurements and kill decisions are in
 [PHASE-II-RESULTS.md](PHASE-II-RESULTS.md). FamilyIR is separate from scalar IR.
 Carry signatures alone compress but output residues remain linear; conditional

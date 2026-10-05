@@ -67,6 +67,11 @@ records and preserve boundary discoveries.
   protocol tests as well as native/oracle/research tests.
 
 ## Current step
+The target-directed continuation in `middle-cut.md` is evaluated, with results
+in `docs/MIDDLE-CUT-RESULTS.md`. The 20–30 TH/s objective remains unmet. The new
+signed-carry/affine/target-word branches are exhausted for their tested budgets;
+a concrete nonenumerating nonlinear relation is needed for the next experiment.
+
 Local engineering and hosted Windows/Linux validation are complete for this
 checkpoint. Continue the bounded frontier when a distinct hypothesis or external
 pool/power/HIP configuration becomes available. No large advantage was found.

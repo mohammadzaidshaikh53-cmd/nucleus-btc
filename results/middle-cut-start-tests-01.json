@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-10-05T14:36:16.625469+00:00",
+  "run": 90,
+  "passed": 86,
+  "skipped": [
+    {
+      "test": "test_backends.BackendTests.test_hip_if_installed",
+      "reason": "HIP backend needs SDK and CMake -DNUCLEUS_ENABLE_HIP=ON; OpenCL is the working fallback"
+    }
+  ],
+  "failures": [],
+  "errors": [
+    {
+      "test": "test_phase_ii_probes.PhaseIIProbeTests.test_local_solver_unsat_needs_independent_certificate",
+      "details": "Traceback (most recent call last):\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\tests\\test_phase_ii_probes.py\", line 29, in test_local_solver_unsat_needs_independent_certificate\n    result=carry_cone()\n           ^^^^^^^^^^^^\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\nucleus_btc\\family_ir\\cones.py\", line 19, in carry_cone\n    a,b,c=[z3.BitVec(name,width) for name in ('carry_a','carry_b','carry_c')];incoming=z3.BitVec('incoming',width)\n           ^^^^^^^^^\nAttributeError: module 'z3' has no attribute 'BitVec'\n"
+    },
+    {
+      "test": "test_phase_ii_probes.PhaseIIProbeTests.test_lossy_projection_retains_and_egraph_bounds",
+      "details": "Traceback (most recent call last):\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\tests\\test_phase_ii_probes.py\", line 22, in test_lossy_projection_retains_and_egraph_bounds\n    self.assertEqual(mitm_projection(f)['retained'],2)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\nucleus_btc\\family_ir\\probes.py\", line 67, in mitm_projection\n    backward=backward_prefix_cone(exact_cut,target)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\nucleus_btc\\family_ir\\cones.py\", line 51, in backward_prefix_cone\n    e=z3.BitVec('cut_e',32);h=e+IV[7]\n      ^^^^^^^^^\nAttributeError: module 'z3' has no attribute 'BitVec'\n"
+    },
+    {
+      "test": "test_representation_portfolio.PortfolioTests.test_smt_templates_and_unknown_never_discard",
+      "details": "Traceback (most recent call last):\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\tests\\test_representation_portfolio.py\", line 33, in test_smt_templates_and_unknown_never_discard\n    self.assertTrue(prove_templates()[\"all_proved\"])\n                    ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\babaf\\Documents\\Codex\\2026-10-05\\so-x20\\outputs\\nucleus-btc\\nucleus_btc\\solver\\smt.py\", line 31, in prove_templates\n    a,b,c=z3.BitVecs(\"a b c\",32);majority=(a&b)|((a|b)&c)\n          ^^^^^^^^^^\nAttributeError: module 'z3' has no attribute 'BitVecs'\n"
+    }
+  ],
+  "successful": false
+}

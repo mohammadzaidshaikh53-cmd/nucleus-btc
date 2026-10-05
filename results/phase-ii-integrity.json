@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "b349bd154105fc12e3f6f25643dff9d060b8d406",
+  "validated_code_commit": "6f7da9913978df1d3dd244ac7f190515cf9a8e9b",
+  "historical_results_unchanged": true,
+  "historical_files_checked": 37,
+  "independent_oracle_unchanged": true,
+  "Git_blob_comparison": true,
+  "pool_configuration_present": false
+}

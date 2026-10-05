@@ -1,0 +1,14 @@
+{
+  "validated_code_commit": "6f7da9913978df1d3dd244ac7f190515cf9a8e9b",
+  "run_id": 37312027317,
+  "run_url": "https://github.com/mohammadzaidshaikh53-cmd/nucleus-btc/actions/runs/37312027317",
+  "jobs": [
+    {"id": 111769500106, "name": "test (ubuntu-latest)", "conclusion": "success"},
+    {"id": 111769500735, "name": "test (windows-latest)", "conclusion": "success"}
+  ],
+  "scope": "CPU/native, optional SMT and encrypted SV2 validation; GPU evidence separately measured locally",
+  "local_tests": {"total": 90, "passed": 89, "skipped_optional_HIP": 1},
+  "production_champion_promoted": false,
+  "live_share_accepted": false,
+  "btc_payout_proven": false
+}

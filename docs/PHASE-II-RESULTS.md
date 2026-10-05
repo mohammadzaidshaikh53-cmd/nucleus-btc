@@ -105,9 +105,11 @@ as an INTERESTING sublinear result. Logical word size is an estimate, not RSS.
 
 ## Hardware, protocol and recovery
 
-Local release: 90 tests, 89 passed and one optional HIP skip. Published
-checkpoint fa5276f passed Windows/Linux CI. Final evidence release is validated
-separately; hosted CI does not establish GPU or external-pool interoperability.
+Local release: 90 tests, 89 passed and one optional HIP skip. Final code checkpoint
+6f7da99 passed [Windows/Linux CI](https://github.com/mohammadzaidshaikh53-cmd/nucleus-btc/actions/runs/37312027317).
+Hosted CI does not establish GPU or external-pool interoperability. Git-blob
+integrity verification confirms all 37 historical result files and the independent
+SHA reference unchanged.
 
 Nine fresh alternating A/B pairs per local size 32/64/128/256, with 4096
 parity headers and scan checks, show no confidence-qualified >2% improvement.

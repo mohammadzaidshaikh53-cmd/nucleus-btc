@@ -26,9 +26,10 @@ cuts with independently verified necessary relations.
 
 Earlier checkpoint history follows; its historical measurements are unchanged.
 
-Phase-II local release: **90 tests, 89 passed, one optional HIP skip**. Published
-checkpoint fa5276f passed Windows/Linux CI; final evidence checkpoint is checked
-separately. Eighteen isolated Phase-II steps are persisted with no pending work.
+Phase-II local release: **90 tests, 89 passed, one optional HIP skip**. Final code
+checkpoint 6f7da99 passed Windows/Linux CI (run 37312027317). Integrity verification
+confirms the independent oracle and all 37 historical result files unchanged.
+Eighteen isolated Phase-II steps are persisted with no pending work.
 
 The runnable foundation and first research loop are implemented and tested.
 The requested long-term SHA-256 advantage remains unproven. The user selected

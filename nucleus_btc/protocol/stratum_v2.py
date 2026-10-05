@@ -1,8 +1,4 @@
-"""Offline SV2 framing and standard-channel state, checked against the spec.
-
-Not a live SV2 transport: authenticated encrypted handshake is still required.
-No plaintext connection is offered as a substitute.
-"""
+"""SV2 framing and standard-channel state; sv2_transport supplies authenticated I/O."""
 from dataclasses import dataclass
 from struct import pack,unpack
 from ..bitcoin.block_header import BlockHeader

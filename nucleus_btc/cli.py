@@ -79,8 +79,11 @@ def main(argv=None):
             from .nucleus.experiment_selector import run_portfolio
             dump(run_portfolio(args.store),args.output);return 0
         if args.command=="mine":
-            from .protocol.stratum_v1 import run_miner
             config=json.loads(Path(args.config).read_text(encoding="utf-8"))
+            if config.get("pool_url","").startswith("stratum2+tcp:"):
+                from .protocol.sv2_client import run_miner
+            else:
+                from .protocol.stratum_v1 import run_miner
             dump(run_miner(config,args.seconds),args.output);return 0
         kwargs={}
         if getattr(args,"champion",False) and args.backend=="opencl":

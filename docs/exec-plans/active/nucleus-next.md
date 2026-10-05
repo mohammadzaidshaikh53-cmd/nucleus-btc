@@ -51,6 +51,18 @@ records and preserve boundary discoveries.
   and ciphertext tamper rejection pass. Cargo Windows Schannel failed; a local
   registry relay fetched upstream data with Python verified HTTPS instead.
 
+## Protocol checkpoint
+- V1 out-of-order acknowledgements/rejections, duplicate suppression, extranonce
+  invalidation, finite fresh reconnect and certificate failures tested.
+- Authenticated SV2 standard/extended local pool sessions, encrypted multichunk
+  fragmentation, tamper rejection, target epochs, rolling restrictions, bounded
+  backpressure, delayed rejection evidence and reconnect aggregation pass.
+- Production helper cannot initialize the synthetic server authority; fixture
+  build is separate. Locked Rust tests: 3 passed. Python: 59 passed, 1 HIP skip.
+- Checkpoint 1 Windows/Linux GitHub Actions both passed. CI now requires encrypted
+  protocol tests as well as native/oracle/research tests.
+
 ## Current step
-Publish tested checkpoint. Complete V1 adversarial coverage and encrypted SV2
-transport/lifecycle; run full representation scaling and reproducibility checks.
+Publish the protocol checkpoint. Measure full representation scaling, strengthen
+economic split learning, carry alternatives and optional SMT, then run supervisor
+recovery and reproducibility checks on the final frontier.

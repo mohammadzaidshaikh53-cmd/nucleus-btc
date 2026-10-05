@@ -23,5 +23,11 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build native core
         run: cmake --build build --config Release
+      - name: Test locked reference SV2 cryptography
+        run: cargo test --locked --manifest-path native/sv2-noise/Cargo.toml
+      - name: Build authenticated SV2 transport
+        run: cargo build --release --locked --manifest-path native/sv2-noise/Cargo.toml
+      - name: Build local SV2 pool fixture
+        run: cargo build --locked --features fixtures --target-dir build/sv2-fixture --manifest-path native/sv2-noise/Cargo.toml
       - name: Verify reference, native and research modules
-        run: python scripts/test_runner.py --require-native
+        run: python scripts/test_runner.py --require-native --require-sv2

@@ -1,4 +1,4 @@
-"""Bounded Stratum V1 client for compatibility while SV2 transport is pending.
+"""Bounded Stratum V1 compatibility client alongside authenticated SV2.
 
 No network connections happen on import. Pool settings are supplied explicitly.
 """
@@ -6,10 +6,11 @@ import json
 import select
 import socket
 import ssl
-from collections import deque
+from collections import deque,OrderedDict
 from dataclasses import dataclass
 from decimal import Decimal
 from time import monotonic,sleep
+from datetime import datetime,timezone
 from urllib.parse import urlparse
 from ..bitcoin.block_header import BlockHeader
 from ..bitcoin.merkle import apply_coinbase_branch
@@ -18,6 +19,7 @@ from ..gpu.backend import get_backend,BackendUnavailable,ResultOverflow
 from ..verify.parity import verify_backend
 
 class ProtocolError(RuntimeError):pass
+class ReconnectRequested(ProtocolError):pass
 
 class JsonLineDecoder:
     def __init__(self,max_line=1<<20):self.buffer=bytearray();self.max_line=max_line
@@ -88,6 +90,7 @@ class StratumClient:
         self.decoder=JsonLineDecoder();self.next_id=1;self.responses={};self.pending={};self.jobs={};self.latest=None
         self.target=difficulty_target(1);self.extranonce1=b"";self.extranonce2_size=0;self.generation=0;self.authorized=False
         self.stats={"submitted":0,"accepted":0,"rejected":0,"stale_discarded":0,"unknown_notifications":0}
+        self.share_evidence={};self.accepted_evidence=[];self.examined=0;self.submission_keys={}
     def send(self,method,params):
         if len(self.pending)>=128:raise ProtocolError("Too many unacknowledged requests")
         ident=self.next_id;self.next_id+=1
@@ -97,11 +100,12 @@ class StratumClient:
         method=obj.get("method")
         if method:
             params=obj.get("params",[])
+            if not isinstance(method,str) or not isinstance(params,list):raise ProtocolError("Invalid Stratum notification")
             if method=="mining.set_difficulty":
                 if len(params)!=1:raise ProtocolError("Invalid difficulty notification")
                 self.target=difficulty_target(params[0]) # Applies to subsequent jobs, not existing jobs.
             elif method=="mining.set_extranonce":
-                if len(params)!=2 or not isinstance(params[1],int) or not 1<=params[1]<=32:raise ProtocolError("Invalid extranonce update")
+                if len(params)!=2 or type(params[1]) is not int or not 1<=params[1]<=32:raise ProtocolError("Invalid extranonce update")
                 self.extranonce1=decode_hex(params[0]);self.extranonce2_size=params[1];self.generation+=1;self.jobs.clear();self.latest=None
             elif method=="mining.notify":
                 clean=params[-1] if isinstance(params,list) and params else False
@@ -109,21 +113,27 @@ class StratumClient:
                 job=MiningJob.from_notify(params,self.target,self.extranonce1,self.extranonce2_size,self.generation)
                 if len(self.jobs)>=64:self.jobs.pop(next(iter(self.jobs)))
                 self.jobs[job.job_id]=job;self.latest=job
-            elif method=="client.reconnect":raise ProtocolError("Pool requested reconnect; restart using the configured endpoint")
+            elif method=="client.reconnect":raise ReconnectRequested("Pool requested reconnect using the configured endpoint")
             else:self.stats["unknown_notifications"]+=1
             return
         ident=obj.get("id")
+        if ident is not None and (not isinstance(ident,int) or isinstance(ident,bool)):raise ProtocolError("Malformed Stratum response id")
         if ident not in self.pending:return
         request=self.pending.pop(ident)
         if request=="mining.submit":
+            if not isinstance(obj.get("result"),bool) and obj.get("error") is None:raise ProtocolError("Malformed share acknowledgement")
             accepted=obj.get("result") is True and obj.get("error") is None
             self.stats["accepted" if accepted else "rejected"]+=1
+            evidence=self.share_evidence.pop(ident,None)
+            if accepted and evidence:
+                evidence.update(timestamp_utc=datetime.now(timezone.utc).isoformat(),pool_response={"id":ident,"result":True,"error":None})
+                self.accepted_evidence=(self.accepted_evidence+[evidence])[-32:]
         else:
             # A subscribe reply and first notify may arrive in the same recv.
             # Install workspace parameters before processing later messages in that recv.
             if request=="mining.subscribe" and obj.get("error") is None:
                 result=obj.get("result")
-                if not isinstance(result,list) or len(result)!=3 or not isinstance(result[2],int) or not 1<=result[2]<=32:raise ProtocolError("Invalid subscription result")
+                if not isinstance(result,list) or len(result)!=3 or type(result[2]) is not int or not 1<=result[2]<=32:raise ProtocolError("Invalid subscription result")
                 self.extranonce1=decode_hex(result[1]);self.extranonce2_size=result[2]
             if len(self.responses)>=128:raise ProtocolError("Response memory bound exceeded")
             self.responses[ident]=obj
@@ -164,12 +174,23 @@ class StratumClient:
         # Waiting can also deliver a replacement job, making this candidate stale.
         if self.jobs.get(job.job_id)!=job or job.generation!=self.generation:
             self.stats["stale_discarded"]+=1;return False
-        self.send("mining.submit",job.submission(self.worker,extranonce2,nonce));self.stats["submitted"]+=1;return True
+        params=job.submission(self.worker,extranonce2,nonce)
+        candidate=job.header(extranonce2).with_nonce(nonce)
+        from ..oracle.sha256 import sha256d
+        digest=sha256d(candidate.serialize())
+        if not meets_target(digest,job.target):raise ProtocolError("Share failed immutable oracle")
+        key=candidate.serialize()
+        if key in self.submission_keys:raise ProtocolError("Duplicate V1 share suppressed")
+        ident=self.send("mining.submit",params)
+        self.share_evidence[ident]={"job_id":job.job_id,"nonce":nonce,"header":candidate.serialize().hex(),"digest":digest.hex(),"target":f"{job.target:064x}"}
+        self.submission_keys[key]=None
+        if len(self.submission_keys)>4096:self.submission_keys.pop(next(iter(self.submission_keys)))
+        self.stats["submitted"]+=1;return True
     def close(self):self.socket.close()
 
 def mine_session(client,backend,seconds=60,batch_size=1<<20):
     if not 0<seconds<=86400 or not 1<=batch_size<=1<<24:raise ValueError("Invalid session budget")
-    started=monotonic();job=None;nonce=0;extranonce_number=0;hashes=0
+    started=monotonic();job=None;nonce=0;extranonce_number=0;hashes=0;cursors=OrderedDict();identity=None
     client.handshake()
     while monotonic()-started<seconds:
         # Drain a bounded amount of pending traffic; avoid starving mining on chatty upstreams.
@@ -178,7 +199,9 @@ def mine_session(client,backend,seconds=60,batch_size=1<<20):
         if client.latest is None:
             client.pump(min(.1,max(0,seconds-(monotonic()-started))));continue
         if client.latest!=job:
-            job=client.latest;nonce=0;extranonce_number=0
+            job=client.latest;identity=job.header(bytes(job.extranonce2_size)).serialize()[:76]
+            nonce,extranonce_number=cursors.get(identity,(0,0));cursors[identity]=(nonce,extranonce_number);cursors.move_to_end(identity)
+            if len(cursors)>64:cursors.popitem(last=False)
         if nonce>=1<<32:
             extranonce_number+=1;nonce=0
         if extranonce_number>=1<<(8*job.extranonce2_size):raise ProtocolError("Extranonce workspace exhausted; await a new pool job")
@@ -189,16 +212,24 @@ def mine_session(client,backend,seconds=60,batch_size=1<<20):
             if batch_size==1:raise
             batch_size=max(1,batch_size//2);continue # Retry the same range; never drop candidates.
         hashes+=scan.examined
+        client.examined=hashes
         for _ in range(32):
             if not client.pump(0):break
         for found in scan.nonces:client.submit(job,extranonce2,found)
         nonce+=count
+        cursors[identity]=(nonce,extranonce_number)
     # Resolve outstanding share acknowledgements briefly; unacknowledged shares never count as accepted.
     deadline=monotonic()+min(2,client.timeout)
     while any(method=="mining.submit" for method in client.pending.values()) and monotonic()<deadline:client.pump(.05)
     elapsed=monotonic()-started
     return {"protocol":"stratum-v1","examined":hashes,"seconds":elapsed,"hashes_per_second":hashes/elapsed,**client.stats,
-            "unacknowledged":sum(method=="mining.submit" for method in client.pending.values()),"btc_balance":None}
+            "unacknowledged":sum(method=="mining.submit" for method in client.pending.values()),"accepted_evidence":client.accepted_evidence,"btc_balance":None}
+
+def connect_pool(parsed,timeout=10):
+    sock=socket.create_connection((parsed.hostname,parsed.port),timeout=timeout)
+    try:
+        return ssl.create_default_context().wrap_socket(sock,server_hostname=parsed.hostname) if parsed.scheme=="stratum+ssl" else sock
+    except Exception:sock.close();raise
 
 def run_miner(config,seconds=60):
     if not 0<seconds<=86400:raise ValueError("Live session must have a finite 0..86400 second budget")
@@ -217,20 +248,30 @@ def run_miner(config,seconds=60):
             except Exception:backend.close();raise
             break
     if backend is None:raise BackendUnavailable("; ".join(failures))
-    sock=None;client=None
+    sock=None;client=None;started=monotonic();sessions=[];totals={"submitted":0,"accepted":0,"rejected":0,"stale_discarded":0,"examined":0};evidence=[]
     try:
         for attempt in range(3):
             try:
-                sock=socket.create_connection((parsed.hostname,parsed.port),timeout=10)
-                if parsed.scheme=="stratum+ssl":sock=ssl.create_default_context().wrap_socket(sock,server_hostname=parsed.hostname)
-                break
-            except OSError:
-                if sock:sock.close();sock=None
-                if attempt==2:raise
-                sleep(.5*(attempt+1))
-        client=StratumClient(sock,worker,config.get("password","x"))
-        result=mine_session(client,backend,seconds,config.get("batch_size",1<<20))
-        return {**result,"backend":backend.name,"fallback_reasons":failures}
+                remaining=seconds-(monotonic()-started)
+                if remaining<=0:break
+                timeout=min(10,remaining);sock=connect_pool(parsed,timeout);client=StratumClient(sock,worker,config.get("password","x"),timeout=timeout)
+                result=mine_session(client,backend,remaining,config.get("batch_size",1<<20))
+                for key in totals:totals[key]+=result[key]
+                evidence=(evidence+result["accepted_evidence"])[-32:]
+                sessions.append({"attempt":attempt+1,"status":"completed","examined":result["examined"],"unacknowledged":result["unacknowledged"]})
+                return {**result,**totals,"accepted_evidence":evidence,"backend":backend.name,"fallback_reasons":failures,"sessions":sessions}
+            except (OSError,ProtocolError) as error:
+                if client:
+                    for key in totals:totals[key]+=client.examined if key=="examined" else client.stats[key]
+                    evidence=(evidence+client.accepted_evidence)[-32:]
+                # Server-provided error strings and credential-bearing configuration are not logged.
+                sessions.append({"attempt":attempt+1,"status":"failed","failure_type":type(error).__name__,"old_job_state_discarded":True})
+                if attempt<2:sleep(min(.5*(attempt+1),max(0,seconds-(monotonic()-started))))
+            finally:
+                if client:client.close();client=None;sock=None
+                elif sock:sock.close();sock=None
+        return {"protocol":"stratum-v1","status":"bounded_reconnect_exhausted",**totals,"accepted_evidence":evidence,
+                "backend":backend.name,"fallback_reasons":failures,"sessions":sessions,"btc_balance":None}
     finally:
         if client:client.close()
         elif sock:sock.close()

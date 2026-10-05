@@ -9,7 +9,7 @@ continued local testing; no live pool mining was started.
 - Native C++20 DLL and executable compile with installed MSVC Build Tools.
 - OpenCL executes on the installed discrete AMD `gfx1102` GPU.
 - Startup verification reproduced 33 tests: 32 passed, optional HIP skipped.
-- The next engineering checkpoint adds exact word IR, generated GPU kernels,
+- The first engineering checkpoint adds exact word IR, generated GPU kernels,
   transactional supervisor recovery and adaptive family validation tests.
 - Fresh confirmation: **1.634 GH/s**, **1.713x** original kernel; historical
   1.605 GH/s / 1.710x evidence remains unchanged in `results/confirmation.json`.
@@ -63,7 +63,10 @@ the fastest available miner or any ASIC.
   are local protocol evidence, not live pool acceptance.
 - Share submission waits for pool acknowledgements when its bounded request
   window is full, times out stalled pools and discards replacement-job shares.
-- Offline SV2 framing, standard-channel job activation, target epochs and share encoding.
+- Authenticated SV2 transport, standard/extended channels and local encrypted
+  mock sessions pass. V1 adversarial response, TLS and reconnect tests pass.
+- Current local suite: 60 tests, 59 passed, optional HIP skipped; three locked
+  Rust cryptography/input tests pass. Checkpoint 1 CI passed on Windows and Linux.
 - PowerShell launchers, CMake build, local CLI, documentation and saved test results.
 - Generated word IR has eight diverse species, safe identity templates, structural
   CSE, deterministic serialization, exact interpreter and OpenCL/C++ lowering.
@@ -76,9 +79,8 @@ the fastest available miner or any ASIC.
 
 - HIP compilation and hardware verification: an SDK is not installed; its source
   is optional and explicitly unverified.
-- Complete authenticated SV2 transport and live channel setup.
-  A pinned reference Noise library compiled and passed authentication/tamper
-  tests; Python transport and lifecycle integration are the current checkpoint.
+- External SV2 interoperability and live acceptance: local encrypted standard/
+  extended sessions are verified, but no configured external pool exists.
 - Actual pool acceptance and BTC payout: intentionally not attempted while local
   testing is selected. A real Bitcoin pool URL and worker are required later.
 - Simultaneous measured whole-system power: no J/TH or profitability claim exists.

@@ -14,10 +14,12 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--require-gpu",action="store_true")
     parser.add_argument("--require-native",action="store_true")
+    parser.add_argument("--require-sv2",action="store_true")
     parser.add_argument("--output",default=str(ROOT/"results"/"test-suite.json"))
     args=parser.parse_args()
     if args.require_gpu:os.environ["NUCLEUS_REQUIRE_OPENCL"]="1"
     if args.require_native:os.environ["NUCLEUS_REQUIRE_NATIVE"]="1"
+    if args.require_sv2:os.environ["NUCLEUS_REQUIRE_SV2"]="1"
     suite=unittest.defaultTestLoader.discover(str(ROOT/"tests"))
     result=unittest.TextTestRunner(verbosity=2).run(suite)
     report={"timestamp_utc":datetime.now(timezone.utc).isoformat(),"run":result.testsRun,

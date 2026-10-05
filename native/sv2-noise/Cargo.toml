@@ -1,0 +1,18 @@
+[package]
+name = "nucleus-sv2-noise"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+noise_sv2 = "=2.0.0"
+serde_json = "1.0"
+secp256k1 = { version = "0.28.2", optional = true }
+
+[features]
+fixtures = ["dep:secp256k1"]
+
+[dev-dependencies]
+secp256k1 = { version = "0.28.2", features = ["rand-std"] }
+
+[profile.release]
+panic = "abort"

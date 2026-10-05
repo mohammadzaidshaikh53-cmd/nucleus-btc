@@ -9,7 +9,7 @@
 | 4: representations | Bit-plane/carry primitives, DAG/BDD, full SHA symbolic families and collapse tracking run | Scalable economic advantage; current methods are slower or hit resource limits |
 | 5: pruning | Full finite-family target circuits, SAT UNKNOWN handling, exhaustive lost-solution audits and complete cost equation exist | Cheap useful pruning on large full-SHA Bitcoin families; not demonstrated |
 | 6: structural families | Negotiated version/time workspace validation and amortization accounting exist | A proven structural property with positive measured lifetime value; not discovered |
-| 7: pool validation | V1 compatibility client and mock integration pass; offline SV2 standard-channel logic exists | Actual pool/worker, accepted live BTC shares; implement and verify authenticated SV2 transport |
+| 7: pool validation | V1 adversarial tests and authenticated SV2 standard/extended local mock integration pass | Actual pool/authority/worker; independent external interoperability and accepted live shares |
 | 8: economics | No profitability claim or assumed power baseline | BTC accounting, pool fees, electricity cost and measured efficiency |
 
 The report's long-term target remains an open cryptanalytic research question.

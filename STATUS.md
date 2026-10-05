@@ -66,7 +66,7 @@ the fastest available miner or any ASIC.
 - Authenticated SV2 transport, standard/extended channels and local encrypted
   mock sessions pass. V1 adversarial response, TLS and reconnect tests pass.
 - Current local suite: 70 tests, 69 passed, optional HIP skipped; three locked
-  Rust cryptography/input tests pass. Checkpoints 1 and 2 CI passed on Windows/Linux.
+  Rust cryptography/input tests pass. All three code checkpoints passed Windows/Linux CI.
 - PowerShell launchers, CMake build, local CLI, documentation and saved test results.
 - Generated word IR has eight diverse species, safe identity templates, structural
   CSE, deterministic serialization, exact interpreter and OpenCL/C++ lowering.

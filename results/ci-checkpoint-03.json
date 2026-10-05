@@ -1,0 +1,20 @@
+{
+  "commit": "936dfb09fdc75049c436463f503c136101f69321",
+  "run_id": 37286618401,
+  "url": "https://github.com/mohammadzaidshaikh53-cmd/nucleus-btc/actions/runs/37286618401",
+  "jobs": [
+    {
+      "id": 111686919494,
+      "name": "test (ubuntu-latest)",
+      "conclusion": "success",
+      "completed_at": "2026-10-05T08:55:49Z"
+    },
+    {
+      "id": 111686919803,
+      "name": "test (windows-latest)",
+      "conclusion": "success",
+      "completed_at": "2026-10-05T08:56:36Z"
+    }
+  ],
+  "scope": "Hosted CPU/native, optional SMT, locked Rust and encrypted local SV2; discrete RX 7600 XT validation is separate"
+}

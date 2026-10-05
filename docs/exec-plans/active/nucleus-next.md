@@ -63,7 +63,9 @@ records and preserve boundary discoveries.
   protocol tests as well as native/oracle/research tests.
 
 ## Current step
-Publish the final tested research checkpoint and verify Windows/Linux CI.
+Local engineering and hosted Windows/Linux validation are complete for this
+checkpoint. Continue the bounded frontier when a distinct hypothesis or external
+pool/power/HIP configuration becomes available. No large advantage was found.
 
 ## Research checkpoint
 - Four exact carry representations measured with full SHA families 2^8..2^20.

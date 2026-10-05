@@ -1,0 +1,25 @@
+{
+  "representation": "dag",
+  "nonce_bits": 1,
+  "candidates": 2,
+  "max_nodes": 200000,
+  "baseline_hashlib_seconds": 1.83000001925393e-05,
+  "status": "resource_budget_collapsed",
+  "at_round": 122,
+  "nodes": 200000,
+  "total_seconds": 0.21327240000027814,
+  "reason": "DAG node budget exceeded",
+  "economic_Rc": null,
+  "failure_phase": "state_carries",
+  "phase_node_growth": {
+    "Ch_Maj": 29028,
+    "T1_Sigma_carries": 69034,
+    "T2_Sigma_carries": 25575,
+    "state_carries": 36086,
+    "message_schedule": 39512
+  },
+  "variable_order": [
+    0
+  ],
+  "cryptanalytic_discovery": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "UNSAT",
+  "certificate": "independent exhaustive integer reproduction",
+  "independent_cases": 12288,
+  "query_seconds": 0.0006886000010126736,
+  "total_seconds": 0.027752300000429386,
+  "pruning_authorized": false,
+  "scope": "bounded local multioperand carry identity, not full SHA rejection",
+  "solvers": {
+    "cadical": null,
+    "kissat": null,
+    "cryptominisat5": null,
+    "z3": "5.1.0"
+  }
+}

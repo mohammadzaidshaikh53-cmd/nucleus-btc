@@ -1,5 +1,6 @@
 from dataclasses import dataclass, replace
 from time import perf_counter
+from functools import cached_property,lru_cache
 from .dimensions import DimensionKind
 from ..bitcoin.block_header import BlockHeader
 from ..bitcoin.merkle import apply_coinbase_branch
@@ -16,7 +17,7 @@ class HeaderFamily:
     merkle_branch: tuple[bytes, ...] = ()
 
     def __post_init__(self):
-        if self.width > 24: raise ValueError("Finite research family limited to 24 live bits")
+        if self.width > 320: raise ValueError("Header workspace exceeds supported dimension count")
         seen = {}
         for d in self.dimensions:
             mask = sum(1 << b for b in d.bits)
@@ -55,12 +56,20 @@ class HeaderFamily:
                 h = replace(h, merkle_root=h.merkle_root[:-4] + tail.to_bytes(4, "little"))
             elif d.kind == DimensionKind.EXTRANONCE: extra ^= change
         if any(d.kind == DimensionKind.EXTRANONCE for d in self.dimensions):
-            cb = self.coinbase_prefix + extra.to_bytes(len(self.extranonce), "little") + self.coinbase_suffix
-            if len(cb) >= 6 and cb[4:6] == b"\x00\x01": raise ValueError("Witness coinbase requires txid stripping")
-            h = replace(h, merkle_root=apply_coinbase_branch(cb, list(self.merkle_branch)))
+            h = replace(h, merkle_root=self._derive_root(extra))
         return h
 
+    @cached_property
+    def _derive_root(self):
+        @lru_cache(maxsize=256)
+        def derive(extra):
+            cb=self.coinbase_prefix+extra.to_bytes(len(self.extranonce),'little')+self.coinbase_suffix
+            if len(cb)>=6 and cb[4:6]==b'\x00\x01':raise ValueError('Witness coinbase requires txid stripping')
+            return apply_coinbase_branch(cb,list(self.merkle_branch))
+        return derive
+
     def construct(self):
+        if self.count > 1<<20: raise ValueError("Materialization budget exceeded; split the conceptual workspace first")
         t = perf_counter(); headers = [self.candidate(i).serialize() for i in range(self.count)]
         return headers, perf_counter() - t
 

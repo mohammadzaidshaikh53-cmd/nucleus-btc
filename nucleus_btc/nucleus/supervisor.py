@@ -13,10 +13,10 @@ from pathlib import Path
 from time import monotonic
 from .memory import KnowledgeStore
 from .persistence import ProcessLock,atomic_json
-from .selector import ExperimentSelector
+from .selector import ExperimentSelector,RESEARCH
 
 ROOT=Path(__file__).resolve().parents[2]
-KINDS=("generated","family","carry","structural","sat","representation","regression","benchmark")
+KINDS=RESEARCH+("regression","benchmark")
 
 def classify(error):
     if isinstance(error,(AssertionError,)):return "D",False

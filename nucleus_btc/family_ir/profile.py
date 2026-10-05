@@ -17,13 +17,18 @@ def word_profile(word):
     degrees=[max((i.bit_count() for i,t in enumerate(terms) if (t>>bit)&1),default=0) for bit in range(32)]
     deps=[sum(1<<v for v in d) for d in word.dependencies]
     residuals=Counter(word.nonlinear_residual)
+    carry_divergence=[]
+    if word.carry_residual:
+        for b in range(word.width):
+            pairs=[(i,i^(1<<b)) for i in range(len(values)) if not i&(1<<b)]
+            carry_divergence.append(sum(word.carry_residual[a]!=word.carry_residual[c] for a,c in pairs)/len(pairs))
     return {"K":len(values),"unique":len(counts),"sharing_ratio":len(values)/len(counts),
             "entropy_proxy_bits":-sum(n/len(values)*log2(n/len(values)) for n in counts.values()),
             "bit_dependency_masks":deps,"bit_live_variables":[x.bit_count() for x in deps],
             "bit_anf_degree":degrees,"affine":max(degrees)<=1,
             "Nnodes":sum(t.bit_count() for t in terms),"Nresidual":len(residuals),
             "residual_description_bits":32*len(residuals)+len(values)*max(1,(len(residuals)-1).bit_length()),
-            "carry_dependency_width":word.width if word.carry_residual else 0,
+            "carry_dependency_width":sum(x>0 for x in carry_divergence),"carry_variable_divergence":carry_divergence,
             "unique_counts_exhaustive":True}
 
 def dependency_profile(family, block_bits=8):

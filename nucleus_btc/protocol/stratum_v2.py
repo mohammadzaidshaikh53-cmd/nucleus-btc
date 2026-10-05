@@ -52,6 +52,16 @@ class StandardJob:
     merkle_root:bytes
     ntime_start:int|None
     target:int|None = None
+    version_rolling_allowed:bool = False
+    version_mask:int = 0
+
+def valid_version_generator(base,mask):
+    for index in range(1<<mask.bit_count()):yield version_for_index(base,index,mask)
+
+def version_for_index(base,index,mask):
+    if not 0<=base<=0xffffffff or not 0<=mask<=0xffffffff or not 0<=index<1<<mask.bit_count():raise ValueError("Version assignment outside permitted mask")
+    positions=[b for b in range(32) if (mask>>b)&1]
+    return base ^ sum(((index>>j)&1)<<b for j,b in enumerate(positions))
 
 class StandardChannel:
     def __init__(self,channel_id,target):
@@ -63,6 +73,7 @@ class StandardChannel:
     def new_job(self,job:StandardJob):
         from dataclasses import replace
         if not 0<=job.job_id<=0xFFFFFFFF or not 0<=job.version<=0xFFFFFFFF or len(job.merkle_root)!=32:raise ValueError("Invalid standard job")
+        if not 0<=job.version_mask<=0xffffffff or not job.version_rolling_allowed and job.version_mask:raise ValueError("Invalid rolling workspace")
         if job.job_id in self.jobs:raise ValueError("Duplicate live job id")
         if len(self.jobs)>=128:raise ValueError("Channel job budget exceeded; upstream must retire jobs")
         if job.ntime_start is not None:
@@ -85,8 +96,8 @@ class StandardChannel:
     def submission(self,nonce,ntime,version):
         h,target=self.work();job=self.jobs[self.active]
         if ntime<job.ntime_start:raise ValueError("Submission before job ntime_start")
-        # Conservative: this codec submits only the supplied version, not unnegotiated rolling.
-        if version!=h.version:raise ValueError("Version rolling not enabled in offline codec")
+        mask=job.version_mask if job.version_rolling_allowed else 0
+        if (version^h.version)&~mask:raise ValueError("Version change exceeds permitted rolling workspace")
         candidate=BlockHeader(version,h.previous_hash,h.merkle_root,ntime,h.bits,nonce)
         from ..bitcoin.target import meets_target
         if not meets_target(candidate.digest(),target):raise ValueError("Share fails CPU validation")

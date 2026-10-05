@@ -16,7 +16,7 @@ from ..oracle.sha256 import sha256d
 from ..gpu.backend import get_backend,BackendUnavailable,ResultOverflow
 from ..verify.parity import verify_backend
 
-VERSION_MASK=0x1FFFE000
+VERSION_MASK=0x1FFFFFE0 # Current SV2 specification references BIP323 bits 5..28.
 
 class ReconnectRequested(ProtocolError):
     def __init__(self,host,port):super().__init__("Authenticated upstream requested reconnect");self.host=host;self.port=port
@@ -106,7 +106,7 @@ class SV2Client:
             if kind==w.NEW_STANDARD:
                 if self.extended:raise ProtocolError("Standard job on extended channel")
                 job=StandardJob(r.integer(),0,b"",r.option());version=r.integer();root=r.take(32);r.finish()
-                self.channel.new_job(replace(job,version=version,merkle_root=root))
+                self.channel.new_job(replace(job,version=version,merkle_root=root,version_rolling_allowed=not bool(self.flags&1),version_mask=VERSION_MASK if not self.flags&1 else 0))
             elif kind==w.NEW_EXTENDED:
                 if not self.extended:raise ProtocolError("Extended jobs violate REQUIRES_STANDARD_JOBS")
                 ident=r.integer();ntime=r.option();version=r.integer();rolling=r.integer(1)
@@ -202,16 +202,19 @@ def mine_session(client,backend,seconds=60,batch_size=1<<20):
         header,target=client.channel.work();identity=(header.serialize()[:76],client.channel.active,client.generation)
         if identity!=previous:previous=identity;nonce=0;extranonce=0;version_counter=0
         if nonce==1<<32:
-            if client.extended:
+            job=client.channel.jobs[client.channel.active]
+            rolling=not client.flags&1 and (not client.extended or job.rolling)
+            if rolling and version_counter<(1<<VERSION_MASK.bit_count())-1:
+                version_counter+=1;nonce=0
+            elif client.extended:
                 extranonce+=1
-                if extranonce>=1<<(8*client.channel.size):raise ProtocolError("Extended extranonce exhausted")
+                if extranonce>=1<<(8*client.channel.size):client.pump(.05);continue
                 client.channel.extranonce=extranonce.to_bytes(client.channel.size,"little");header,target=client.channel.work()
-                previous=(header.serialize()[:76],client.channel.active,client.generation);nonce=0
-            elif not client.flags&1 and version_counter<65535:version_counter+=1;nonce=0
+                previous=(header.serialize()[:76],client.channel.active,client.generation);nonce=0;version_counter=0
             else:client.pump(.05);continue # Await a distinct valid job after permitted workspace exhaustion.
         if version_counter:
-            version_bits=(((header.version&VERSION_MASK)>>13)+version_counter)&0xFFFF
-            header=replace(header,version=(header.version&~VERSION_MASK)|(version_bits<<13))
+            from .stratum_v2 import version_for_index
+            header=replace(header,version=version_for_index(header.version,version_counter,VERSION_MASK))
         count=min(batch_size,(1<<32)-nonce);job_id=client.channel.active;generation=client.generation
         try:scan=backend.scan(header.serialize(),nonce,count,target)
         except ResultOverflow:

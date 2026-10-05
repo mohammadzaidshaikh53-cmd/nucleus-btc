@@ -3,7 +3,7 @@ from struct import unpack,pack
 from .graph import Graph
 from ..oracle.sha256 import K,IV
 
-def compression_graph(spec=None):
+def compression_graph(spec=None, observer=None):
     spec=spec or {};ch_forms=spec.get("ch",[0]*64);maj_forms=spec.get("maj",[0]*64)
     addition=spec.get("addition","nary");schedule=spec.get("schedule","stream")
     if len(ch_forms)!=64 or len(maj_forms)!=64 or any(x not in (0,1,2) for x in ch_forms+maj_forms):raise ValueError("Invalid Boolean genome")
@@ -42,6 +42,7 @@ def compression_graph(spec=None):
         t1=add(h,x3(rr(e,6),rr(e,11),rr(e,25)),ch,g.const(K[i]),w[i])
         t2=add(x3(rr(a,2),rr(a,13),rr(a,22)),maj)
         a,b,c,d,e,f,hg,h=add(t1,t2),a,b,c,add(d,t1),e,f,hg
+        if observer:observer(i,(a,b,c,d,e,f,hg,h),w[i])
     g.outputs=[add(old,new) for old,new in zip(state,(a,b,c,d,e,f,hg,h))]
     g.validate();return g
 

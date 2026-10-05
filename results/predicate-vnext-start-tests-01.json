@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-10-05T15:46:25.638355+00:00",
+  "run": 98,
+  "passed": 97,
+  "skipped": [
+    {
+      "test": "test_backends.BackendTests.test_hip_if_installed",
+      "reason": "HIP backend needs SDK and CMake -DNUCLEUS_ENABLE_HIP=ON; OpenCL is the working fallback"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "successful": true
+}

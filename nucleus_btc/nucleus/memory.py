@@ -19,6 +19,7 @@ class KnowledgeStore:
         self.db.execute("PRAGMA journal_size_limit=262144")
         self.db.execute("CREATE TABLE IF NOT EXISTS knowledge (id TEXT PRIMARY KEY, class TEXT NOT NULL, created TEXT NOT NULL, utility REAL NOT NULL, payload TEXT NOT NULL)")
         self.db.execute("CREATE TABLE IF NOT EXISTS state (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
+        self.db.execute("CREATE TABLE IF NOT EXISTS lemmas (id TEXT PRIMARY KEY, class TEXT NOT NULL, created TEXT NOT NULL, payload TEXT NOT NULL)")
         self.db.commit()
     def put(self,kind,config,metrics,reason,utility=0.):
         if kind not in CLASSES:raise ValueError("Unknown knowledge class")
@@ -84,6 +85,34 @@ class KnowledgeStore:
             self.db.executemany("INSERT OR REPLACE INTO state VALUES (?,?)",encoded.items())
     def records(self):
         return [{"id":key,"class":kind,"created":created,"utility":utility,**json.loads(payload)} for key,kind,created,utility,payload in self.db.execute("SELECT * FROM knowledge ORDER BY created")]
+    def put_lemma(self,kind,record):
+        from ..verify.lemmas import verify_lemma,fingerprint
+        if kind not in CLASSES:raise ValueError('Invalid lemma class')
+        required={'fingerprint','statement','preconditions','proof','checker','source','domains','costs','reuse_count','information_gain','supersedes','failure_boundaries'}
+        if not required <= set(record):raise ValueError('Incomplete scoped lemma record')
+        if record['fingerprint']!=fingerprint(record['statement'],record['preconditions']):raise ValueError('Noncanonical lemma fingerprint')
+        if kind=='PROVEN' and (record['checker']!='lemma/v1' or not verify_lemma(record)):
+            raise ValueError('Trace agreement or UNKNOWN is not a lemma proof')
+        payload=json.dumps(record,sort_keys=True,allow_nan=False)
+        if len(payload.encode())>16384:raise ValueError('Lemma memory budget exceeded')
+        with self.db:
+            self.db.execute('INSERT OR REPLACE INTO lemmas VALUES (?,?,?,?)',(record['fingerprint'],kind,datetime.now(timezone.utc).isoformat(),payload))
+            budget=max(1,self.max_records//3)
+            for cls in CLASSES:
+                rows=self.db.execute('SELECT id FROM lemmas WHERE class=? ORDER BY created DESC',(cls,)).fetchall()
+                for (ident,) in rows[budget:]:self.db.execute('DELETE FROM lemmas WHERE id=?',(ident,))
+        return record['fingerprint']
+    def lemmas(self):
+        return [{'class':kind,**json.loads(payload)} for kind,payload in self.db.execute('SELECT class,payload FROM lemmas ORDER BY created')]
+    def reuse_lemma(self,ident,inputs,source):
+        from ..verify.lemmas import applicable
+        row=self.db.execute('SELECT class,payload FROM lemmas WHERE id=?',(ident,)).fetchone()
+        if not row or row[0]!='PROVEN':return None
+        record=json.loads(row[1])
+        if not applicable(record,inputs,source):return None
+        record['reuse_count']+=1
+        self.put_lemma('PROVEN',record)
+        return record
     def close(self):self.db.close()
     def __enter__(self):return self
     def __exit__(self,*args):self.close()

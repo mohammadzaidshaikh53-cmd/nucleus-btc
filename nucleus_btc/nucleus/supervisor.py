@@ -13,7 +13,7 @@ from pathlib import Path
 from time import monotonic
 from .memory import KnowledgeStore
 from .persistence import ProcessLock,atomic_json
-from .selector import ExperimentSelector,RESEARCH
+from .selector import ExperimentSelector,RESEARCH,VNEXT
 
 ROOT=Path(__file__).resolve().parents[2]
 KINDS=RESEARCH+("regression","benchmark")
@@ -43,10 +43,12 @@ def source_fingerprint():
     return digest.hexdigest()
 
 class Supervisor:
-    def __init__(self,directory="results/evolution",worker_timeout=180,max_records=192,runner=None):
+    def __init__(self,directory="results/evolution",worker_timeout=180,max_records=192,runner=None,profile='phase-ii'):
         self.directory=Path(directory);self.worker_timeout=worker_timeout
         if not 1<=worker_timeout<=3600:raise ValueError("Worker timeout must be 1..3600 seconds")
         self.max_records=max_records;self.runner=runner or self._worker;self.stop=False
+        if profile not in ('phase-ii','predicate-vnext'):raise ValueError('Invalid research profile')
+        self.profile=profile
     def _worker(self,experiment):
         request=self.directory/"request.json";response=self.directory/"response.json"
         atomic_json(request,experiment)
@@ -66,11 +68,11 @@ class Supervisor:
         fingerprint=source_fingerprint()
         with ProcessLock(self.directory/"owner.lock"),KnowledgeStore(self.directory/"state.sqlite",self.max_records) as store:
             state=store.get_state("supervisor",{"schema":1,"cursor":0,"pending":None,"completed":0,"history":[]})
-            if state["pending"] and state["pending"].get("source_sha256")!=fingerprint:
+            if state["pending"] and (state["pending"].get("source_sha256")!=fingerprint or state["pending"].get('profile','phase-ii')!=self.profile):
                 previous=state["pending"]
                 store.put("DEAD",{"candidate_id":previous["id"]},{"failure_class":"A","previous_source_sha256":previous.get("source_sha256"),"new_source_sha256":fingerprint},"Source changed across restart; stale worker result invalidated")
                 state["pending"]=None;store.set_state("supervisor",state)
-            selector=ExperimentSelector(store.get_state("selector",{}));promotions=0
+            selector=ExperimentSelector(store.get_state("selector",{}),self.profile);promotions=0
             previous_handlers={}
             if __import__('threading').current_thread() is __import__('threading').main_thread():
                 for sig in (signal.SIGINT,signal.SIGTERM):
@@ -80,7 +82,7 @@ class Supervisor:
                     if state["pending"] is None:
                         cursor=state["cursor"];kind=selector.select(cursor)
                         if kind=='frontier-complete':break
-                        config={"kind":kind,"generation":selector.statistics.get(kind,{}).get("trials",0),"source_sha256":fingerprint}
+                        config={"kind":kind,"generation":selector.statistics.get(kind,{}).get("trials",0),"source_sha256":fingerprint,'profile':self.profile}
                         if kind=="family":config["split_policy"]=store.get_state("split_policy",{})
                         ident=sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
                         state["pending"]={**config,"id":ident,"attempts":0}
@@ -109,6 +111,7 @@ class Supervisor:
                     store.set_states({"worker_result":result,"supervisor":state})
                     if result.get("status")=="promotion_qualified":
                         try:
+                            if experiment['kind'] in VNEXT:raise AssertionError('Offline predicate research can never promote production')
                             holdout=result.get("fresh_holdout") or {}
                             gates=(result.get("interpreter_parity",{}).get("passed"),result.get("parity",{}).get("passed"),
                                    holdout.get("passed"),holdout.get("headers_tested",0)>=16384,result.get("metrics",{}).get("ci95_low",0)>1.02)
@@ -120,6 +123,10 @@ class Supervisor:
                         except Exception as error:
                             category,_=classify(error);result={"status":"failed","failure_class":category,"reason":str(error)[:2048]}
                     kind="DEAD" if result.get("status") in ("DEAD","failed","resource_budget_collapsed","economic_budget_collapsed","economically_dominated") else "FRONTIER"
+                    if result.get('lemma'):
+                        try:store.put_lemma(result.get('lemma_class','FRONTIER'),result['lemma'])
+                        except ValueError as error:
+                            result={'status':'failed','failure_class':'D','reason':str(error)};kind='DEAD'
                     # Worker validation does not itself authorize a production replacement.
                     store.put(kind,{"species":experiment["kind"],"candidate_id":experiment["id"]},result,
                               result.get("reason","Finite exact experiment; production champion retained"))
@@ -136,7 +143,7 @@ class Supervisor:
                 store.db.execute("VACUUM")
                 report={"schema":1,"status":"stopped" if self.stop else "checkpointed","completed_this_run":completed,
                         "total_completed":state["completed"],"next_kind":selector.select(state["cursor"]),
-                        "pending":state["pending"],"history":state["history"],"source_sha256":fingerprint,
+                        "pending":state["pending"],"history":state["history"],"source_sha256":fingerprint,'profile':self.profile,
                         "storage_bytes":sum(p.stat().st_size for p in self.directory.iterdir() if p.is_file()),
                         "production_champion_modified":promotions>0,"selector_estimates":{k:selector.estimates(k) for k in KINDS},"live_pool_acceptance":False}
                 atomic_json(self.directory/"latest.json",report);return report

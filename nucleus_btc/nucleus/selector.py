@@ -2,10 +2,13 @@
 from math import log,sqrt
 
 PHASE_II=("family-ir","carry-factor","conditional","program","differential","mitm","cone","egraph")
-RESEARCH=PHASE_II+("generated","family","carry","structural","sat","representation")
+VNEXT=('predicate-ir','abstract-domain','reduced-product','refinement','certificate','lemma-discovery','workspace-compiler')
+RESEARCH=PHASE_II+("generated","family","carry","structural","sat","representation")+VNEXT
 
 class ExperimentSelector:
-    def __init__(self,statistics=None): self.statistics=statistics or {}
+    def __init__(self,statistics=None,profile='phase-ii'):
+        if profile not in ('phase-ii','predicate-vnext'):raise ValueError('Unknown research profile')
+        self.statistics=statistics or {};self.profile=profile
     def estimates(self,kind):
         s=self.statistics.get(kind,{});n=s.get('trials',0);valid=(s.get('valid',0)+1)/(n+2);better=(s.get('better',0)+1)/(n+2)
         recent=s.get('recent',[]);identities=[r['cause'] for r in recent]
@@ -16,14 +19,16 @@ class ExperimentSelector:
         information=-(better*log(better)+(1-better)*log(1-better))
         novelty=1/(1+repeats);cost=max(.01,s.get('seconds',1.)/max(1,n))
         slope=(recent[-1]['gain']-recent[0]['gain'])/len(recent) if len(recent)>1 else 0.
-        prior=3. if kind in PHASE_II else .15
+        prior=3. if kind in (VNEXT if self.profile=='predicate-vnext' else PHASE_II) else .15
         priority=prior*valid*better*information*novelty*(1-saturation)/sqrt(cost)
+        if kind in VNEXT:priority*=1+min(4.,s.get('target_information_gain',0.))+min(1.,s.get('useful_rejection',0.))
         return {"P_valid":valid,"P_better":better,"expected_gain":s.get('best_improvement',1.),"novelty":novelty,
                 "expected_information_gain":information,"expected_cost":cost,"saturation":saturation,
                 "failure_diversity":diversity,"recent_improvement_slope":slope,
                 "time_since_new_result":s.get('since_new',0),"priority":priority}
     def select(self,completed):
-        active=[k for k in PHASE_II if not self.statistics.get(k,{}).get('exhausted')]
+        species=VNEXT if self.profile=='predicate-vnext' else PHASE_II
+        active=[k for k in species if not self.statistics.get(k,{}).get('exhausted')]
         if not active:return 'frontier-complete'
         if completed%16==14:return 'regression'
         if completed%16==15:return 'benchmark'
@@ -38,6 +43,10 @@ class ExperimentSelector:
         s=self.statistics.setdefault(kind,{"trials":0,"valid":0,"better":0,"seconds":0.})
         s['trials']+=1;s['seconds']+=max(0.,seconds)
         valid=result.get('status') not in ('failed','resource_budget_collapsed','economic_budget_collapsed')
+        if kind in VNEXT:
+            valid=valid and result.get('soundness_verified') is True
+            s['target_information_gain']=max(s.get('target_information_gain',0.),result.get('target_information_gain',0.))
+            s['useful_rejection']=max(s.get('useful_rejection',0.),result.get('useful_rho',0.))
         gain=result.get('metrics',{}).get('geometric_speedup',result.get('effective_speedup',result.get('speedup_including_construction',0.))) or 0.
         improved=bool(valid and gain>1.02);s['valid']+=int(valid);s['better']+=int(improved)
         s['best_improvement']=max(s.get('best_improvement',1.),gain)

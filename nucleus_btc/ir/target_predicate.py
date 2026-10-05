@@ -52,6 +52,7 @@ class TargetPredicate:
         self.setup_headers = 0
         if self.always_true:
             g.outputs = [g.const(1)]
+            self.predicate_graph = g
             self.raw_nodes = 1
             self.compile_seconds = perf_counter()-start
             return
@@ -124,6 +125,25 @@ class TargetPredicate:
         self.graph, mapping = compact(g)
         self.digest_nodes = tuple(self.graph.outputs)
         self.trace = [{**t, 'state': tuple(mapping.get(i) for i in t['state']), 'W': mapping.get(t['W'])} for t in self.trace]
+        # Separate Boolean-root view, using only existing exact word operators.
+        # The digest view remains available to the independent interval checker.
+        # Slice backward from the inclusive comparator, rather than declaring
+        # digest outputs to be the mining observable. Worst-case equality needs
+        # every digest bit, so this does not imply cheap full-SHA evaluation.
+        boolean = Graph.deserialize(self.graph.serialize())
+        equal, less = boolean.const(1), boolean.const(0)
+        for position in range(255, -1, -1):
+            word, byte, bit = position//32, (position%32)//8, position%8
+            raw_bit = (3-byte)*8+bit
+            value = boolean.node('AND', boolean.node('SHR', self.digest_nodes[word], value=raw_bit), boolean.const(1))
+            inverse = boolean.node('XOR', value, boolean.const(1))
+            if (target >> position) & 1:
+                less = boolean.node('OR', less, boolean.node('AND', equal, inverse))
+                equal = boolean.node('AND', equal, value)
+            else:
+                equal = boolean.node('AND', equal, inverse)
+        boolean.outputs = [boolean.node('OR', less, equal)]
+        self.predicate_graph, _ = compact(boolean)
         self.compile_seconds = perf_counter()-start
 
     def evaluate(self, index):
@@ -131,20 +151,20 @@ class TargetPredicate:
             if not 0 <= index < self.workspace.count:
                 raise ValueError('Assignment outside workspace')
             return True
-        words = self.graph.evaluate(self.workspace.inputs(index))
-        digest = b''.join(x.to_bytes(4, 'big') for x in words)
-        return int.from_bytes(digest, 'little') <= self.target
+        return bool(self.predicate_graph.evaluate(self.workspace.inputs(index))[0])
 
     @property
     def fingerprint(self):
         from hashlib import sha256
-        return sha256((self.workspace.fingerprint+str(self.target)+self.graph.fingerprint).encode()).hexdigest()
+        return sha256((self.workspace.fingerprint+str(self.target)+self.predicate_graph.fingerprint).encode()).hexdigest()
 
     def metadata(self):
         return {'conceptual_K': self.workspace.count, 'K_materialized': False,
                 'nodes': len(self.graph.nodes), 'raw_nodes': self.raw_nodes,
                 'dead_nodes_removed': self.raw_nodes-len(self.graph.nodes),
                 'graph_bytes': len(self.graph.serialize()), 'compile_seconds': self.compile_seconds,
+                'predicate_nodes': len(self.predicate_graph.nodes), 'predicate_bytes': len(self.predicate_graph.serialize()),
+                'predicate_root_outputs': 1, 'storage_includes_digest_view': True,
                 'setup_headers': self.setup_headers, 'root': 'exact inclusive little-endian uint256 comparator',
                 'comparator_words': 0 if self.always_true else 8,
                 'predicate_fingerprint': self.fingerprint, 'cost_grows_with_K': False}

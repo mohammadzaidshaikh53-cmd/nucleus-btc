@@ -21,6 +21,10 @@ def backend():
 
 def execute(experiment):
     kind=experiment["kind"];generation=experiment.get("generation",0);header=heldout_headers(510019+generation,1)[0]
+    from .selector import VNEXT
+    if kind in VNEXT:
+        from ..family_ir.predicate_experiments import worker_experiment
+        return worker_experiment(kind,generation)
     if kind in ("family-ir","carry-factor","conditional","program","differential","mitm","cone","egraph"):
         from ..family_ir.experiments import worker_experiment
         return worker_experiment(kind,generation)
